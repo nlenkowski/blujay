@@ -1,0 +1,132 @@
+/**
+ * All styles are mobile first!
+ */
+
+//
+// Initial imports
+// --------------------------------------------------
+
+@import "normalize.less";
+
+
+//
+// Variables
+// --------------------------------------------------
+
+// Base
+@body-background:   #fff;
+@text-color:        #444;
+
+// Links
+@link-color:        #428bca;
+@link-color-hover:  darken(@link-color, 10%);
+
+// Font stacks
+@font-family-sans:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif: Georgia, "Times New Roman", Times, serif;
+@font-family-mono:  Monaco, Menlo, Consolas, "Courier New", monospace;
+
+// Typography
+@font-size-base:    16px;
+@font-size-large:   @font-size-base * 1.25; // ~20px
+@font-size-small:   @font-size-base * 0.85; // ~13px
+@font-size-mini:    @font-size-base * 0.75; // ~12px
+@line-height-base:  1.4em;
+
+//
+// General formatting and typography
+// --------------------------------------------------
+
+body {
+    background: @body-background;
+    font-family: @font-family-sans;
+    font-size: @font-size-base;
+    font-weight: normal;
+    line-height: @line-height-base;
+    color: @text-color;
+}
+
+
+a { color: @link-color;
+    text-decoration: none;
+
+    &:hover {
+        color: @link-color-hover;
+    }
+}
+
+a:focus, input:focus, button:focus {
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+//
+// Layout
+// --------------------------------------------------
+
+.container {
+    padding: 20px;
+}
+
+.site-content {
+    .clearfix();
+}
+
+.footer-sidebar {
+    .clearfix();
+}
+
+//
+// Header
+// --------------------------------------------------
+
+header {
+}
+
+//
+// Navigation
+// --------------------------------------------------
+
+nav {
+    padding-top: 20px;
+}
+
+//
+// Footer
+// --------------------------------------------------
+
+footer {
+    margin-top: 20px;
+
+    .site-info {
+        margin-top: 30px;
+    }
+}
+
+//
+// Utilities
+// --------------------------------------------------
+
+// Micro Clearfix
+.clearfix() {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+
+//
+// Final imports
+// --------------------------------------------------
+
+@import "media-queries.less";
+@import "print.less";
