@@ -1,6 +1,6 @@
 <?php
 /**
- * Scripts to enqueue
+ * Enqueue javascripts
  *
  * @package bbln_bootstrap
  */

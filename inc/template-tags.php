@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom template tags for this theme
+ * Custom template tags
  *
  * @package bbln_bootstrap
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom functions that act independently of the theme templates
+ * Useful utility scripts and nicities
  *
  * @package bbln_bootstrap
  */

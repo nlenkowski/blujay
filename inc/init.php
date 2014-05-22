@@ -1,6 +1,6 @@
 <?php
 /**
- * bbln_bootstrap theme init
+ * Register constants, menus, sidebars/widget areas, etc
  *
  * @package bbln_bootstrap
  */

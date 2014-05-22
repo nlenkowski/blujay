@@ -1,4 +1,9 @@
 <?php
+/**
+ * Plugins to install
+ *
+ * @package bbln_bootstrap
+ */
 
 add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
 /**
@@ -40,6 +45,12 @@ function my_theme_register_required_plugins() {
         array(
             'name'      => 'Google Analytics for WordPress',
             'slug'      => 'google-analytics-for-wordpress',
+            'required'  => false,
+        ),
+
+        array(
+            'name'      => 'WordPress SEO',
+            'slug'      => 'wordpress-seo',
             'required'  => false,
         ),
 

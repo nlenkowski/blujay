@@ -1,6 +1,6 @@
 <?php
 /**
- * Styles to enqueue
+ * Enqueue styles and fonts
  *
  * @package bbln_bootstrap
  */
@@ -20,6 +20,3 @@ function load_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'load_styles' );
 ?>
-
-
-
