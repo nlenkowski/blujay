@@ -1,25 +1,24 @@
 <?php
 /**
- * The template for displaying Search Results pages.
+ * The template for displaying search results pages
  *
  * @package bbln_bootstrap
  */
 
 get_header(); ?>
 
-    <section id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
+    <div class="content">
 
         <?php if ( have_posts() ) : ?>
 
             <header class="page-header">
                 <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'bbln_bootstrap' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-            </header><!-- .page-header -->
+            </header><!-- /page-header -->
 
             <?php /* Start the Loop */ ?>
             <?php while ( have_posts() ) : the_post(); ?>
 
-                <?php get_template_part( 'content', 'search' ); ?>
+                <?php get_template_part( 'templates/content', 'search' ); ?>
 
             <?php endwhile; ?>
 
@@ -27,12 +26,11 @@ get_header(); ?>
 
         <?php else : ?>
 
-            <?php get_template_part( 'content', 'none' ); ?>
+            <?php get_template_part( 'templates/content', 'none' ); ?>
 
         <?php endif; ?>
 
-        </main><!-- #main -->
-    </section><!-- #primary -->
+    </div><!-- /content -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -1,28 +1,29 @@
 <?php
 /**
- * The template for displaying the footer.
- *
- * Contains the closing of the content div and all content after
+ * The template for displaying the footer
  *
  * @package bbln_bootstrap
  */
 ?>
 
-    </div><!-- /content -->
+        </div><!-- /container -->
+    </section><!-- /site-content -->
 
-    <footer class="site-footer" role="contentinfo">
+    <footer class="site-footer">
+        <div class="container">
 
-        <?php get_sidebar( 'footer' ); ?>
+            <aside class="footer-widgets widget-area">
+                <?php dynamic_sidebar( 'footer-widgets' ); ?>
+            </aside>
 
-        <div class="site-info">
-            &copy; <?php echo date("Y"); ?> <?php echo bloginfo('name'); ?>
-        </div>
+            <div class="site-info">
+                &copy; <?php echo date("Y"); ?> <?php echo bloginfo('name'); ?>
+            </div>
 
-    </footer>
+        </div><!-- /container -->
+    </footer><!-- /footer -->
 
-</div><!-- /page -->
-
-<?php wp_footer(); ?>
+    <?php wp_footer(); ?>
 
 </body>
 </html>

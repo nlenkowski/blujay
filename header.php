@@ -1,40 +1,43 @@
 <?php
 /**
- * The Header for our theme.
- *
- * Displays all of the <head> section and everything up till <div id="content">
+ * The template for displaying the header
  *
  * @package bbln_bootstrap
  */
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php wp_title( '|', true, 'right' ); ?><?php echo get_bloginfo('name'); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link rel="shortcut icon" href="<?php echo THEMEDIR ?>/favicon.ico" />
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <title><?php wp_title( '|', true, 'right' ); ?><?php echo get_bloginfo('name'); ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<?php wp_head(); ?>
+    <link rel="shortcut icon" href="<?php echo THEMEDIR ?>/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="<?php echo THEMEDIR ?>/favicon-152.png">
+    <meta name="msapplication-TileImage" content="<?php echo THEMEDIR ?>/favicon-144.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 
-<div id="page" class="container">
+    <header class="site-header">
+        <div class="container">
 
-    <header id="masthead" class="site-header" role="banner">
+            <h1 class="title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <h2><?php bloginfo( 'description' ); ?></h2>
 
-        <div class="site-branding">
-            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-            <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-        </div>
+            <nav class="primary-navigation">
+                <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+            </nav>
 
-        <nav id="site-navigation" class="main-navigation" role="navigation">
-            <h1 class="menu-toggle"><?php _e( 'Menu', 'bbln_bootstrap' ); ?></h1>
+        </div><!-- /container -->
+    </header><!-- /site-header -->
 
-            <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-        </nav><!-- #site-navigation -->
-    </header><!-- #masthead -->
-
-    <div id="content" class="site-content">
+    <section class="site-content">
+        <div class="container">

@@ -1,34 +1,43 @@
 <?php
 /**
+ * The template used for displaying blog posts on the blog home page and in the search results
+ *
  * @package bbln_bootstrap
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
     <header class="entry-header">
+
         <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
         <?php if ( 'post' == get_post_type() ) : ?>
-        <div class="entry-meta">
-            <?php bbln_bootstrap_posted_on(); ?>
-        </div><!-- .entry-meta -->
+            <div class="entry-meta">
+                <?php bbln_bootstrap_posted_on(); ?>
+            </div>
         <?php endif; ?>
-    </header><!-- .entry-header -->
+
+    </header><!-- /entry-header -->
 
     <?php if ( is_search() ) : // Only display Excerpts for Search ?>
-    <div class="entry-summary">
-        <?php the_excerpt(); ?>
-    </div><!-- .entry-summary -->
+
+        <div class="entry-summary">
+            <?php the_excerpt(); ?>
+        </div>
+
     <?php else : ?>
-    <div class="entry-content">
-        <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'bbln_bootstrap' ) ); ?>
-        <?php
-            wp_link_pages( array(
-                'before' => '<div class="page-links">' . __( 'Pages:', 'bbln_bootstrap' ),
-                'after'  => '</div>',
-            ) );
-        ?>
-    </div><!-- .entry-content -->
+
+        <div class="entry-content">
+            <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'bbln_bootstrap' ) ); ?>
+            <?php
+                wp_link_pages( array(
+                    'before' => '<div class="page-links">' . __( 'Pages:', 'bbln_bootstrap' ),
+                    'after'  => '</div>',
+                ) );
+            ?>
+        </div><!-- /entry-content -->
+
     <?php endif; ?>
 
     <footer class="entry-footer">
@@ -59,5 +68,5 @@
         <?php endif; ?>
 
         <?php edit_post_link( __( 'Edit', 'bbln_bootstrap' ), '<span class="edit-link">', '</span>' ); ?>
-    </footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+    </footer><!-- /entry-footer -->
+</article><!-- /post -->

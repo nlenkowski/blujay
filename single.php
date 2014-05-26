@@ -7,12 +7,11 @@
 
 get_header(); ?>
 
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
+    <div class="content">
 
         <?php while ( have_posts() ) : the_post(); ?>
 
-            <?php get_template_part( 'content', 'single' ); ?>
+            <?php get_template_part( 'templates/content', 'single' ); ?>
 
             <?php bbln_bootstrap_post_nav(); ?>
 
@@ -25,8 +24,8 @@ get_header(); ?>
 
         <?php endwhile; // end of the loop. ?>
 
-        </main><!-- #main -->
-    </div><!-- #primary -->
+    </div><!-- /content -->
 
-<?php dynamic_sidebar( 'posts-sidebar' ); ?>
+<?php get_template_part( 'sidebar' ); ?>
+
 <?php get_footer(); ?>

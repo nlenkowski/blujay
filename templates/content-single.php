@@ -1,19 +1,22 @@
 <?php
 /**
- * The template used for displaying blog posts
+ * The template used for displaying single blog posts
  *
  * @package bbln_bootstrap
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
     <header class="entry-header">
+
         <h1 class="entry-title"><?php the_title(); ?></h1>
 
         <div class="entry-meta">
             <?php bbln_bootstrap_posted_on(); ?>
-        </div><!-- .entry-meta -->
-    </header><!-- .entry-header -->
+        </div>
+
+    </header><!-- /entry-header -->
 
     <div class="entry-content">
         <?php the_content(); ?>
@@ -23,7 +26,7 @@
                 'after'  => '</div>',
             ) );
         ?>
-    </div><!-- .entry-content -->
+    </div><!-- /entry-content -->
 
     <footer class="entry-footer">
         <?php
@@ -36,17 +39,13 @@
             if ( ! bbln_bootstrap_categorized_blog() ) {
                 // This blog only has 1 category so we just need to worry about tags in the meta text
                 if ( '' != $tag_list ) {
-                    $meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'bbln_bootstrap' );
-                } else {
-                    $meta_text = __( 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'bbln_bootstrap' );
+                    $meta_text = __( 'This entry was tagged %2$s.', 'bbln_bootstrap' );
                 }
 
             } else {
                 // But this blog has loads of categories so we should probably display them here
                 if ( '' != $tag_list ) {
-                    $meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'bbln_bootstrap' );
-                } else {
-                    $meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'bbln_bootstrap' );
+                    $meta_text = __( 'This entry was posted in %1$s and tagged %2$s.', 'bbln_bootstrap' );
                 }
 
             } // end check for categories on this blog
@@ -60,5 +59,5 @@
         ?>
 
         <?php edit_post_link( __( 'Edit', 'bbln_bootstrap' ), '<span class="edit-link">', '</span>' ); ?>
-    </footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+    </footer><!-- /entry-footer -->
+</article><!-- /post -->
