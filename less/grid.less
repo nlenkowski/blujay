@@ -1,0 +1,42 @@
+/**
+ * Semantic.gs for LESS: http://lesscss.org/
+ */
+
+// Defaults which you can freely override
+@column-width: 60;
+@gutter-width: 20;
+@columns: 12;
+
+// Utility variable — you should never need to modify this
+@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
+
+// Set @total-width to 100% for a fluid layout
+@total-width: @gridsystem-width;
+
+//////////
+// GRID //
+//////////
+
+body {
+	width: 100%;
+	.clearfix;
+}
+
+.row(@columns:@columns) {
+	display: block;
+	width: @total-width*((@gutter-width + @gridsystem-width)/@gridsystem-width);
+	margin: 0 @total-width*(((@gutter-width*.5)/@gridsystem-width)*-1);
+	.clearfix;
+}
+.column(@x,@columns:@columns) {
+	display: inline;
+	float: left;
+	width: @total-width*((((@gutter-width+@column-width)*@x)-@gutter-width) / @gridsystem-width);
+	margin: 0 @total-width*((@gutter-width*.5)/@gridsystem-width);
+}
+.push(@offset:1) {
+	margin-left: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
+}
+.pull(@offset:1) {
+	margin-right: @total-width*(((@gutter-width+@column-width)*@offset) / @gridsystem-width) + @total-width*((@gutter-width*.5)/@gridsystem-width);
+}

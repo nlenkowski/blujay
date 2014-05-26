@@ -1,5 +1,10 @@
 /**
- * All styles are mobile first!
+ * Main styles, mobile first!
+ *
+ * Included libraries:
+ *  - Normalize.css | https://github.com/necolas/normalize.css
+ *  - LESS Elements | http://www.lesselements.com/
+ *  - Semantic Grid | http://semantic.gs/
  */
 
 //
@@ -7,10 +12,11 @@
 // --------------------------------------------------
 
 @import "normalize.less";
+@import "grid.less";
 
 
 //
-// Variables
+// Config
 // --------------------------------------------------
 
 // Base
@@ -21,31 +27,45 @@
 @link-color:        #428bca;
 @link-color-hover:  darken(@link-color, 10%);
 
-// Font stacks
+// Color palette
+@color-light-grey:  #ddd;
+@color-success:     #5cb85c;
+@color-warning:     #f0ad4e;
+@color-error:       #d9534f;
+@color-info:        #5bc0de;
+
+// Font stack
 @font-family-sans:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif: Georgia, "Times New Roman", Times, serif;
 @font-family-mono:  Monaco, Menlo, Consolas, "Courier New", monospace;
+@font-family-base:  @font-family-sans;
 
 // Typography
 @font-size-base:    16px;
-@font-size-large:   @font-size-base * 1.25; // ~20px
-@font-size-small:   @font-size-base * 0.85; // ~13px
-@font-size-mini:    @font-size-base * 0.75; // ~12px
 @line-height-base:  1.4em;
+@font-size-large:   @font-size-base * 1.25; // ~20px
+@font-size-small:   @font-size-base * 0.85; // ~14px
+@font-size-tiny:    @font-size-base * 0.75; // ~12px
+
+// Grid
+@column-width:      60;
+@gutter-width:      0;
+@columns:           12;
+@total-width:       100%; // Fluid
+
 
 //
 // General formatting and typography
 // --------------------------------------------------
 
-body {
+html {
     background: @body-background;
-    font-family: @font-family-sans;
+    font-family: @font-family-base;
     font-size: @font-size-base;
     font-weight: normal;
     line-height: @line-height-base;
     color: @text-color;
 }
-
 
 a { color: @link-color;
     text-decoration: none;
@@ -55,8 +75,8 @@ a { color: @link-color;
     }
 }
 
-a:focus, input:focus, button:focus {
-    outline: none;
+p {
+    line-height: 1.75
 }
 
 img {
@@ -64,69 +84,201 @@ img {
     height: auto;
 }
 
+.title {
+    font-size: floor(@font-size-base * 3);
+}
+
+.separator {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid @color-light-grey;
+}
+
+.clear-separator {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+
+.edit-link a {
+    color: @color-error;
+}
+
+
 //
 // Layout
 // --------------------------------------------------
 
+// Apply a natural box layout model to all elements
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 .container {
-    padding: 20px;
-}
-
-.site-content {
+    margin: 0 auto;
+    padding: 0 15px;
     .clearfix();
 }
 
-.footer-sidebar {
-    .clearfix();
-}
+.site-content { }
+
 
 //
 // Header
 // --------------------------------------------------
 
-header {
+.site-header {
+    padding-top: 10px;
+    text-align: center;
+    .gradient(#fff, #fff, @color-light-grey);
 }
+
 
 //
 // Navigation
 // --------------------------------------------------
 
-nav {
-    padding-top: 20px;
+.primary-navigation {
+    border-top: 1px solid @color-light-grey;
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    ul li {
+        display: inline-block;
+        margin-right: 20px;
+        font-size: floor(@font-size-base * 1.15);
+    }
 }
+
+
+//
+// Content
+// --------------------------------------------------
+
+.content {
+    .separator();
+}
+
+
+//
+// Sidebar
+// --------------------------------------------------
+
+.sidebar {
+    text-align: center;
+    .separator();
+}
+
+
+//
+// Blog
+// --------------------------------------------------
+
+.blog { }
+
+.archive {
+
+    .page-title {
+        .separator();
+    }
+
+}
+
+//
+// Posts
+// --------------------------------------------------
+
+.post {
+
+    .entry-header { }
+
+    .entry-meta {
+        font-size: @font-size-small;
+
+        .posted-on { }
+
+        .byline {
+            display: block;
+        }
+
+        .updated {
+            display: none;
+        }
+     }
+
+    .entry-content { }
+
+    .entry-footer {
+
+        .comments-link {
+            display: block;
+            margin-top: 10px;
+        }
+    }
+}
+
+
+//
+// Comments
+// --------------------------------------------------
+
+.comments {
+
+    .comment-list {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .comment {
+        .separator();
+    }
+
+    .comment-form-comment label {
+        display: none;
+    }
+
+    .form-allowed-tags {
+        display: none;
+    }
+}
+
 
 //
 // Footer
 // --------------------------------------------------
 
-footer {
-    margin-top: 20px;
+.site-footer {
+    text-align: center;
+
+    .footer-widgets {
+
+        .clearfix();
+
+        .widget {
+            .separator;
+        }
+    }
 
     .site-info {
-        margin-top: 30px;
-    }
-}
-
-//
-// Utilities
-// --------------------------------------------------
-
-// Micro Clearfix
-.clearfix() {
-    &:before,
-    &:after {
-        content: " "; // 1
-        display: table; // 2
-    }
-    &:after {
-        clear: both;
+        font-size: @font-size-small;
+        margin-top: 10px;
+        margin-bottom: 20px;
     }
 }
 
 
 //
-// Final imports
+// Additional imports
 // --------------------------------------------------
 
 @import "media-queries.less";
+@import "shortcodes.less";
+@import "elements.less";
+@import "utilities.less";
+@import "required.less";
 @import "print.less";
