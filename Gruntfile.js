@@ -2,6 +2,22 @@
 module.exports = function (grunt) {
 
     grunt.initConfig({
+
+        devUpdate: {
+            main: {
+                options: {
+                    updateType: 'report', //just report outdated packages
+                    reportUpdated: false, //don't report already updated packages
+                    semver: true, //use package.json semver rules when updating
+                    packages: { //what packages to check
+                        devDependencies: true, //only devDependencies
+                        dependencies: false
+                    },
+                    packageJson: null //find package.json automatically
+                }
+            }
+        },
+
         jshint: {
             options: {
                 jshintrc: '.jshintrc'
@@ -14,6 +30,7 @@ module.exports = function (grunt) {
                 '!js/app.min.js'
             ]
         },
+
         less: {
             dist: {
                 files: {
@@ -26,6 +43,7 @@ module.exports = function (grunt) {
                 }
             }
         },
+
         uglify: {
             dist: {
                 files: {
@@ -38,6 +56,7 @@ module.exports = function (grunt) {
                 options: {}
             }
         },
+
         watch: {
             less: {
                 files: [
@@ -53,7 +72,7 @@ module.exports = function (grunt) {
             },
             livereload: {
                 options: {
-                    livereload: false
+                    livereload: true
                 },
                 files: [
                     'css/main.min.css',
@@ -63,6 +82,7 @@ module.exports = function (grunt) {
                 ]
             }
         },
+
         clean: {
             dist: [
                 'css/main.min.css',
@@ -77,6 +97,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-notify');
+    grunt.loadNpmTasks('grunt-dev-update');
 
     // Register tasks
     grunt.registerTask('default', [
@@ -84,6 +106,8 @@ module.exports = function (grunt) {
         'less',
         'uglify'
     ]);
+
+
     grunt.registerTask('dev', [
         'watch'
     ]);
