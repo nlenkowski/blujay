@@ -5,35 +5,50 @@
  * @package bbln_bootstrap
  */
 
-/*
- * Load jQuery from google cdn
+/**
+ * Load jQuery from cdn
  */
-
 function load_cdn_jquery() {
-    wp_deregister_script( 'jquery' );
-    wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', false, '1.11.0', true);
-    wp_enqueue_script('jquery');
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), null, false);
+    add_filter('script_loader_src', 'bbln_bootstrap_jquery_local_fallback', 10, 2);
 }
 add_action('wp_enqueue_scripts', 'load_cdn_jquery');
 
-/*
+/**
+ * Local jQuery fallback
+ */
+function bbln_bootstrap_jquery_local_fallback($src, $handle = null) {
+    static $add_jquery_fallback = false;
+
+    if ($add_jquery_fallback) {
+        echo '<script>window.jQuery || document.write(\'<script src="' . THEMEDIR . '/js/lib/jquery-1.11.1.min.js"><\/script>\')</script>' . "\n";
+        $add_jquery_fallback = false;
+    }
+
+    if ($handle === 'jquery') {
+        $add_jquery_fallback = true;
+    }
+
+    return $src;
+}
+add_action('wp_head', 'bbln_bootstrap_jquery_local_fallback');
+
+/**
  * Load other scripts
  */
-
 function load_scripts() {
 
     // Load scripts
     wp_enqueue_script('app', THEMEDIR . '/js/app.min.js', array('jquery'), '1.0', true);
 
-    // Load dev tools
-    wp_enqueue_script('lbldevtools', 'https://raw.githubusercontent.com/nlenkowski/lbl-devtools/master/devtools.js', array('jquery'), '1.0', true);
-
     // Load IE8 support scripts
     if ( preg_match('/(?i)msie [8]/',$_SERVER['HTTP_USER_AGENT']) ) {
-        wp_enqueue_script('html5shiv', 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js', false);
-        wp_enqueue_script('respondjs', 'https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js', false);
+        wp_enqueue_script('html5shiv', THEMEDIR . '/js/lib/html5shiv.min.js', '3.7.2', false);
+        wp_enqueue_script('css3-mediaqueries', THEMEDIR . '/js/lib/respond.min.js', '1.4.2', false);
     }
 
 }
 add_action( 'wp_enqueue_scripts', 'load_scripts' );
+
 ?>

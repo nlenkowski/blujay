@@ -5,17 +5,24 @@
  * @package bbln_bootstrap
  */
 
+add_filter( 'the_content', 'shortcode_unautop' );
+
 // Row
 function bbln_bootstrap_row( $atts, $content = null ) {
    return '<div class="row">' . do_shortcode($content) . '</div>';
 }
 add_shortcode('row', 'bbln_bootstrap_row');
 
-// Column
-function bbln_bootstrap_column( $atts, $content = null ) {
-   return '<div class="column">' . do_shortcode($content) . '</div>';
+// Columns
+function bbln_bootstrap_column_one_third( $atts, $content = null ) {
+   return '<div class="column one-third">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('column', 'bbln_bootstrap_column');
+add_shortcode('one_third', 'bbln_bootstrap_column_one_third');
+
+function bbln_bootstrap_column_one_half( $atts, $content = null ) {
+   return '<div class="column one-half">' . do_shortcode($content) . '</div>';
+}
+add_shortcode('one_half', 'bbln_bootstrap_column_one_half');
 
 // Vimeo embed
 add_shortcode('vimeo', 'bbln_bootstrap_vimeo_shortcode');

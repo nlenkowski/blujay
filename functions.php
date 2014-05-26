@@ -1,6 +1,6 @@
 <?php
 /**
- * Include theme function files
+ * Theme functions loader
  *
  * @package bbln_bootstrap
  */
@@ -10,7 +10,7 @@ require_once locate_template('/inc/init.php');              /* Register constant
 require_once locate_template('/inc/activation.php');        /* Initial theme activation scripts */
 require_once locate_template('/inc/template-tags.php');     /* Custom template tags */
 require_once locate_template('/inc/shortcodes.php');        /* Custom shortcodes */
-require_once locate_template('/inc/utilities.php');         /* Useful utility scripts and nicities */
+require_once locate_template('/inc/utilities.php');         /* Utility scripts */
 require_once locate_template('/inc/scripts.php');           /* Enqueue javascripts */
 require_once locate_template('/inc/styles.php');            /* Enqueue styles and fonts */
 require_once locate_template('/inc/custom.php');            /* Your custom functions go here */

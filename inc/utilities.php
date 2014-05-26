@@ -1,12 +1,32 @@
 <?php
 /**
- * Useful utility scripts and nicities
+ * Utility scripts
  *
  * @package bbln_bootstrap
  */
 
 /**
- * Add page slug classes to body class
+ * Remove unnessesary links from header
+ * http://wpengineer.com/1438/wordpress-header/
+ */
+function bbln_bootstrap_head_cleanup() {
+  remove_action('wp_head', 'feed_links', 2);
+  remove_action('wp_head', 'feed_links_extra', 3);
+  remove_action('wp_head', 'rsd_link');
+  remove_action('wp_head', 'wlwmanifest_link');
+  remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+  remove_action('wp_head', 'wp_generator');
+  remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+}
+add_action('init', 'bbln_bootstrap_head_cleanup');
+
+/**
+ * Remove the WordPress version from RSS feeds
+ */
+add_filter('the_generator', '__return_false');
+
+/**
+ * Add page slug to body class
  */
 function add_body_class( $classes ) {
   global $post;
@@ -17,6 +37,50 @@ function add_body_class( $classes ) {
 }
 add_filter( 'body_class', 'add_body_class' );
 
+/**
+ * Do not automatically add <p> and <br> tags to shortcodes
+ */
+function bbln_bootstrap_reformat($content) {
+    $new_content = '';
+
+    /* Matches the contents and the open and closing tags */
+    $pattern_full = '{(\[raw\].*?\[/raw\])}is';
+
+    /* Matches just the contents */
+    $pattern_contents = '{\[raw\](.*?)\[/raw\]}is';
+
+    /* Divide content into pieces */
+    $pieces = preg_split($pattern_full, $content, -1, PREG_SPLIT_DELIM_CAPTURE);
+
+    /* Loop over pieces */
+    foreach ($pieces as $piece) {
+        /* Look for presence of the shortcode */
+        if (preg_match($pattern_contents, $piece, $matches)) {
+
+            /* Append to content (no formatting) */
+            $new_content .= $matches[1];
+        } else {
+
+            /* Format and append to content */
+            $new_content .= wptexturize(wpautop($piece));
+        }
+    }
+
+    return $new_content;
+}
+
+// Remove the 2 main auto-formatters
+remove_filter('the_content', 'wpautop');
+remove_filter('the_content', 'wptexturize');
+
+// Before displaying for viewing, apply this function
+add_filter('the_content', 'bbln_bootstrap_reformat', 99);
+add_filter('widget_text', 'bbln_bootstrap_reformat', 99);
+
+/**
+ * Enable execution of shortcodes in widgets
+ */
+add_filter('widget_text', 'do_shortcode');
 
 /**
  * Sanatize upload filenames
@@ -31,13 +95,6 @@ function sanitize_filename_on_upload($filename) {
 }
 add_filter('sanitize_file_name', 'sanitize_filename_on_upload', 10);
 
-
-/**
- * Enable execution of shortcodes in widgets
- */
-add_filter('widget_text', 'do_shortcode');
-
-
 /**
  * Generic function to trim text and add padding
  */
@@ -49,16 +106,3 @@ function trim_text($string, $limit, $break=" ", $pad="...") {
     }
     return $string . $pad;
 }
-
-
-/**
- * Remove unwanted plugins
- */
-function adios_dolly() {
-    if (file_exists(WP_PLUGIN_DIR.'/hello.php')) {
-        require_once(ABSPATH.'wp-admin/includes/plugin.php');
-        require_once(ABSPATH.'wp-admin/includes/file.php');
-        delete_plugins(array('hello.php'));
-    }
-}
-add_action ( 'admin_init' , 'adios_dolly' ) ;

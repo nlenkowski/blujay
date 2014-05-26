@@ -156,4 +156,17 @@ function my_theme_register_required_plugins() {
     tgmpa( $plugins, $config );
 
 }
+
+/**
+ * Remove unwanted plugins
+ */
+function adios_dolly() {
+    if (file_exists(WP_PLUGIN_DIR.'/hello.php')) {
+        require_once(ABSPATH.'wp-admin/includes/plugin.php');
+        require_once(ABSPATH.'wp-admin/includes/file.php');
+        delete_plugins(array('hello.php'));
+    }
+}
+add_action ( 'admin_init' , 'adios_dolly' ) ;
+
 ?>

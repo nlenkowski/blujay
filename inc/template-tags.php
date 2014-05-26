@@ -67,6 +67,7 @@ if ( ! function_exists( 'bbln_bootstrap_posted_on' ) ) :
  */
 function bbln_bootstrap_posted_on() {
     $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+
     if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
         $time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
     }
