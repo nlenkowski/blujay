@@ -1,10 +1,5 @@
 /**
  * Main styles, mobile first!
- *
- * Included libraries:
- *  - Normalize.css | https://github.com/necolas/normalize.css
- *  - LESS Elements | http://www.lesselements.com/
- *  - Semantic Grid | http://semantic.gs/
  */
 
 //
@@ -14,14 +9,13 @@
 @import "normalize.less";
 @import "grid.less";
 
-
 //
 // Config
 // --------------------------------------------------
 
 // Base
 @body-background:   #fff;
-@text-color:        #444;
+@text-color:        #333;
 
 // Links
 @link-color:        #428bca;
@@ -37,26 +31,40 @@
 // Font stack
 @font-family-sans:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif: Georgia, "Times New Roman", Times, serif;
-@font-family-mono:  Monaco, Menlo, Consolas, "Courier New", monospace;
 @font-family-base:  @font-family-sans;
 
 // Typography
 @font-size-base:    16px;
-@line-height-base:  1.4em;
-@font-size-large:   @font-size-base * 1.25; // ~20px
-@font-size-small:   @font-size-base * 0.85; // ~14px
-@font-size-tiny:    @font-size-base * 0.75; // ~12px
+@line-height-base:  1.2em;
+@font-size-xl:      floor(@font-size-base * 2.25); // ~36px
+@font-size-lg:      floor(@font-size-base * 1.25); // ~20px
+@font-size-sm:      floor(@font-size-base * 0.85); // ~14px
+@font-size-xs:      floor(@font-size-base * 0.75); // ~12px
 
 // Grid
-@column-width:      60;
-@gutter-width:      0;
-@columns:           12;
-@total-width:       100%; // Fluid
+@column-width: 60;
+@gutter-width: 20;
+@columns:      12;
+@total-width:  100%;
+
+//
+// Mixins
+// --------------------------------------------------
+
 
 
 //
-// General formatting and typography
+// Global
 // --------------------------------------------------
+
+// Apply a natural box layout model to all elements
+// http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 html {
     background: @body-background;
@@ -65,6 +73,10 @@ html {
     font-weight: normal;
     line-height: @line-height-base;
     color: @text-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: @line-height-base;
 }
 
 a { color: @link-color;
@@ -76,7 +88,7 @@ a { color: @link-color;
 }
 
 p {
-    line-height: 1.75
+    line-height: 1.75em;
 }
 
 img {
@@ -85,35 +97,8 @@ img {
 }
 
 .title {
-    font-size: floor(@font-size-base * 3);
-}
-
-.separator {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid @color-light-grey;
-}
-
-.clear-separator {
-    padding-bottom: 0;
+    font-size: @font-size-xl;
     margin-bottom: 0;
-    border-bottom: 0;
-}
-
-.edit-link a {
-    color: @color-error;
-}
-
-
-//
-// Layout
-// --------------------------------------------------
-
-// Apply a natural box layout model to all elements
-*, *:before, *:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 .container {
@@ -124,7 +109,6 @@ img {
 
 .site-content { }
 
-
 //
 // Header
 // --------------------------------------------------
@@ -132,7 +116,6 @@ img {
 .site-header {
     padding-top: 10px;
     text-align: center;
-    .gradient(#fff, #fff, @color-light-grey);
 }
 
 
@@ -151,7 +134,6 @@ img {
     ul li {
         display: inline-block;
         margin-right: 20px;
-        font-size: floor(@font-size-base * 1.15);
     }
 }
 
@@ -160,19 +142,14 @@ img {
 // Content
 // --------------------------------------------------
 
-.content {
-    .separator();
-}
+.content { }
 
 
 //
 // Sidebar
 // --------------------------------------------------
 
-.sidebar {
-    text-align: center;
-    .separator();
-}
+.sidebar { }
 
 
 //
@@ -181,13 +158,7 @@ img {
 
 .blog { }
 
-.archive {
-
-    .page-title {
-        .separator();
-    }
-
-}
+.archive { }
 
 //
 // Posts
@@ -198,7 +169,7 @@ img {
     .entry-header { }
 
     .entry-meta {
-        font-size: @font-size-small;
+        font-size: @font-size-sm;
 
         .posted-on { }
 
@@ -235,7 +206,6 @@ img {
     }
 
     .comment {
-        .separator();
     }
 
     .comment-form-comment label {
@@ -259,13 +229,11 @@ img {
 
         .clearfix();
 
-        .widget {
-            .separator;
-        }
+        .widget {}
     }
 
     .site-info {
-        font-size: @font-size-small;
+        font-size: @font-size-sm;
         margin-top: 10px;
         margin-bottom: 20px;
     }
@@ -277,8 +245,6 @@ img {
 // --------------------------------------------------
 
 @import "media-queries.less";
-@import "shortcodes.less";
-@import "elements.less";
 @import "utilities.less";
 @import "required.less";
 @import "print.less";
