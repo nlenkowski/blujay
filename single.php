@@ -1,6 +1,6 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * The template for displaying single posts
  *
  * @package bbln_bootstrap
  */
@@ -16,7 +16,6 @@ get_header(); ?>
             <?php bbln_bootstrap_post_nav(); ?>
 
             <?php
-                // If comments are open or we have at least one comment, load up the comment template
                 if ( comments_open() || '0' != get_comments_number() ) :
                     comments_template();
                 endif;

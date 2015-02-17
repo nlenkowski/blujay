@@ -17,8 +17,6 @@ if ( post_password_required() ) {
 
 <div class="comments">
 
-    <?php // You can start editing here -- including this comment! ?>
-
     <?php if ( have_comments() ) : ?>
         <h2 class="comments-title">
             <?php

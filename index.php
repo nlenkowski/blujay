@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file.
+ * The template for displaying the main blog page
  *
  * @package bbln_bootstrap
  */
@@ -11,14 +11,11 @@ get_header(); ?>
 
         <?php if ( have_posts() ) : ?>
 
-            <?php /* Start the Loop */ ?>
             <?php while ( have_posts() ) : the_post(); ?>
 
-                <?php
-                    get_template_part( 'templates/content', get_post_format() );
-                ?>
+                <?php  get_template_part( 'templates/content', get_post_format() ); ?>
 
-            <?php endwhile; ?>
+            <?php endwhile; // end of the loop. ?>
 
             <?php bbln_bootstrap_paging_nav(); ?>
 
@@ -29,5 +26,7 @@ get_header(); ?>
         <?php endif; ?>
 
     </div><!-- /content -->
+
+    <?php get_template_part( 'sidebar' ); ?>
 
 <?php get_footer(); ?>
