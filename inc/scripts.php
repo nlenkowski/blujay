@@ -10,7 +10,7 @@
  */
 function load_cdn_jquery() {
     wp_deregister_script('jquery');
-    wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', array(), null, false);
+    wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js', array(), null, false);
     add_filter('script_loader_src', 'bbln_bootstrap_jquery_local_fallback', 10, 2);
 }
 add_action('wp_enqueue_scripts', 'load_cdn_jquery');
@@ -22,7 +22,7 @@ function bbln_bootstrap_jquery_local_fallback($src, $handle = null) {
     static $add_jquery_fallback = false;
 
     if ($add_jquery_fallback) {
-        echo '<script>window.jQuery || document.write(\'<script src="' . THEMEDIR . '/js/lib/jquery-1.11.1.min.js"><\/script>\')</script>' . "\n";
+        echo '<script>window.jQuery || document.write(\'<script src="' . THEMEDIR . '/js/lib/jquery-1.11.2.min.js"><\/script>\')</script>' . "\n";
         $add_jquery_fallback = false;
     }
 
