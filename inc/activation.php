@@ -1,6 +1,7 @@
 <?php
 /**
- * Initial theme activation scripts
+ * Theme activation
+ * Borrowed from the amazing Roots theme, http://roots.io/starter-theme/
  *
  * @package bbln_bootstrap
  */
@@ -216,5 +217,17 @@ function bbln_bootstrap_deactivation() {
   delete_option('bbln_bootstrap_theme_activation_options');
 }
 add_action('switch_theme', 'bbln_bootstrap_deactivation');
+
+/**
+ * Hide duplicate tgmpa notification when activating theme
+ */
+function hide_tgmpa_error() {
+    echo "<style>
+      #setting-error-tgmpa.below-h2 {
+        display: none;
+      }
+    </style>";
+}
+add_action('admin_head', 'hide_tgmpa_error');
 
 ?>

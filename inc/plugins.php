@@ -6,6 +6,7 @@
  */
 
 add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
+
 /**
  * Register the required plugins for this theme.
  *
@@ -31,12 +32,6 @@ function my_theme_register_required_plugins() {
          */
 
         array(
-            'name'      => 'Advanced Custom Fields',
-            'slug'      => 'advanced-custom-fields',
-            'required'  => false,
-        ),
-
-        array(
             'name'      => 'Custom Post Type Maker',
             'slug'      => 'custom-post-type-maker',
             'required'  => false,
@@ -59,41 +54,17 @@ function my_theme_register_required_plugins() {
          */
 
         array(
-            'name'               => 'Advanced Custom Fields: Flexible Content ',
-            'slug'               => 'acf-flexible-content',
-            'source'             => 'http://blueberryln.com/bootstrap/plugins/acf-flexible-content.zip',
+            'name'               => 'Advanced Custom Fields Pro',
+            'slug'               => 'advanced-custom-fields-pro',
+            'source'             => 'http://bootstrap.bblndev.com/plugins/advanced-custom-fields-pro.zip',
             'required'           => false,
-            'external_url'       => 'http://www.advancedcustomfields.com/add-ons/flexible-content/',
-        ),
-
-        array(
-            'name'               => 'Advanced Custom Fields: Gallery',
-            'slug'               => 'acf-gallery',
-            'source'             => 'http://blueberryln.com/bootstrap/plugins/acf-gallery.zip',
-            'required'           => false,
-            'external_url'       => 'http://www.advancedcustomfields.com/add-ons/gallery/',
-        ),
-
-        array(
-            'name'               => 'Advanced Custom Fields: Options Page',
-            'slug'               => 'acf-options-page',
-            'source'             => 'http://blueberryln.com/bootstrap/plugins/acf-options-page.zip',
-            'required'           => false,
-            'external_url'       => 'http://www.advancedcustomfields.com/add-ons/options-page/',
-        ),
-
-        array(
-            'name'               => 'Advanced Custom Fields: Repeater Field',
-            'slug'               => 'acf-repeater',
-            'source'             => 'http://blueberryln.com/bootstrap/plugins/acf-repeater.zip',
-            'required'           => false,
-            'external_url'       => 'http://www.advancedcustomfields.com/add-ons/repeater-field/',
+            'external_url'       => 'http://www.advancedcustomfields.com/',
         ),
 
         array(
             'name'               => 'Gravity Forms',
             'slug'               => 'gravityforms',
-            'source'             => 'http://blueberryln.com/bootstrap/plugins/gravityforms.zip',
+            'source'             => 'http://bootstrap.blueberryln.com/plugins/gravityforms.zip',
             'required'           => false,
             'external_url'       => 'http://www.gravityforms.com/',
         ),
@@ -101,18 +72,18 @@ function my_theme_register_required_plugins() {
         array(
             'name'               => 'WP Migrate DB Pro',
             'slug'               => 'wp-migrate-db-pro',
-            'source'             => 'http://blueberryln.com/bootstrap/plugins/wp-migrate-db-pro.zip',
+            'source'             => 'http://bootstrap.blueberryln.com/plugins/wp-migrate-db-pro.zip',
             'required'           => false,
             'external_url'       => 'https://deliciousbrains.com/wp-migrate-db-pro/',
         ),
 
         array(
-            'name'               => 'WP Migrate DB Pro: Media Files',
+            'name'               => 'WP Migrate DB Pro Media Files',
             'slug'               => 'wp-migrate-db-pro-media-files',
-            'source'             => 'http://blueberryln.com/bootstrap/plugins/wp-migrate-db-pro-media-files.zip',
+            'source'             => 'http://bootstrap.blueberryln.com/plugins/wp-migrate-db-pro-media-files.zip',
             'required'           => false,
-            'external_url'       => 'https://deliciousbrains.com/wp-migrate-db-pro/documentation/#media-files-addon',
-        ),
+            'external_url'       => 'https://deliciousbrains.com/wp-migrate-db-pro/doc/media-files-addon/',
+        )
     );
 
     /**

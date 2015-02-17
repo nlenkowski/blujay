@@ -5,24 +5,29 @@
  * @package bbln_bootstrap
  */
 
-add_filter( 'the_content', 'shortcode_unautop' );
-
 // Row
-function bbln_bootstrap_row( $atts, $content = null ) {
-   return '<div class="row">' . do_shortcode($content) . '</div>';
+function bbln_bootstrap_columns( $atts, $content = null ) {
+   return '<div class="columns">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('row', 'bbln_bootstrap_row');
+add_shortcode('columns', 'bbln_bootstrap_columns');
 
-// Columns
-function bbln_bootstrap_column_one_third( $atts, $content = null ) {
-   return '<div class="column one-third">' . do_shortcode($content) . '</div>';
-}
-add_shortcode('one_third', 'bbln_bootstrap_column_one_third');
-
+// 1/2 Columns
 function bbln_bootstrap_column_one_half( $atts, $content = null ) {
    return '<div class="column one-half">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('one_half', 'bbln_bootstrap_column_one_half');
+add_shortcode('column_one_half', 'bbln_bootstrap_column_one_half');
+
+// 1/3 Columns
+function bbln_bootstrap_column_one_third( $atts, $content = null ) {
+   return '<div class="column one-third">' . do_shortcode($content) . '</div>';
+}
+add_shortcode('column_one_third', 'bbln_bootstrap_column_one_third');
+
+// 2/3 Columns
+function bbln_bootstrap_column_two_third( $atts, $content = null ) {
+   return '<div class="column two-third">' . do_shortcode($content) . '</div>';
+}
+add_shortcode('column_two_third', 'bbln_bootstrap_column_two_third');
 
 // Vimeo embed
 add_shortcode('vimeo', 'bbln_bootstrap_vimeo_shortcode');
