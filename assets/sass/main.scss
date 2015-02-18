@@ -309,19 +309,6 @@ img {
                 margin-left: 0;
             }
         }
-
-        /*
-        @include breakpoint($lg) {
-
-            @include span(4 inside no-gutters);
-            margin: 0;
-            background: $color-info;
-
-            &:first-child {
-                margin-left: 0;
-            }
-        }
-        */
     }
 
     @include clearfix();
