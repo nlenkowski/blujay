@@ -1,13 +1,15 @@
 'use strict';
 module.exports = function (grunt) {
 
+    require('time-grunt')(grunt);
+
     grunt.initConfig({
 
         sass: {
             all: {
                 options: {
-                    style: 'compressed',
-                    cacheLocation: 'assets/tmp/.sass-cache'
+                    sourceMap: false,
+                    outputStyle: 'compressed'
                 },
                 files: {
                     'assets/css/main.min.css': 'assets/sass/main.scss'
@@ -55,10 +57,7 @@ module.exports = function (grunt) {
 
             sass: {
                 files: ['assets/sass/*.scss'],
-                tasks: ['sass', 'autoprefixer'],
-                options: {
-                    debounceDelay: 500
-                }
+                tasks: ['sass', 'autoprefixer']
             },
 
             js: {
@@ -83,12 +82,7 @@ module.exports = function (grunt) {
     });
 
     // Load tasks
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-autoprefixer');
-    grunt.loadNpmTasks('grunt-notify');
+    require('load-grunt-tasks')(grunt);
 
     // Register tasks
     grunt.registerTask('default', [

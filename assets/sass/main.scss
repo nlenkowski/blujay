@@ -1,7 +1,12 @@
-/**
- * Initial imports
- */
+//
+// Imports
+// --------------------------------------------------
 
+// Libs
+@import "lib/susy/susy";
+@import "lib/breakpoint/breakpoint";
+
+// Other
 @import "reset";
 @import "mixins";
 
@@ -42,6 +47,15 @@ $sm: 480px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
+
+// Susy
+$susy: (
+    columns: 12,
+    gutters: .25,
+    gutter-position: before,
+    container: 1120px,
+    global-box-sizing: border-box
+    );
 
 //
 // General
@@ -92,14 +106,8 @@ img {
 }
 
 .container {
-    margin: 0 auto;
+    @include container;
     padding: 0 15px;
-
-    @include breakpoint($xl) {
-        width: 1200px;
-    }
-
-    @include clearfix();
 }
 
 
@@ -112,19 +120,23 @@ img {
     @include breakpoint($md) {
 
         .one-fourth {
-            @include column(3);
+            @include span(3);
         }
 
         .one-third {
-            @include column(4);
+            @include span(4);
         }
 
         .one-half {
-            @include column(6);
+            @include span(6);
         }
 
         .two-third {
-            @include column(8);
+            @include span(8);
+        }
+
+        .column:first-child {
+            margin-left: 0;
         }
     }
 
@@ -171,13 +183,13 @@ img {
 // --------------------------------------------------
 
 .site-content {
-    padding-bottom: 15px;
+    padding-bottom: 30px;
 }
 
 .is-blog .content {
 
     @include breakpoint($md) {
-        @include column(9);
+        @include span(9);
     }
 }
 
@@ -194,7 +206,7 @@ img {
     @include breakpoint($md) {
         display: block;
         padding-left: 30px;
-        @include column(3);
+        @include span(3);
     }
 }
 
@@ -288,9 +300,28 @@ img {
         border-top: 1px solid $color-grey;
 
         @include breakpoint($md) {
+
+            @include span(4);
+            margin-top: 10px;
             border-top: none;
-            @include column(4);
+
+            &:first-child {
+                margin-left: 0;
+            }
         }
+
+        /*
+        @include breakpoint($lg) {
+
+            @include span(4 inside no-gutters);
+            margin: 0;
+            background: $color-info;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+        */
     }
 
     @include clearfix();
@@ -298,13 +329,12 @@ img {
 
 .site-info {
     font-size: $font-size-sm;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 
 //
-// Final imports
+// Imports
 // --------------------------------------------------
 
 @import "required";

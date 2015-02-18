@@ -1,14 +1,4 @@
 /**
- * Named media queries
- * http://css-tricks.com/naming-media-queries/
- */
-@mixin breakpoint($device-width) {
-  @media screen and (min-width: $device-width) {
-    @content
-  }
-}
-
-/**
  * Micro clearfix
  * http://nicolasgallagher.com/micro-clearfix-hack/
  */
@@ -24,18 +14,4 @@
     &:after {
         clear: both;
     }
-}
-
-/**
- * Simple columns mixin
- */
-$columns: 12;
-$column-width: 60;
-$total-width: 100%;
-
-$gridsystem-width: ($column-width * $columns);
-
-@mixin column($cols) {
-    float: left;
-    width: ($total-width * (($column-width) * $cols) / $gridsystem-width);
 }
