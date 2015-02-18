@@ -3,58 +3,71 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
 
+        sass: {
+            all: {
+                options: {
+                    style: 'compressed',
+                    cacheLocation: 'tmp/.sass-cache'
+                },
+                files: {
+                    'css/main.min.css': 'sass/main.scss'
+                }
+            }
+        },
+
+        autoprefixer: {
+            all: {
+                options: {
+                    browsers: ['last 2 versions', 'ie 8', 'ie 9']
+                },
+                files: {
+                    'css/main.min.css': 'css/main.min.css'
+                }
+            }
+        },
+
         jshint: {
-            options: {
-                jshintrc: '.jshintrc'
-            },
             all: [
                 'Gruntfile.js',
                 'js/*.js',
                 '!js/lib/*.js',
                 '!js/plugins/*.js',
                 '!js/app.min.js'
-            ]
-        },
-
-        less: {
-            dist: {
-                files: {
-                    'css/main.min.css': [
-                        'less/main.less'
-                    ]
-                },
+                ],
                 options: {
-                    compress: true,
+                    jshintrc: '.jshintrc'
                 }
-            }
         },
 
         uglify: {
-            dist: {
+            all: {
                 files: {
                     'js/app.min.js': [
                         'js/plugins/*.js',
                         'js/app.js',
                         '!js/app.min.js'
                     ]
-                },
-                options: {}
+                }
             }
         },
 
         watch: {
-            less: {
-                files: [
-                    'less/*.less'
-                ],
-                tasks: ['less']
+
+            sass: {
+                files: ['sass/*.scss'],
+                tasks: ['sass', 'autoprefixer'],
+                options: {
+                    debounceDelay: 500
+                }
             },
+
             js: {
                 files: [
                     '<%= jshint.all %>'
                 ],
                 tasks: ['jshint', 'uglify']
             },
+
             livereload: {
                 options: {
                     livereload: true
@@ -66,28 +79,21 @@ module.exports = function (grunt) {
                     '*.php'
                 ]
             }
-        },
-
-        clean: {
-            dist: [
-                'css/main.min.css',
-                'js/app.min.js'
-            ]
         }
     });
 
     // Load tasks
-    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-notify');
 
     // Register tasks
     grunt.registerTask('default', [
-        'clean',
-        'less',
+        'sass',
+        'autoprefixer',
         'uglify'
     ]);
 
