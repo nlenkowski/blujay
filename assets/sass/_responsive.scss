@@ -1,0 +1,99 @@
+/**
+ * Media queries
+ */
+
+/**
+ * Retina only
+ */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { }
+
+
+/**
+ * Mobile landscape
+ */
+@media (min-width: 480px) { }
+
+
+/**
+ * Wide mobile landscape
+ */
+@media (min-width: 568px) { }
+
+
+/**
+ * Tablets
+ */
+
+@media (min-width: 768px) {
+
+    .container {
+        width: 768px;
+        padding: none;
+    }
+
+    .site-header {
+        text-align: left;
+    }
+
+    .is-blog .content {
+        @include column(9);
+    }
+
+    .columns {
+
+        .one-fourth {
+            @include column(3);
+        }
+
+        .one-third {
+            @include column(4);
+        }
+
+        .one-half {
+            @include column(6);
+        }
+
+        .two-third {
+            @include column(8);
+        }
+
+        @include clearfix();
+    }
+
+    .sidebar {
+        @include column(3);
+        text-align: left;
+        padding-left: 30px;
+    }
+
+    .site-footer {
+        text-align: left;
+
+        .footer-widgets .widget {
+            @include column(4);
+            border-bottom: 0;
+        }
+    }
+}
+
+
+/**
+ * Destop
+ */
+@media (min-width: 992px) {
+
+    .container {
+        width: 992px;
+    }
+}
+
+
+/**
+ * Wide desktop
+ */
+@media (min-width: 1200px) {
+
+    .container {
+        width: 1200px;
+    }
+}

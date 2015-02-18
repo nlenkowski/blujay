@@ -31,7 +31,12 @@ add_action( 'after_setup_theme', 'bbln_bootstrap_setup' );
  * Register constants
  */
 define("THEMEDIR", get_template_directory_uri());
-define("IMAGEDIR", THEMEDIR . '/img');
+define("TEMPLATEDIR", THEMEDIR . '/templates');
+define("ASSETDIR", THEMEDIR . '/assets');
+define("IMAGEDIR", ASSETDIR . '/img');
+define("STYLEDIR", ASSETDIR . '/css');
+define("SCRIPTDIR", ASSETDIR . '/js');
+define("VENDORDIR", ASSETDIR . '/vendor');
 
 /**
  * Register menus

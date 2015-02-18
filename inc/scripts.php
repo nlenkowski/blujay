@@ -22,7 +22,7 @@ function bbln_bootstrap_jquery_local_fallback($src, $handle = null) {
     static $add_jquery_fallback = false;
 
     if ($add_jquery_fallback) {
-        echo '<script>window.jQuery || document.write(\'<script src="' . THEMEDIR . '/js/lib/jquery-1.11.2.min.js"><\/script>\')</script>' . "\n";
+        echo '<script>window.jQuery || document.write(\'<script src="' . SCRIPTDIR . '/lib/jquery-1.11.2.min.js"><\/script>\')</script>' . "\n";
         $add_jquery_fallback = false;
     }
 
@@ -40,12 +40,12 @@ add_action('wp_head', 'bbln_bootstrap_jquery_local_fallback');
 function load_scripts() {
 
     // Load scripts
-    wp_enqueue_script('app', THEMEDIR . '/js/app.min.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('app', SCRIPTDIR . '/app.min.js', array('jquery'), '1.0', true);
 
     // Load IE8 support scripts
     if ( preg_match('/(?i)msie [8]/',$_SERVER['HTTP_USER_AGENT']) ) {
-        wp_enqueue_script('html5shiv', THEMEDIR . '/js/lib/html5shiv.min.js', '3.7.2', false);
-        wp_enqueue_script('css3-mediaqueries', THEMEDIR . '/js/lib/respond.min.js', '1.4.2', false);
+        wp_enqueue_script('html5shiv', SCRIPTDIR . '/lib/html5shiv.min.js', '3.7.2', false);
+        wp_enqueue_script('css3-mediaqueries', SCRIPTDIR . '/lib/respond.min.js', '1.4.2', false);
     }
 
 }

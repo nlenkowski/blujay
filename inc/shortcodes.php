@@ -7,25 +7,25 @@
 
 // Row
 function bbln_bootstrap_columns( $atts, $content = null ) {
-   return '<div class="columns">' . do_shortcode($content) . '</div>';
+    return '<div class="columns">' . do_shortcode($content) . '</div>';
 }
 add_shortcode('columns', 'bbln_bootstrap_columns');
 
 // 1/2 Columns
 function bbln_bootstrap_column_one_half( $atts, $content = null ) {
-   return '<div class="column one-half">' . do_shortcode($content) . '</div>';
+    return '<div class="column one-half">' . do_shortcode($content) . '</div>';
 }
 add_shortcode('column_one_half', 'bbln_bootstrap_column_one_half');
 
 // 1/3 Columns
 function bbln_bootstrap_column_one_third( $atts, $content = null ) {
-   return '<div class="column one-third">' . do_shortcode($content) . '</div>';
+    return '<div class="column one-third">' . do_shortcode($content) . '</div>';
 }
 add_shortcode('column_one_third', 'bbln_bootstrap_column_one_third');
 
 // 2/3 Columns
 function bbln_bootstrap_column_two_third( $atts, $content = null ) {
-   return '<div class="column two-third">' . do_shortcode($content) . '</div>';
+    return '<div class="column two-third">' . do_shortcode($content) . '</div>';
 }
 add_shortcode('column_two_third', 'bbln_bootstrap_column_two_third');
 

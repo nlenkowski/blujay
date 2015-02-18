@@ -30,7 +30,7 @@
         <div class="container">
 
             <h1 class="title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-            <h2><?php bloginfo( 'description' ); ?></h2>
+            <h2 class="subtitle"><?php bloginfo( 'description' ); ?></h2>
 
             <nav class="primary-navigation">
                 <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>

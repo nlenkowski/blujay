@@ -10,13 +10,13 @@
  * http://wpengineer.com/1438/wordpress-header/
  */
 function bbln_bootstrap_head_cleanup() {
-  remove_action('wp_head', 'feed_links', 2);
-  remove_action('wp_head', 'feed_links_extra', 3);
-  remove_action('wp_head', 'rsd_link');
-  remove_action('wp_head', 'wlwmanifest_link');
-  remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-  remove_action('wp_head', 'wp_generator');
-  remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+    remove_action('wp_head', 'feed_links', 2);
+    remove_action('wp_head', 'feed_links_extra', 3);
+    remove_action('wp_head', 'rsd_link');
+    remove_action('wp_head', 'wlwmanifest_link');
+    remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+    remove_action('wp_head', 'wp_generator');
+    remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 }
 add_action('init', 'bbln_bootstrap_head_cleanup');
 
@@ -29,13 +29,25 @@ add_filter('the_generator', '__return_false');
  * Add page slug to body class
  */
 function add_body_class( $classes ) {
-  global $post;
-  if ( isset( $post ) ) {
-      $classes[] = $post->post_type . '-' . $post->post_name;
-  }
-  return $classes;
+    global $post;
+    if ( isset( $post ) ) {
+        $classes[] = $post->post_type . '-' . $post->post_name;
+    }
+
+    if (is_blog() == true) {
+        $classes[] = "is-blog";
+    }
+
+    return $classes;
 }
 add_filter( 'body_class', 'add_body_class' );
+
+/**
+ * Determine if viewing a blog page and add body class
+ */
+function is_blog() {
+    return ( ((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_search()) || (is_tag())) ) ? true : false ;
+}
 
 /**
  * Do not automatically add <p> and <br> tags to shortcodes

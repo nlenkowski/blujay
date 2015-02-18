@@ -7,10 +7,10 @@ module.exports = function (grunt) {
             all: {
                 options: {
                     style: 'compressed',
-                    cacheLocation: 'tmp/.sass-cache'
+                    cacheLocation: 'assets/tmp/.sass-cache'
                 },
                 files: {
-                    'css/main.min.css': 'sass/main.scss'
+                    'assets/css/main.min.css': 'assets/sass/main.scss'
                 }
             }
         },
@@ -21,7 +21,7 @@ module.exports = function (grunt) {
                     browsers: ['last 2 versions', 'ie 8', 'ie 9']
                 },
                 files: {
-                    'css/main.min.css': 'css/main.min.css'
+                    'assets/css/main.min.css': 'assets/css/main.min.css'
                 }
             }
         },
@@ -29,10 +29,10 @@ module.exports = function (grunt) {
         jshint: {
             all: [
                 'Gruntfile.js',
-                'js/*.js',
-                '!js/lib/*.js',
-                '!js/plugins/*.js',
-                '!js/app.min.js'
+                'assets/js/*.js',
+                '!assets/js/lib/*.js',
+                '!assets/js/plugins/*.js',
+                '!assets/js/app.min.js'
                 ],
                 options: {
                     jshintrc: '.jshintrc'
@@ -42,10 +42,10 @@ module.exports = function (grunt) {
         uglify: {
             all: {
                 files: {
-                    'js/app.min.js': [
-                        'js/plugins/*.js',
-                        'js/app.js',
-                        '!js/app.min.js'
+                    'assets/js/app.min.js': [
+                        'assets/js/plugins/*.js',
+                        'assets/js/app.js',
+                        '!assets/js/app.min.js'
                     ]
                 }
             }
@@ -54,7 +54,7 @@ module.exports = function (grunt) {
         watch: {
 
             sass: {
-                files: ['sass/*.scss'],
+                files: ['assets/sass/*.scss'],
                 tasks: ['sass', 'autoprefixer'],
                 options: {
                     debounceDelay: 500
@@ -73,8 +73,8 @@ module.exports = function (grunt) {
                     livereload: true
                 },
                 files: [
-                    'css/main.min.css',
-                    'js/app.min.js',
+                    'assets/css/main.min.css',
+                    'assets/js/app.min.js',
                     'templates/*.php',
                     '*.php'
                 ]
