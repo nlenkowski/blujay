@@ -17,7 +17,7 @@
 
 // Base
 $body-background: #fff;
-$text-color:      #333;
+$text-color:      #444;
 
 // Links
 $link-color:       #428bca;
@@ -95,7 +95,7 @@ h5, .f5 { font-size: $f5; }
 h6, .f6 { font-size: $f6; }
 
 h1.title {
-    font-size: $f1 * 1.5;
+    font-size: $f1 * 1.3;
 }
 
 a { color: $link-color;
@@ -103,15 +103,6 @@ a { color: $link-color;
 
     &:hover {
         color: $link-color-hover;
-    }
-}
-
-p {
-    font-size: $font-size-base;
-
-    @include breakpoint($lg) {
-        font-size: 18px;
-        line-height: 1.813em;
     }
 }
 
@@ -124,11 +115,11 @@ img {
     height: auto;
 }
 
-button, .button {
+button, .button, input[type=submit] {
     @include button($color-button, #444, 1em, 5px);
 }
 
-button.large, .button.large {
+button.large, .button.large, {
     @include button($color-button, #444, 1.5em, 5px);
 }
 
@@ -225,21 +216,13 @@ button.large, .button.large {
     }
 }
 
-.content { }
-
-
-//
-// Sidebar
-// --------------------------------------------------
-
-.sidebar {
-    display: none;
-
-    @include breakpoint($md) {
-        display: block;
-        padding-left: 30px;
-        @include span(3);
-    }
+.archive-title {
+    display: inline-block;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    font-size: $f4;
+    text-transform: uppercase;
+    border-bottom: 1px solid $color-separator;
 }
 
 
@@ -247,34 +230,19 @@ button.large, .button.large {
 // Blog
 // --------------------------------------------------
 
-.blog { }
-
-.archive { }
-
-
-//
-// Posts
-// --------------------------------------------------
+.blog {}
 
 .post {
+    margin-bottom: 30px;
 
-    .entry-header { }
+    .entry-image {
+        float: left;
+        padding-right: 20px;
+    }
 
     .entry-meta {
         font-size: $f4;
-
-        .posted-on { }
-
-        .byline {
-            display: block;
-        }
-
-        .updated {
-            display: none;
-        }
      }
-
-    .entry-content { }
 
     .entry-footer {
 
@@ -285,19 +253,22 @@ button.large, .button.large {
     }
 }
 
-
-//
-// Comments
-// --------------------------------------------------
-
 .comments {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid $color-separator;
+
+    .comment {
+        margin-bottom: 25px;
+
+        .comment-reply-link {
+            font-weight: bold;
+        }
+    }
 
     .comment-list {
         list-style: none;
         padding-left: 0;
-    }
-
-    .comment {
     }
 
     .comment-form-comment label {
@@ -309,6 +280,70 @@ button.large, .button.large {
     }
 }
 
+.post-nav {
+
+    .previous {
+        float: left;
+    }
+
+    .next {
+        float: right;
+    }
+
+    @include clearfix();
+}
+
+.edit-link a {
+    color: $color-success;
+    font-weight: bold;
+}
+
+
+//
+// Sidebar
+// --------------------------------------------------
+
+.sidebar {
+    display: none;
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+
+    @include breakpoint($md) {
+        display: block;
+        padding-left: 30px;
+        @include span(3);
+    }
+}
+
+
+//
+// Forms
+// --------------------------------------------------
+
+// Gravity forms specific
+.gform_footer {
+
+    br {
+        display: none;
+    }
+}
+
+
+//
+// Widgets
+// --------------------------------------------------
+
+.widget_search {
+    margin-bottom: 20px;
+
+    input[type=search] {
+        margin-bottom: 10px;
+    }
+}
 
 //
 // Footer

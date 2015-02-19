@@ -1,72 +1,76 @@
 <?php
 /**
- * The template used for displaying blog posts on the blog home page and in the search results
+ * The template used for displaying entries on the blog and search results pages
  *
  * @package bbln_bootstrap
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" class="post">
 
-    <header class="entry-header">
+    <div class="entry-image">
+        <?php echo get_the_post_thumbnail( $post_id, 'thumbnail' ); ?>
+    </div>
 
-        <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+    <div class="entry-container">
 
-        <?php if ( 'post' == get_post_type() ) : ?>
+        <header class="entry-header">
+
+            <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+
             <div class="entry-meta">
-                <?php bbln_bootstrap_posted_on(); ?>
-            </div>
+                <?php get_template_part('templates/entry-meta'); ?>
+
+                <?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
+
+                    <div class="entry-postedin">
+
+                        <?php
+                        $categories_list = get_the_category_list( __( ', ', 'bbln_bootstrap' ) );
+                        if ( $categories_list && bbln_bootstrap_has_categories() ) : ?>
+                            <span class="entry-cats">
+                                <?php printf( __( 'In %1$s', 'bbln_bootstrap' ), $categories_list ); ?>
+                            </span>
+                        <?php endif; ?>
+
+                        <?php
+                        $tags_list = get_the_tag_list( '', __( ', ', 'bbln_bootstrap' ) );
+                        if ( $tags_list ) : ?>
+                            <span class="entry-tags">
+                                <?php printf( __( '| Tagged %1$s', 'bbln_bootstrap' ), $tags_list ); ?>
+                            </span>
+                        <?php endif; ?>
+
+                    </div>
+
+                <?php endif; ?>
+            </div><!-- /entry-meta -->
+
+        </header><!-- /entry-header -->
+
+        <?php if ( is_search() ) : ?>
+
+            <div class="entry-summary">
+                <?php the_excerpt(); ?>
+            </div><!-- /entry-summary -->
+
+        <?php else : ?>
+
+            <div class="entry-summary">
+                <?php the_excerpt(); ?>
+            </div><!-- /entry-summary -->
+
         <?php endif; ?>
 
-    </header><!-- /entry-header -->
+        <footer class="entry-footer">
 
-    <?php if ( is_search() ) : // Only display Excerpts for Search ?>
+            <?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+                <span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'bbln_bootstrap' ), __( '1 Comment', 'bbln_bootstrap' ), __( '% Comments', 'bbln_bootstrap' ) ); ?></span>
+            <?php endif; ?>
 
-        <div class="entry-summary">
-            <?php the_excerpt(); ?>
-        </div>
+            <?php edit_post_link( __( 'Edit', 'bbln_bootstrap' ), '<span class="edit-link">', '</span>' ); ?>
 
-    <?php else : ?>
+        </footer><!-- /entry-footer -->
 
-        <div class="entry-content">
-            <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'bbln_bootstrap' ) ); ?>
-            <?php
-                wp_link_pages( array(
-                    'before' => '<div class="page-links">' . __( 'Pages:', 'bbln_bootstrap' ),
-                    'after'  => '</div>',
-                ) );
-            ?>
-        </div><!-- /entry-content -->
-
-    <?php endif; ?>
-
-    <footer class="entry-footer">
-        <?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-            <?php
-                /* translators: used between list items, there is a space after the comma */
-                $categories_list = get_the_category_list( __( ', ', 'bbln_bootstrap' ) );
-                if ( $categories_list && bbln_bootstrap_categorized_blog() ) :
-            ?>
-            <span class="cat-links">
-                <?php printf( __( 'Posted in %1$s', 'bbln_bootstrap' ), $categories_list ); ?>
-            </span>
-            <?php endif; // End if categories ?>
-
-            <?php
-                /* translators: used between list items, there is a space after the comma */
-                $tags_list = get_the_tag_list( '', __( ', ', 'bbln_bootstrap' ) );
-                if ( $tags_list ) :
-            ?>
-            <span class="tags-links">
-                <?php printf( __( 'Tagged %1$s', 'bbln_bootstrap' ), $tags_list ); ?>
-            </span>
-            <?php endif; // End if $tags_list ?>
-        <?php endif; // End if 'post' == get_post_type() ?>
-
-        <?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-        <span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'bbln_bootstrap' ), __( '1 Comment', 'bbln_bootstrap' ), __( '% Comments', 'bbln_bootstrap' ) ); ?></span>
-        <?php endif; ?>
-
-        <?php edit_post_link( __( 'Edit', 'bbln_bootstrap' ), '<span class="edit-link">', '</span>' ); ?>
-    </footer><!-- /entry-footer -->
+    </div><!-- /entry-container -->
 </article><!-- /post -->

@@ -13,7 +13,10 @@ get_header(); ?>
 
             <?php get_template_part( 'templates/content', 'single' ); ?>
 
-            <?php bbln_bootstrap_post_nav(); ?>
+              <nav class="post-nav">
+                  <span class="previous"><?php previous_post_link('%link', __('&larr; Previous', 'bbln_bootstrap')); ?></span>
+                  <span class="next"><?php next_post_link('%link', __('Next &rarr;', 'bbln_bootstrap')); ?></span>
+              </nav>
 
             <?php
                 if ( comments_open() || '0' != get_comments_number() ) :

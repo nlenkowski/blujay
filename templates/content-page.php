@@ -8,11 +8,11 @@
 
 <article <?php post_class(); ?>>
 
-    <header class="entry-header">
-        <h1><?php the_title(); ?></h1>
+    <header class="page-header">
+        <h1 class="page-title"><?php the_title(); ?></h1>
     </header><!-- /entry-header -->
 
-    <div class="entry-content">
+    <div class="page-content">
         <?php the_content(); ?>
     </div><!-- /entry-content -->
 
