@@ -5,6 +5,12 @@
 (function($) {
 
     /**
+     * Make videos responsive
+     */
+
+    $(".video").fitVids();
+
+    /**
      * Utilities
      */
 

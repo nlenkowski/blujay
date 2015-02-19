@@ -15,3 +15,29 @@
         clear: both;
     }
 }
+
+/**
+ * buttons
+ */
+@mixin button($background:#ccc, $color:#000, $size:1.2em, $radius:5px) {
+    display: inline-block;
+    background: $background;
+    padding-top: $size / 2.5;
+    padding-right: $size / 1.5;
+    padding-bottom: $size / 2.5;
+    padding-left: $size / 1.5;
+    font-size: $size;
+    font-weight: normal;
+    color: $color;
+    border: 1px solid darken($background, 10%);
+    border-radius: $radius;
+
+    &:hover {
+        background: darken($background, 5%);
+        color: darken($color, 5%);
+    }
+
+    .fa {
+        padding-left: 5px;
+    }
+}
