@@ -1,21 +1,29 @@
 <?php
 /**
- * Theme functions loader
+ * Functions loader
  *
  * @package bbln_bootstrap
  */
 
 // Theme functions
-require_once locate_template('/inc/init.php');              /* Register constants, menus, sidebars/widget areas, etc */
-require_once locate_template('/inc/activation.php');        /* Initial theme activation scripts */
-require_once locate_template('/inc/template-tags.php');     /* Custom template tags */
-require_once locate_template('/inc/shortcodes.php');        /* Custom shortcodes */
-require_once locate_template('/inc/utilities.php');         /* Utility scripts */
-require_once locate_template('/inc/scripts.php');           /* Enqueue javascripts */
-require_once locate_template('/inc/styles.php');            /* Enqueue styles and fonts */
-require_once locate_template('/inc/custom.php');            /* Your custom functions go here */
+$bbln_boostrap_includes = array(
+    '/lib/init.php',        // Register constants, menus, sidebars/widget areas, etc
+    '/lib/activation.php',  // Theme activation scripts
+    '/lib/shortcodes.php',  // Shortcodes
+    '/lib/utilities.php',   // PHP and WP Utilities
+    '/lib/scripts.php',     // Enqueue javascripts
+    '/lib/styles.php',      // Enqueue styles and fonts
+    '/lib/custom.php',      // Custom theme functions
+    '/lib/tgmpa.php',       // Plugin activation class
+    '/lib/plugins.php'      // Plugins to automatically install
+);
 
-// Plugin functions
-require_once locate_template('/inc/lib/plugin-activation.php');     /* Plugin activation class */
-require_once locate_template('/inc/plugins.php');                   /* Plugins to install */
+foreach ($bbln_boostrap_includes as $file) {
+  if (!$filepath = locate_template($file)) {
+    trigger_error(sprintf(__('Error locating %s for inclusion', 'bbln_boostrap'), $file), E_USER_ERROR);
+  }
+
+  require_once $filepath;
+}
+unset($file, $filepath);
 ?>

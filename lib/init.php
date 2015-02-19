@@ -14,7 +14,7 @@ function bbln_bootstrap_setup() {
     add_theme_support('title-tag');
 
     // Enable support for Post Formats
-    add_theme_support('post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ));
+    //add_theme_support('post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ));
 
     // Enable support for HTML5 markup
     add_theme_support('html5', array(
@@ -36,7 +36,6 @@ define("ASSETDIR", THEMEDIR . '/assets');
 define("IMAGEDIR", ASSETDIR . '/img');
 define("STYLEDIR", ASSETDIR . '/css');
 define("SCRIPTDIR", ASSETDIR . '/js');
-define("VENDORDIR", ASSETDIR . '/vendor');
 
 /**
  * Register menus

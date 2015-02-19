@@ -43,10 +43,31 @@ function add_body_class( $classes ) {
 add_filter( 'body_class', 'add_body_class' );
 
 /**
- * Determine if viewing a blog page and add body class
+ * Returns true if viewing a blog page
+ *
+ * @return bool
  */
 function is_blog() {
     return ( ((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_search()) || (is_tag())) ) ? true : false ;
+}
+
+/**
+ * Returns true if a blog has more than one category
+ *
+ * @return bool
+ */
+function bbln_bootstrap_has_categories() {
+
+        $all_cats = get_categories( array(
+            'fields'     => 'ids',
+            'hide_empty' => 1,
+            'number'     => 2,
+        ) );
+
+        $all_cats = count( $all_cats );
+
+    $has_cats = ($all_cats > 1 ? true : false);
+    return $has_cats;
 }
 
 /**
