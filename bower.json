@@ -1,0 +1,14 @@
+{
+  "name": "BBLN Bootstrap",
+  "dependencies": {
+    "jquery-legacy": "jquery#^1",
+    "jquery-modern": "jquery#~2.1.3",
+    "fitvids": "latest",
+    "normalize.css": "latest",
+    "html5shiv": "latest",
+    "respond": "latest",
+    "fontawesome": "latest",
+    "breakpoint-sass": "latest",
+    "susy": "latest"
+  }
+}
