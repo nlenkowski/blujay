@@ -16,20 +16,20 @@ Blujay provides a simple starter theme built with modern web development tools. 
 - [Bower](http://bower.io/) support for quickly incorporating new tools
 - Custom theme activation script for automating common post-install tasks
 - Optional automated installation of a select few WordPress plugins
-- jQuery loaded by CDN with local fallback
+- [jQuery](http://jquery.com/) loaded by CDN with local fallback
 - Shortcodes for columns, buttons and Youtube and Vimeo embedding. See the [shortcode demo page](http://blujay.blueberryln.com/shortcodes) for details.
 - Responsive video support by [Fitvids.js](http://fitvidsjs.com/)
 - Icon font library support by [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 - Responsive images done right via [Picturefill](http://scottjehl.github.io/picturefill/)
-- Html5shiv, respond.js and legacy stylesheet conditionally included for legacy browser support
-- Just the right amount of commenting
+- [Html5shiv](https://github.com/aFarkas/html5shiv), [respond.js](https://github.com/scottjehl/Respond) conditionally included for legacy browser support
+- Just the right amount of comments
 
 ## Whats not included
 
-- Sass libraries like Compass or Bourbon
-- Heavy frontend frameworks like Bootstrap
-- Unnecessary jQuery plugins
-- The kitchen sink
+- Sass libraries like [Compass](http://compass-style.org/) or [Bourbon](http://bourbon.io/)
+- Heavy frontend frameworks like [Bootstrap](http://getbootstrap.com/)
+- [jQueryUI](http://jqueryui.com/) and other bulky jQuery plugins
+- [The kitchen sink](http://goo.gl/IgPH41)
 
 ## Plugin Activation
 Over time we found ourselves using a core set of useful plugins for each new WordPress project. Installing them manually is a pain, so now you don't have to. When you activate the theme you'll be asked if you'd like to optionally install the following:
@@ -68,11 +68,11 @@ We use [Grunt](http://gruntjs.com/) for automating common deployment tasks. Our 
 
 ## Bower
 
-Using [Bower](http://bower.io/) for package management is entirely optional. We don't reference any assets directly from the /bower\_components directory, rather we use Bower to quickly pull down assets and then manually install them into the appropriate /assets subdirectory. If you prefer to reference your Bower assets directly from /bower_components by all means feel free!
+Using [Bower](http://bower.io/) for package management is entirely optional. We don't reference any assets directly from the /bower\_components directory, rather we use Bower to quickly pull down assets and then manually install them into the appropriate /assets subdirectory. If you prefer to reference your Bower assets directly from /bower_components feel free!
 
 ## Build process
 
-Step by step instructions to begin theme evelopment and/or prepare the site for deployment.
+Step by step instructions to begin theme development and/or prepare the site for deployment.
 
 #### Clone repository:
 
