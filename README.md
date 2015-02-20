@@ -1,10 +1,15 @@
 # Blujay
+### A lightweight, responsive starter theme for WordPress.
 
-A lightweight, responsive starter theme for WordPress.
+<img src="http://local.blujay.com/wp-content/uploads/2015/02/logo.png" alt="logo" width="134" height="104" />
 
-## Overview
+Blujay is a minimal starter theme built with modern web development tools. Use it to bootstrap your next responsive WordPress project and then make it your own! Blujay was inspired by and borrows from the excellent [Roots](http://roots.io/starter-theme/) starter theme by Ben Ward. 
 
-Blujay provides a simple starter theme built with modern web development tools. Use it to bootstrap your next responsive WordPress theme and make it your own. Blujay was inspired by and borrows from the excellent [Roots](http://roots.io/starter-theme/) starter theme by Ben Ward. [See the theme in action here](http://blujay.blueberryln.com).
+[View demo](http://blujay.blueberryln.com)
+
+#### Now make it your own
+
+<iframe src="http://bb-btns.bitbucket.org/bitbucket-btn.html?user=blueberryln&repo=blujay&type=fork" allowtransparency="true" frameborder="0" scrolling="0" width="53" height="20"></iframe>
 
 ## Features
 
@@ -20,7 +25,6 @@ Blujay provides a simple starter theme built with modern web development tools. 
 - Shortcodes for columns, buttons and Youtube and Vimeo embedding. See the [shortcode demo page](http://blujay.blueberryln.com/shortcodes) for details.
 - Responsive video support by [Fitvids.js](http://fitvidsjs.com/)
 - Icon font library support by [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
-- Responsive images done right via [Picturefill](http://scottjehl.github.io/picturefill/)
 - [Html5shiv](https://github.com/aFarkas/html5shiv), [respond.js](https://github.com/scottjehl/Respond) conditionally included for legacy browser support
 - Just the right amount of comments
 
@@ -37,7 +41,6 @@ Over time we found ourselves using a core set of useful plugins for each new Wor
 - [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
 - [Custom Post Typer Maker](https://wordpress.org/plugins/custom-post-type-maker/)
 - [WP Migrate DB](https://wordpress.org/plugins/wp-migrate-db/)
-- [WP Retina 2x](https://wordpress.org/plugins/wp-retina-2x/)
 
 We own pro versions of these awesome plugins, they're well worth the cost.
 
@@ -88,7 +91,6 @@ Download and install Node for your development environment from [nodejs.org](htt
 
 ```
 npm install -g grunt-cli
-npm install -g bower
 ```
 
 #### Install Grunt dependencies
@@ -102,5 +104,3 @@ npm install
 ```
 grunt watch
 ```
-
-#### And you're off!

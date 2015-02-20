@@ -115,6 +115,13 @@ img {
     height: auto;
 }
 
+code {
+    padding: 8px;
+    background: #F8F8F8;
+    border: 1px solid #D5D5D5;
+    border-radius: 5px;
+}
+
 button, .button, input[type=submit] {
     @include button($color-button, #444, 1em, 5px);
 }
@@ -153,12 +160,13 @@ button.large, .button.large, {
             @include span(8);
         }
 
-        .column:first-child {
-            margin-left: 0;
-        }
     }
 
     @include clearfix();
+}
+
+.column:first-child {
+    margin-left: 0;
 }
 
 
@@ -185,6 +193,7 @@ button.large, .button.large, {
 
     ul {
         list-style: none;
+        margin-top: 10px;
         padding-left: 0;
     }
 
@@ -214,6 +223,10 @@ button.large, .button.large, {
             margin: 0;
         }
     }
+}
+
+.page-title {
+    font-size: $f2;
 }
 
 .archive-title {
@@ -363,6 +376,11 @@ button.large, .button.large, {
                 margin-left: 0;
             }
         }
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
     }
 
     @include clearfix();

@@ -17,7 +17,7 @@
             </aside>
 
             <div class="site-info">
-                &copy; <?php echo date("Y"); ?> <?php echo bloginfo('name'); ?>
+                Made with love at <a href="http://blueberryln.com">Blueberry Ln</a>.
             </div>
 
         </div><!-- /container -->
