@@ -12,7 +12,8 @@ module.exports = function (grunt) {
                     outputStyle: 'compressed'
                 },
                 files: {
-                    'assets/css/main.min.css': 'assets/sass/main.scss'
+                    'assets/css/main.min.css': 'assets/sass/main.scss',
+                    'assets/css/legacy.min.css': 'assets/sass/legacy.scss'
                 }
             }
         },

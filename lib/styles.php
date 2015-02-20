@@ -14,8 +14,13 @@ function load_styles() {
     );
     wp_enqueue_style( 'fonts', add_query_arg( $fonts, "$protocol://fonts.googleapis.com/css" ) );
 
-    // Load styles
+    // Load main styles
     wp_enqueue_style('main-styles', STYLEDIR . '/main.min.css');
+
+    // Load legacy styles
+    if ( preg_match('/(?i)msie [8]/',$_SERVER['HTTP_USER_AGENT']) ) {
+        wp_enqueue_style('legacy-styles', STYLEDIR . '/legacy.min.css');
+    }
 
 }
 add_action( 'wp_enqueue_scripts', 'load_styles' );

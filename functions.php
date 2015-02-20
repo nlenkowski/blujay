@@ -7,15 +7,15 @@
 
 // Theme functions
 $bbln_boostrap_includes = array(
-    '/lib/init.php',        // Register constants, menus, sidebars/widget areas, etc
-    '/lib/activation.php',  // Theme activation scripts
+    '/lib/init.php',        // Register constants, menus, sidebars, widget areas, etc
+    '/lib/activation.php',  // Theme activation
+    '/lib/tgmpa.php',       // Plugin activation
+    '/lib/plugins.php',     // Plugins to automatically install
     '/lib/shortcodes.php',  // Shortcodes
-    '/lib/utilities.php',   // PHP and WP Utilities
+    '/lib/utilities.php',   // Utility scripts
     '/lib/scripts.php',     // Enqueue javascripts
     '/lib/styles.php',      // Enqueue styles and fonts
-    '/lib/custom.php',      // Custom theme functions
-    '/lib/tgmpa.php',       // Plugin activation class
-    '/lib/plugins.php'      // Plugins to automatically install
+    '/lib/custom.php'       // Custom theme functions
 );
 
 foreach ($bbln_boostrap_includes as $file) {

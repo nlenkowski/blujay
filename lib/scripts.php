@@ -45,7 +45,6 @@ function load_scripts() {
     // Load IE8 support scripts
     if ( preg_match('/(?i)msie [8]/',$_SERVER['HTTP_USER_AGENT']) ) {
         wp_enqueue_script('html5shiv', SCRIPTDIR . '/lib/html5shiv.min.js', '3.7.2', false);
-        wp_enqueue_script('selectivizr', SCRIPTDIR . '/lib/selectivizr.min.js', '1.0.2', false);
         wp_enqueue_script('respond', SCRIPTDIR . '/lib/respond.min.js', '1.4.2', false);
     }
 

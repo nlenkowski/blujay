@@ -32,57 +32,27 @@ function my_theme_register_required_plugins() {
          */
 
         array(
+            'name'      => 'Advanced Custom Fields',
+            'slug'      => 'advanced-custom-fields',
+            'required'  => false,
+        ),
+
+        array(
             'name'      => 'Custom Post Type Maker',
             'slug'      => 'custom-post-type-maker',
             'required'  => false,
         ),
 
         array(
-            'name'      => 'Google Analytics for WordPress',
-            'slug'      => 'google-analytics-for-wordpress',
+            'name'      => 'WP Migrate DB',
+            'slug'      => 'wp-migrate-db',
             'required'  => false,
         ),
 
         array(
-            'name'      => 'WordPress SEO',
-            'slug'      => 'wordpress-seo',
+            'name'      => 'WP Retina 2x',
+            'slug'      => 'wp-retina-2x',
             'required'  => false,
-        ),
-
-        /*
-         * Purchased plugins
-         */
-
-        array(
-            'name'               => 'Advanced Custom Fields Pro',
-            'slug'               => 'advanced-custom-fields-pro',
-            'source'             => 'http://bootstrap.bblndev.com/plugins/advanced-custom-fields-pro.zip',
-            'required'           => false,
-            'external_url'       => 'http://www.advancedcustomfields.com/',
-        ),
-
-        array(
-            'name'               => 'Gravity Forms',
-            'slug'               => 'gravityforms',
-            'source'             => 'http://bootstrap.blueberryln.com/plugins/gravityforms.zip',
-            'required'           => false,
-            'external_url'       => 'http://www.gravityforms.com/',
-        ),
-
-        array(
-            'name'               => 'WP Migrate DB Pro',
-            'slug'               => 'wp-migrate-db-pro',
-            'source'             => 'http://bootstrap.blueberryln.com/plugins/wp-migrate-db-pro.zip',
-            'required'           => false,
-            'external_url'       => 'https://deliciousbrains.com/wp-migrate-db-pro/',
-        ),
-
-        array(
-            'name'               => 'WP Migrate DB Pro Media Files',
-            'slug'               => 'wp-migrate-db-pro-media-files',
-            'source'             => 'http://bootstrap.blueberryln.com/plugins/wp-migrate-db-pro-media-files.zip',
-            'required'           => false,
-            'external_url'       => 'https://deliciousbrains.com/wp-migrate-db-pro/doc/media-files-addon/',
         )
     );
 

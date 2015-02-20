@@ -26,6 +26,28 @@ add_action('init', 'bbln_bootstrap_head_cleanup');
 add_filter('the_generator', '__return_false');
 
 /**
+ * Add custom image sizes to media library
+ */
+function bbln_bootstrap_add_custom_image_sizes( $image_sizes ) {
+
+    // Get the custom image sizes
+    global $_wp_additional_image_sizes;
+
+    // If there are none, just return the built-in sizes
+    if ( empty( $_wp_additional_image_sizes ) )
+        return $image_sizes;
+
+    // Add all the custom sizes to the built-in sizes
+    foreach ( $_wp_additional_image_sizes as $id => $data ) {
+        if ( !isset($image_sizes[$id]) )
+            $image_sizes[$id] = ucfirst( str_replace( '-', ' ', $id ) );
+        }
+
+    return $image_sizes;
+}
+add_filter('image_size_names_choose', 'bbln_bootstrap_add_custom_image_sizes');
+
+/**
  * Add page slug to body class
  */
 function add_body_class( $classes ) {

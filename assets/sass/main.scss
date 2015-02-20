@@ -1,5 +1,5 @@
 //
-// Imports
+// Initial imports
 // --------------------------------------------------
 
 // Libs
@@ -321,19 +321,6 @@ button.large, .button.large, {
 
 
 //
-// Forms
-// --------------------------------------------------
-
-// Gravity forms specific
-.gform_footer {
-
-    br {
-        display: none;
-    }
-}
-
-
-//
 // Widgets
 // --------------------------------------------------
 
@@ -388,7 +375,7 @@ button.large, .button.large, {
 
 
 //
-// Imports
+// Final imports
 // --------------------------------------------------
 
 @import "required";
