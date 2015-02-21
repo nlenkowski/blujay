@@ -1,15 +1,9 @@
 # Blujay
 ### A lightweight, responsive starter theme for WordPress.
 
-<img src="http://local.blujay.com/wp-content/uploads/2015/02/logo.png" alt="logo" width="134" height="104" />
-
 Blujay is a minimal starter theme built with modern web development tools. Use it to bootstrap your next responsive WordPress project and then make it your own! Blujay was inspired by and borrows from the excellent [Roots](http://roots.io/starter-theme/) starter theme by Ben Ward. 
 
 [View demo](http://blujay.blueberryln.com)
-
-#### Now make it your own
-
-<iframe src="http://bb-btns.bitbucket.org/bitbucket-btn.html?user=blueberryln&repo=blujay&type=fork" allowtransparency="true" frameborder="0" scrolling="0" width="53" height="20"></iframe>
 
 ## Features
 
@@ -22,7 +16,7 @@ Blujay is a minimal starter theme built with modern web development tools. Use i
 - Custom theme activation script for automating common post-install tasks
 - Optional automated installation of a select few WordPress plugins
 - [jQuery](http://jquery.com/) loaded by CDN with local fallback
-- Shortcodes for columns, buttons and Youtube and Vimeo embedding. See the [shortcode demo page](http://blujay.blueberryln.com/shortcodes) for details.
+- Shortcodes for columns, buttons and Youtube and Vimeo embedding. See the [demo](http://blujay.blueberryln.com/shortcodes) for usage examples.
 - Responsive video support by [Fitvids.js](http://fitvidsjs.com/)
 - Icon font library support by [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 - [Html5shiv](https://github.com/aFarkas/html5shiv), [respond.js](https://github.com/scottjehl/Respond) conditionally included for legacy browser support
@@ -36,17 +30,17 @@ Blujay is a minimal starter theme built with modern web development tools. Use i
 - [The kitchen sink](http://goo.gl/IgPH41)
 
 ## Plugin Activation
-Over time we found ourselves using a core set of useful plugins for each new WordPress project. Installing them manually is a pain, so now you don't have to. When you activate the theme you'll be asked if you'd like to optionally install the following:
+Manually installing the same old plugins every time you begin a new WordPress project is a pain, so why not automate it? When you activate the theme you'll be asked if you'd like to (optionally) install the following awesome plugins:
 
 - [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
 - [Custom Post Typer Maker](https://wordpress.org/plugins/custom-post-type-maker/)
 - [WP Migrate DB](https://wordpress.org/plugins/wp-migrate-db/)
 
-We own pro versions of these awesome plugins, they're well worth the cost.
+We own pro versions of ACF and WP Migrate DB Pro, they're well worth the cost.
 
 ## Theme Initialization
 
-The theme is initialized via functions.php, which loads several additional scripts:
+The theme is initialized via /functions.php, which loads several additional scripts:
 
 - **/lib/init.php** Registers custom constants, menus, sidebars, widget areas, etc
 - **/lib/activation.php** Handles theme activation
@@ -60,7 +54,7 @@ The theme is initialized via functions.php, which loads several additional scrip
 
 ## Grunt
 
-We use [Grunt](http://gruntjs.com/) for automating common deployment tasks. Our build process consists of the following:
+We use [Grunt](http://gruntjs.com/) for automating development and deployment tasks. Our build process consists of the following:
 
 - Watch sass, js and theme files for changes
 - Compile, autoprefix and minify /sass/main.scss into /css/main.min.css with [libSass](https://github.com/sindresorhus/grunt-sass)
@@ -87,7 +81,7 @@ git clone git@bitbucket.org:blueberryln/blujay.git
 
 Download and install Node for your development environment from [nodejs.org](http://nodejs.org). Node can also be installed using [Homebrew](http://brew.sh/) if you swing that way.
 
-#### Install Grunt and Bower
+#### Install Grunt
 
 ```
 npm install -g grunt-cli
