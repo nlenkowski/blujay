@@ -19,22 +19,29 @@
 /**
  * buttons
  */
-@mixin button($background:#ccc, $color:#000, $size:1.2em, $radius:5px) {
+@mixin button($size:1.2em, $radius:5px) {
+
+    $color: #444;
+    $background1: #fcfcfc;
+    $background2: #eeeeee;
+
     display: inline-block;
-    background: $background;
+    background: linear-gradient(#fcfcfc,#eee);
     padding-top: $size / 2.5;
     padding-right: $size / 1.5;
     padding-bottom: $size / 2.5;
     padding-left: $size / 1.5;
     font-size: $size;
-    font-weight: normal;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #fff;
     color: $color;
-    border: 1px solid darken($background, 10%);
+    border: 1px solid darken($background1, 10%);
     border-radius: $radius;
 
     &:hover {
-        background: darken($background, 5%);
-        color: darken($color, 5%);
+        background: linear-gradient( darken($background1, 3%), darken($background2, 3%));
+        border: 1px solid darken($background1, 15%);
+        color: darken($color, 10%);
     }
 
     .fa {

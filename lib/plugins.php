@@ -47,12 +47,6 @@ function my_theme_register_required_plugins() {
             'name'      => 'WP Migrate DB',
             'slug'      => 'wp-migrate-db',
             'required'  => false,
-        ),
-
-        array(
-            'name'      => 'WP Retina 2x',
-            'slug'      => 'wp-retina-2x',
-            'required'  => false,
         )
     );
 

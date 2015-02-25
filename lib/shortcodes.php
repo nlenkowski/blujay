@@ -69,9 +69,9 @@ function bbln_bootstrap_column_one_third( $atts, $content = null ) {
 add_shortcode('column_one_third', 'bbln_bootstrap_column_one_third');
 
 // 2/3 Columns
-function bbln_bootstrap_column_two_third( $atts, $content = null ) {
-    return '<div class="column two-third">' . do_shortcode($content) . '</div>';
+function bbln_bootstrap_column_two_thirds( $atts, $content = null ) {
+    return '<div class="column two-thirds">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('column_two_third', 'bbln_bootstrap_column_two_third');
+add_shortcode('column_two_thirds', 'bbln_bootstrap_column_two_thirds');
 
 ?>

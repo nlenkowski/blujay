@@ -8,7 +8,7 @@
      * Make videos responsive
      */
 
-    $(".video").fitVids();
+    $(".videos").fitVids();
 
     /**
      * Utilities
