@@ -5,7 +5,7 @@ Blujay is a minimal, responsive starter theme built with modern web development 
 
 * [Website](http://blujay.blueberryln.com)
 * [Demo](http://blujay.blueberryln.com/demo)
-* [Download](http://blujay.blueberryln.com/demo)
+* [Download](https://github.com/nlenkowski/blujay/releases/tag/v1.1.0)
 * [Github](https://github.com/nlenkowski/blujay)
 
 ## Features
