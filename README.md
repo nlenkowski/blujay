@@ -1,7 +1,7 @@
 # Blujay
 ### A modern starter theme for WordPress
 
-Blujay is a minimal, responsive starter theme built with modern web development tools. Use it to bootstrap your next responsive WordPress project and make it your own! Blujay was inspired by the excellent [Roots](http://roots.io/starter-theme/) starter theme by Ben Ward. 
+Blujay is a minimal, responsive starter theme built with modern web development tools. Use it to bootstrap your next responsive WordPress project and make it your own! Blujay was inspired by the excellent [Sage](https://roots.io/sage/) starter theme from [the Roots team](https://roots.io/). 
 
 * [Website](http://blujay.blueberryln.com)
 * [Demo](http://blujay.blueberryln.com/demo)
