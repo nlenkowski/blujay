@@ -19,7 +19,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0); }
 
 /* makes the font 33% larger relative to the icon container */
@@ -63,7 +62,7 @@
   left: -1.85714286em; }
 
 .fa-border {
-  padding: 0.2em 0.25em 0.15em;
+  padding: .2em .25em .15em;
   border: solid 0.08em #eeeeee;
   border-radius: .1em; }
 
@@ -106,31 +105,26 @@
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
   transform: rotate(90deg); }
 
 .fa-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
   transform: rotate(180deg); }
 
 .fa-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
   transform: rotate(270deg); }
 
 .fa-flip-horizontal {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
   -webkit-transform: scale(-1, 1);
-  -ms-transform: scale(-1, 1);
   transform: scale(-1, 1); }
 
 .fa-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
   -webkit-transform: scale(1, -1);
-  -ms-transform: scale(1, -1);
   transform: scale(1, -1); }
 
 :root .fa-rotate-90,
@@ -2030,7 +2024,8 @@ select {
  *    `input` and others.
  */
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -2300,8 +2295,7 @@ button.large, .button.large {
 .columns {
   *zoom: 1; }
 
-.columns:before,
-.columns:after {
+.columns:before, .columns:after {
   content: "";
   display: table; }
 
@@ -2326,7 +2320,8 @@ button.large, .button.large {
   margin: 30px 0;
   border-top: 1px solid #ddd;
   transition: -webkit-transform 1s;
-  transition: transform 1s; }
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s; }
   .primary-navigation ul {
     list-style: none;
     margin-top: 10px;
@@ -2394,8 +2389,7 @@ button.large, .button.large {
 .post-nav {
   *zoom: 1; }
 
-.post-nav:before,
-.post-nav:after {
+.post-nav:before, .post-nav:after {
   content: "";
   display: table; }
 
@@ -2453,8 +2447,7 @@ button.large, .button.large {
 .footer-widgets {
   *zoom: 1; }
 
-.footer-widgets:before,
-.footer-widgets:after {
+.footer-widgets:before, .footer-widgets:after {
   content: "";
   display: table; }
 
