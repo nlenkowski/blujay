@@ -42,13 +42,12 @@ register_nav_menus(array(
 ));
 
 /**
- * Add and remove custom image sizes
+ * Custom image sizes
  */
-function remove_then_add_image_sizes() {
+function blujay_add_image_sizes() {
     add_image_size( 'featured', '350', '200', true );
-    remove_image_size('cptm_icon');
 }
-add_action('init', 'remove_then_add_image_sizes');
+add_action('init', 'blujay_add_image_sizes');
 
 /**
  * Register sidebar and widget areas
