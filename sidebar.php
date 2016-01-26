@@ -1,8 +1,6 @@
 <?php
 /**
  * The template used for displaying the primary sidebar
- *
- * @package bbln_bootstrap
  */
 
 if ( ! is_active_sidebar( 'primary-sidebar' ) ) {

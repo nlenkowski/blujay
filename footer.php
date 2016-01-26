@@ -1,8 +1,6 @@
 <?php
 /**
  * The template for displaying the footer
- *
- * @package bbln_bootstrap
  */
 ?>
 

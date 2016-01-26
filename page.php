@@ -1,8 +1,6 @@
 <?php
 /**
  * The template for displaying pages
- *
- * @package bbln_bootstrap
  */
 
 get_header(); ?>

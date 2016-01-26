@@ -1,8 +1,6 @@
 <?php
 /**
  * The template for displaying the header
- *
- * @package bbln_bootstrap
  */
 ?>
 <!DOCTYPE html>

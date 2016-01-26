@@ -1,15 +1,13 @@
 <?php
 /**
  * Utility scripts
- *
- * @package bbln_bootstrap
  */
 
 /**
  * Remove unnessesary links from header
  * http://wpengineer.com/1438/wordpress-header/
  */
-function bbln_bootstrap_head_cleanup() {
+function blujay_head_cleanup() {
     remove_action('wp_head', 'feed_links', 2);
     remove_action('wp_head', 'feed_links_extra', 3);
     remove_action('wp_head', 'rsd_link');
@@ -18,7 +16,7 @@ function bbln_bootstrap_head_cleanup() {
     remove_action('wp_head', 'wp_generator');
     remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 }
-add_action('init', 'bbln_bootstrap_head_cleanup');
+add_action('init', 'blujay_head_cleanup');
 
 /**
  * Remove the WordPress version from RSS feeds
@@ -28,7 +26,7 @@ add_filter('the_generator', '__return_false');
 /**
  * Add custom image sizes to media library
  */
-function bbln_bootstrap_add_custom_image_sizes( $image_sizes ) {
+function blujay_add_custom_image_sizes( $image_sizes ) {
 
     // Get the custom image sizes
     global $_wp_additional_image_sizes;
@@ -45,7 +43,7 @@ function bbln_bootstrap_add_custom_image_sizes( $image_sizes ) {
 
     return $image_sizes;
 }
-add_filter('image_size_names_choose', 'bbln_bootstrap_add_custom_image_sizes');
+add_filter('image_size_names_choose', 'blujay_add_custom_image_sizes');
 
 /**
  * Add page slug to body class
@@ -78,7 +76,7 @@ function is_blog() {
  *
  * @return bool
  */
-function bbln_bootstrap_has_categories() {
+function blujay_has_categories() {
 
         $all_cats = get_categories( array(
             'fields'     => 'ids',
@@ -95,7 +93,7 @@ function bbln_bootstrap_has_categories() {
 /**
  * Do not automatically add <p> and <br> tags to shortcodes
  */
-function bbln_bootstrap_reformat($content) {
+function blujay_reformat($content) {
     $new_content = '';
 
     /* Matches the contents and the open and closing tags */
@@ -129,8 +127,8 @@ remove_filter('the_content', 'wpautop');
 remove_filter('the_content', 'wptexturize');
 
 // Before displaying for viewing, apply this function
-add_filter('the_content', 'bbln_bootstrap_reformat', 99);
-add_filter('widget_text', 'bbln_bootstrap_reformat', 99);
+add_filter('the_content', 'blujay_reformat', 99);
+add_filter('widget_text', 'blujay_reformat', 99);
 
 /**
  * Enable execution of shortcodes in widgets

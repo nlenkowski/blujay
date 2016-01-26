@@ -1,8 +1,6 @@
 <?php
 /**
  * The template used for displaying entries on the blog and search results pages
- *
- * @package bbln_bootstrap
  */
 ?>
 
@@ -26,18 +24,18 @@
                     <div class="entry-postedin">
 
                         <?php
-                        $categories_list = get_the_category_list( __( ', ', 'bbln_bootstrap' ) );
-                        if ( $categories_list && bbln_bootstrap_has_categories() ) : ?>
+                        $categories_list = get_the_category_list( __( ', ', 'blujay' ) );
+                        if ( $categories_list && blujay_has_categories() ) : ?>
                             <span class="entry-cats">
-                                <?php printf( __( 'In %1$s', 'bbln_bootstrap' ), $categories_list ); ?>
+                                <?php printf( __( 'In %1$s', 'blujay' ), $categories_list ); ?>
                             </span>
                         <?php endif; ?>
 
                         <?php
-                        $tags_list = get_the_tag_list( '', __( ', ', 'bbln_bootstrap' ) );
+                        $tags_list = get_the_tag_list( '', __( ', ', 'blujay' ) );
                         if ( $tags_list ) : ?>
                             <span class="entry-tags">
-                                <?php printf( __( '| Tagged %1$s', 'bbln_bootstrap' ), $tags_list ); ?>
+                                <?php printf( __( '| Tagged %1$s', 'blujay' ), $tags_list ); ?>
                             </span>
                         <?php endif; ?>
 
@@ -65,10 +63,10 @@
         <footer class="entry-footer">
 
             <?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-                <span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'bbln_bootstrap' ), __( '1 Comment', 'bbln_bootstrap' ), __( '% Comments', 'bbln_bootstrap' ) ); ?></span>
+                <span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'blujay' ), __( '1 Comment', 'blujay' ), __( '% Comments', 'blujay' ) ); ?></span>
             <?php endif; ?>
 
-            <?php edit_post_link( __( 'Edit', 'bbln_bootstrap' ), '<span class="edit-link">', '</span>' ); ?>
+            <?php edit_post_link( __( 'Edit', 'blujay' ), '<span class="edit-link">', '</span>' ); ?>
 
         </footer><!-- /entry-footer -->
 

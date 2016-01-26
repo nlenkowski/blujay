@@ -1,8 +1,6 @@
 <?php
 /**
  * The template for displaying the main blog page
- *
- * @package bbln_bootstrap
  */
 
 get_header(); ?>
@@ -19,7 +17,7 @@ get_header(); ?>
 
             <?php if ( is_search() ) : ?>
                 <header class="page-header">
-                    <h1 class="archive-title"><?php printf( __( 'Search Results for: %s', 'bbln_bootstrap' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                    <h1 class="archive-title"><?php printf( __( 'Search Results for: %s', 'blujay' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
                 </header>
             <?php endif; ?>
 
@@ -31,8 +29,8 @@ get_header(); ?>
 
             <?php if ($wp_query->max_num_pages > 1) : ?>
               <nav class="post-nav">
-                  <span class="previous"><?php next_posts_link(__('&larr; Older posts', 'bbln_bootstrap')); ?></li>
-                  <span class="next"><?php previous_posts_link(__('Newer posts &rarr;', 'bbln_bootstrap')); ?></li>
+                  <span class="previous"><?php next_posts_link(__('&larr; Older posts', 'blujay')); ?></li>
+                  <span class="next"><?php previous_posts_link(__('Newer posts &rarr;', 'blujay')); ?></li>
               </nav>
             <?php endif; ?>
 

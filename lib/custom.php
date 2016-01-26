@@ -1,8 +1,6 @@
 <?php
 /**
- * Custom functions
- *
- * @package bbln_bootstrap
+ * Your custom theme functions
  */
 
 ?>

@@ -1,8 +1,6 @@
 <?php
 /**
  * The template used for displaying page content
- *
- * @package bbln_bootstrap
  */
 ?>
 

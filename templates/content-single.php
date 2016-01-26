@@ -1,8 +1,6 @@
 <?php
 /**
  * The template used for displaying single blog posts
- *
- * @package bbln_bootstrap
  */
 ?>
 
@@ -22,14 +20,14 @@
         <?php the_content(); ?>
         <?php
             wp_link_pages( array(
-                'before' => '<div class="page-links">' . __( 'Pages:', 'bbln_bootstrap' ),
+                'before' => '<div class="page-links">' . __( 'Pages:', 'blujay' ),
                 'after'  => '</div>',
             ) );
         ?>
     </div><!-- /entry-content -->
 
     <footer class="entry-footer">
-        <?php edit_post_link( __( 'Edit', 'bbln_bootstrap' ), '<span class="edit-link">', '</span>' ); ?>
+        <?php edit_post_link( __( 'Edit', 'blujay' ), '<span class="edit-link">', '</span>' ); ?>
     </footer><!-- /entry-footer -->
 
 </article><!-- /post -->

@@ -1,8 +1,6 @@
 <?php
 /**
  * The template for displaying single posts
- *
- * @package bbln_bootstrap
  */
 
 get_header(); ?>
@@ -14,8 +12,8 @@ get_header(); ?>
             <?php get_template_part( 'templates/content', 'single' ); ?>
 
               <nav class="post-nav">
-                  <span class="previous"><?php previous_post_link('%link', __('&larr; Previous', 'bbln_bootstrap')); ?></span>
-                  <span class="next"><?php next_post_link('%link', __('Next &rarr;', 'bbln_bootstrap')); ?></span>
+                  <span class="previous"><?php previous_post_link('%link', __('&larr; Previous', 'blujay')); ?></span>
+                  <span class="next"><?php next_post_link('%link', __('Next &rarr;', 'blujay')); ?></span>
               </nav>
 
             <?php
