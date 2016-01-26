@@ -1,0 +1,41 @@
+/**
+ * Buttons
+ */
+
+ @mixin button($size:1.2em, $radius:5px) {
+
+     $color: #444;
+     $bg1: #fcfcfc;
+     $bg2: #eeeeee;
+
+     display: inline-block;
+     background: linear-gradient($bg1, $bg2);
+     padding-top: $size / 2.5;
+     padding-right: $size / 1.5;
+     padding-bottom: $size / 2.5;
+     padding-left: $size / 1.5;
+     font-size: $size;
+     font-weight: bold;
+     text-shadow: 0 1px 0 #fff;
+     color: $color;
+     border: 1px solid darken($bg1, 10%);
+     border-radius: $radius;
+
+     &:hover {
+         background: linear-gradient( darken($bg1, 3%), darken($bg2, 3%));
+         border: 1px solid darken($bg1, 15%);
+         color: darken($color, 10%);
+     }
+
+     .fa {
+         padding-left: 5px;
+     }
+ }
+
+button, .button {
+    @include button(1em, 3px);
+}
+
+button.large, .button.large, {
+    @include button(1.5em, 5px);
+}

@@ -1,0 +1,34 @@
+/**
+ * Columns
+ */
+.columns {
+
+    @include breakpoint($md) {
+
+        .one-fourth {
+            @include span(3);
+        }
+
+        .one-third {
+            @include span(4);
+        }
+
+        .one-half {
+            @include span(6);
+        }
+
+        .two-thirds {
+            @include span(8);
+        }
+    }
+
+    @include clearfix();
+}
+
+.column {
+    margin-bottom: 20px;
+
+    &:first-child {
+        @include first;
+    }
+}

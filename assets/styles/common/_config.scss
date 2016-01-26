@@ -1,0 +1,49 @@
+/**
+ * Config
+ */
+
+// Base Colors
+$body-background:  #fff;
+$text-color:       #444;
+$link-color:       #428bca;
+$link-color-hover: darken($link-color, 10%);
+
+// Color palette
+$color-border:  #ddd;
+$color-button:  #efefef;
+$color-success: #5cb85c;
+$color-warning: #f0ad4e;
+$color-error:   #d9534f;
+$color-info:    #5bc0de;
+
+// Font stack
+$font-family-base: 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
+$font-family-fa:   'FontAwesome', sans-serif;
+
+// Typography
+$font-size-base:       1em;
+$line-height-base:     1.625em;
+$line-height-headings: 1.1em;
+
+$f1: $font-size-base * 2.25;  // 36px
+$f2: $font-size-base * 1.875; // 30px
+$f3: $font-size-base * 1.5;   // 24px
+$f4: $font-size-base * 1.125; // 18px
+$f5: $font-size-base * 0.875; // 14px
+$f6: $font-size-base * 0.75;  // 12px
+
+// Breakpoints
+$sm: 480px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$short: (max-height 600px) (min-width 480px);
+
+// Grid
+$susy: (
+    columns: 12,
+    gutters: .25,
+    gutter-position: before,
+    container: 1200px,
+    global-box-sizing: border-box
+    );

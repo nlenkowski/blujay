@@ -1,0 +1,12 @@
+/**
+ * Base
+ */
+
+.container {
+    @include container;
+    padding: 0 15px;
+}
+
+.site-content {
+    padding-bottom: 30px;
+}

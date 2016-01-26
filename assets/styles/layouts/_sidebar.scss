@@ -1,0 +1,18 @@
+/**
+ * Sidebar
+ */
+
+.sidebar {
+    display: none;
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    @include breakpoint($md) {
+        display: block;
+        padding-left: 30px;
+        @include span(3);
+    }
+}

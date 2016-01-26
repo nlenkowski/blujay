@@ -1,0 +1,45 @@
+/**
+ * Footer
+ */
+
+.site-footer {
+    text-align: center;
+
+    @include breakpoint($md) {
+        text-align: left;
+    }
+}
+
+.footer-widgets {
+
+    @include breakpoint($md) {
+        border-top: 1px solid $color-border;
+    }
+
+    .widget {
+        padding-top: 20px;
+        border-top: 1px solid $color-border;
+
+        @include breakpoint($md) {
+            border-top: none;
+            
+            @include span(4);
+
+            &:first-child {
+                @include first;
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    @include clearfix();
+}
+
+.site-info {
+    font-size: $f5;
+    margin: 20px 0;
+}

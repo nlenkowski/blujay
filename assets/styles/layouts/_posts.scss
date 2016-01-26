@@ -1,0 +1,50 @@
+.post {
+    margin-bottom: 30px;
+
+    .entry-image {
+        float: left;
+        padding-right: 20px;
+    }
+
+    .entry-meta {
+        font-size: $f4;
+     }
+
+    .entry-footer {
+
+        .comments-link {
+            display: block;
+            margin-top: 10px;
+        }
+    }
+}
+
+.post-nav {
+
+    .previous {
+        float: left;
+    }
+
+    .next {
+        float: right;
+    }
+
+    @include clearfix();
+}
+
+.edit-link a {
+    color: $color-success;
+    font-weight: bold;
+}
+
+.is-blog .content {
+
+    @include breakpoint($md) {
+
+        @include span(9);
+
+        &:first-child {
+            margin: 0;
+        }
+    }
+}
