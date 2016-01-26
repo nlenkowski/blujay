@@ -1,11 +1,9 @@
 <?php
 /**
  * Initial theme setup, register constants, menus, custom image sizes, sidebars/widget areas, etc
- *
- * @package bbln_bootstrap
  */
 
-function bbln_bootstrap_setup() {
+function blujay_setup() {
 
     // Enable support for Post Thumbnails on posts and pages
     add_theme_support('post-thumbnails');
@@ -25,7 +23,7 @@ function bbln_bootstrap_setup() {
         'caption'
     ));
 }
-add_action( 'after_setup_theme', 'bbln_bootstrap_setup' );
+add_action( 'after_setup_theme', 'blujay_setup' );
 
 /**
  * Register constants
@@ -38,7 +36,7 @@ define("DISTDIR", THEMEDIR . '/dist');
  * Register menus
  */
 register_nav_menus(array(
-    'primary' => __('Primary Menu', 'bbln_bootstrap'),
+    'primary' => __('Primary Menu', 'blujay'),
 ));
 
 /**
@@ -52,10 +50,10 @@ add_action('init', 'blujay_add_image_sizes');
 /**
  * Register sidebar and widget areas
  */
-function bbln_bootstrap_widgets_init() {
+function blujay_widgets_init() {
 
     register_sidebar(array(
-        'name'          => __('Primary Sidebar', 'bbln_bootstrap'),
+        'name'          => __('Primary Sidebar', 'blujay'),
         'id'            => 'primary-sidebar',
         'description'   => 'Widgets displayed in the blog sidebar.',
         'before_widget' => '<section class="widget %1$s %2$s">',
@@ -65,7 +63,7 @@ function bbln_bootstrap_widgets_init() {
     ));
 
     register_sidebar( array(
-        'name'          => __('Footer Widgets', 'bbln_bootstrap'),
+        'name'          => __('Footer Widgets', 'blujay'),
         'id'            => 'footer-widgets',
         'description'   => 'Select up to three widgets for display in the footer.',
         'before_widget' => '<section class="widget %1$s %2$s">',
@@ -74,6 +72,6 @@ function bbln_bootstrap_widgets_init() {
         'after_title'   => '</h3>',
     ));
 }
-add_action('widgets_init', 'bbln_bootstrap_widgets_init');
+add_action('widgets_init', 'blujay_widgets_init');
 
 ?>
