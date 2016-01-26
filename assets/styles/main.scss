@@ -5,7 +5,7 @@
 // Libs
 @import "lib/susy/susy";
 @import "lib/breakpoint/breakpoint";
-@import "lib/fontawesome/fontawesome";
+@import "lib/fontawesome/font-awesome";
 @import "lib/normalize/normalize";
 
 // Common
@@ -19,7 +19,6 @@
 @import "components/columns";
 
 // Layouts
-@import "layouts/base";
 @import "layouts/comments";
 @import "layouts/footer";
 @import "layouts/header";

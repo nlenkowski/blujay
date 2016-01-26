@@ -1,29 +1,29 @@
 //////////////////////////////
 // Default Variables
 //////////////////////////////
-// Default Features
-$breakpoint-default-media:      all !default;
-$breakpoint-default-feature:    min-width !default;
-$breakpoint-default-pair:       width !default;
+$Breakpoint-Settings: (
+  'default media': all,
+  'default feature': min-width,
+  'default pair': width,
 
-// Default Transforms
-$breakpoint-force-media-all:    false !default;
-$breakpoint-to-ems:             false !default;
-$breakpoint-resolutions:        true !default;
+  'force all media type': false,
+  'to ems': false,
+  'transform resolutions': true,
 
-// Default No Query Options
-$breakpoint-no-queries:         false !default;
-$breakpoint-no-query-fallbacks: false !default;
+  'no queries': false,
+  'no query fallbacks': false,
 
-// Deftault Base Font Size
-$breakpoint-base-font-size:     16px !default;
+  'base font size': 16px,
 
-// Legacy Syntax Support
-$breakpoint-legacy-syntax:      false !default;
+  'legacy syntax': false
+);
+
+$breakpoint: () !default;
 
 //////////////////////////////
 // Imports
 //////////////////////////////
+@import "breakpoint/settings";
 @import 'breakpoint/context';
 @import 'breakpoint/helpers';
 @import 'breakpoint/parsers';
@@ -31,11 +31,15 @@ $breakpoint-legacy-syntax:      false !default;
 
 @import 'breakpoint/respond-to';
 
+@import "breakpoint/legacy-settings";
+
 //////////////////////////////
 // Breakpoint Mixin
 //////////////////////////////
 
 @mixin breakpoint($query, $no-query: false) {
+  @include legacy-settings-warning;
+
   // Reset contexts
   @include private-breakpoint-reset-contexts();
 
@@ -57,27 +61,27 @@ $breakpoint-legacy-syntax:      false !default;
   }
 
   // Print Out Query String
-  @if not $breakpoint-no-queries {
+  @if not breakpoint-get('no queries') {
     @media #{$query-string} {
       @content;
     }
   }
 
-  @if $breakpoint-no-query-fallbacks != false or $breakpoint-no-queries == true {
+  @if breakpoint-get('no query fallbacks') != false or breakpoint-get('no queries') == true {
 
-    $type: type-of($breakpoint-no-query-fallbacks);
+    $type: type-of(breakpoint-get('no query fallbacks'));
     $print: false;
 
     @if ($type == 'bool') {
       $print: true;
     }
     @else if ($type == 'string') {
-      @if $query-fallback == $breakpoint-no-query-fallbacks {
+      @if $query-fallback == breakpoint-get('no query fallbacks') {
         $print: true;
       }
     }
     @else if ($type == 'list') {
-      @each $wrapper in $breakpoint-no-query-fallbacks {
+      @each $wrapper in breakpoint-get('no query fallbacks') {
         @if $query-fallback == $wrapper {
           $print: true;
         }

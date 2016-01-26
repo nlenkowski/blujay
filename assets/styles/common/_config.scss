@@ -17,8 +17,9 @@ $color-error:   #d9534f;
 $color-info:    #5bc0de;
 
 // Font stack
-$font-family-base: 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
-$font-family-fa:   'FontAwesome', sans-serif;
+$font-family-helvetica: 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
+$font-family-fa:        'FontAwesome', sans-serif;
+$font-family-base:      $font-family-helvetica;
 
 // Typography
 $font-size-base:       1em;
@@ -42,7 +43,7 @@ $short: (max-height 600px) (min-width 480px);
 // Grid
 $susy: (
     columns: 12,
-    gutters: .25,
+    gutters: 1/4,
     gutter-position: before,
     container: 1200px,
     global-box-sizing: border-box
