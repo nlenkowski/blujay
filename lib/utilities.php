@@ -4,7 +4,7 @@
  */
 
 /**
- * Remove unnessesary links from header
+ * Cleanup header
  * http://wpengineer.com/1438/wordpress-header/
  */
 function blujay_head_cleanup() {
@@ -26,7 +26,7 @@ add_filter('the_generator', '__return_false');
 /**
  * Add custom image sizes to media library
  */
-function blujay_add_custom_image_sizes( $image_sizes ) {
+function blujay_custom_image_sizes( $image_sizes ) {
 
     // Get the custom image sizes
     global $_wp_additional_image_sizes;
@@ -43,7 +43,7 @@ function blujay_add_custom_image_sizes( $image_sizes ) {
 
     return $image_sizes;
 }
-add_filter('image_size_names_choose', 'blujay_add_custom_image_sizes');
+add_filter('image_size_names_choose', 'blujay_custom_image_sizes');
 
 /**
  * Add page slug to body class
@@ -60,7 +60,7 @@ function add_body_class( $classes ) {
 
     return $classes;
 }
-add_filter( 'body_class', 'add_body_class' );
+add_filter('body_class', 'add_body_class');
 
 /**
  * Returns true if viewing a blog page

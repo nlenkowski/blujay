@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying single posts
+ * Single post template
  */
 
 get_header(); ?>

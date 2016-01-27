@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying entries on the blog and search results pages
+ * Posts and search results content
  */
 ?>
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying single blog posts
+ * Single posts content
  */
 ?>
 
