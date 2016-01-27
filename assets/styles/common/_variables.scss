@@ -1,5 +1,5 @@
 /**
- * Config
+ * Variables
  */
 
 // Base Colors
@@ -7,6 +7,7 @@ $body-background:  #fff;
 $text-color:       #444;
 $link-color:       #428bca;
 $link-color-hover: darken($link-color, 10%);
+$header-color:     #444;
 
 // Color palette
 $color-border:  #ddd;
@@ -18,13 +19,14 @@ $color-info:    #5bc0de;
 
 // Font stack
 $font-family-helvetica: 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
+$font-family-roboto:    'Roboto Slab', serif;
 $font-family-fa:        'FontAwesome', sans-serif;
 $font-family-base:      $font-family-helvetica;
 
 // Typography
 $font-size-base:       1em;
 $line-height-base:     1.625em;
-$line-height-headings: 1.1em;
+$line-height-headings: 1.125em;
 
 $f1: $font-size-base * 2.25;  // 36px
 $f2: $font-size-base * 1.875; // 30px
