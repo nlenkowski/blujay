@@ -1,6 +1,6 @@
 <?php
 /**
- * Entry meta content
+ * Displays entry meta content
  */
 ?>
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Posts and search results content
+ * Displays posts and search results content
  */
 ?>
 

@@ -2433,10 +2433,10 @@ th {
   padding: 0; }
 
 /**
- * Config
+ * Variables
  */
 /**
- * Global
+ * Global styles, typography and layout classes
  */
 html {
   box-sizing: border-box; }
@@ -2518,6 +2518,20 @@ blockquote {
     padding: 0;
     margin: 0; }
 
+/*
+ * Typography
+ */
+.title {
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 4.5em;
+  font-weight: 400; }
+
+.subtitle {
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 1.375em; }
+
 .page-title {
   font-size: 1.875em; }
 
@@ -2529,6 +2543,9 @@ blockquote {
   text-transform: uppercase;
   border-bottom: 1px solid #ddd; }
 
+/*
+ * Layout
+ */
 .container {
   max-width: 1200px;
   margin-left: auto;

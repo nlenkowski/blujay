@@ -1,6 +1,6 @@
 <?php
 /**
- * Primary sidebar template
+ * Displays the primary sidebar
  */
 
 if ( ! is_active_sidebar( 'primary-sidebar' ) ) {

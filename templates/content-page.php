@@ -1,6 +1,6 @@
 <?php
 /**
- * Page content
+ * Displays page content
  */
 ?>
 

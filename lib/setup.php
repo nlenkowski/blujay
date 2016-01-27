@@ -1,29 +1,33 @@
 <?php
 /**
- * Initial theme setup, register constants, menus, custom image sizes, sidebars/widget areas, etc
+ * Initial theme setup
+ * Register constants, menus, custom image sizes, sidebars, widget areas, etc
  */
 
+/**
+ * General setup
+ */
 function blujay_setup() {
 
+    // Make theme available for translation
+    load_theme_textdomain( 'blujay', get_template_directory() . '/lang' );
+
+    // Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
+
     // Enable support for Post Thumbnails on posts and pages
-    add_theme_support('post-thumbnails');
+    add_theme_support( 'post-thumbnails' );
 
     // Enable plugins to manage the document title
-    add_theme_support('title-tag');
+    add_theme_support( 'title-tag' );
 
     // Enable support for Post Formats
-    //add_theme_support('post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ));
+    add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat' ) );
 
     // Enable support for HTML5 markup
-    add_theme_support('html5', array(
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption'
-    ));
+    add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 }
-add_action( 'after_setup_theme', 'blujay_setup' );
+add_action('after_setup_theme', 'blujay_setup');
 
 /**
  * Register constants
@@ -40,7 +44,7 @@ register_nav_menus(array(
 ));
 
 /**
- * Custom image sizes
+ * Register custom image sizes
  */
 function blujay_add_image_sizes() {
     add_image_size( 'featured', '350', '200', true );

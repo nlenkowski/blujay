@@ -1,6 +1,6 @@
 <?php
 /**
- * Posts not found content
+ * Displays posts not found content
  */
 ?>
 

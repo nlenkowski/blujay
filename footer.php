@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the footer
+ * Displays the footer
  */
 ?>
 
@@ -13,9 +13,11 @@
             <aside class="footer-widgets widget-area">
                 <?php dynamic_sidebar( 'footer-widgets' ); ?>
             </aside>
+            
+            <hr />
 
             <div class="site-info">
-                Made with love at <a href="http://blueberryln.com">Blueberry Ln</a>.
+                <i class="fa fa-code"></i> by <a href="http://littlebiglab.com">LittleBigLab</a>
             </div>
 
         </div><!-- /container -->

@@ -1,6 +1,6 @@
 <?php
 /**
- * 404 page
+ * Displays 404 errors
  */
 
 get_header(); ?>
