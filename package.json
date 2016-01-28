@@ -1,19 +1,14 @@
 {
   "name": "blujay",
-  "version": "1.2.0",
-  "author": "Nathan Lenkowski <nathan@littlebiglab.com>",
   "homepage": "http://blujay.blueberryln.com",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:nlenkowski/blujay.git"
-  },
-  "bugs": {
-    "url": "https://github.com/nlenkowski/blujay/issues/"
-  },
+  "authors": [
+    "Nathan Lenkowski <nathan@littlebiglab.com>"
+  ],
   "license": "MIT",
+  "private": true,
   "devDependencies": {
     "browser-sync": "^2.7.6",
-    "del": "^1.2.1",
+    "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.5.2",

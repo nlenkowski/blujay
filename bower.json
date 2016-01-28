@@ -1,9 +1,9 @@
 {
   "name": "blujay",
   "dependencies": {
-    "breakpoint-sass": "latest",
-    "fontawesome": "latest",
-    "normalize.css": "latest",
-    "susy": "latest"
+    "compass-breakpoint": "^2.6.1",
+    "font-awesome": "^4.5.0",
+    "susy": "^2.2.12",
+    "normalize-css": "^3.0.3"
   }
 }
