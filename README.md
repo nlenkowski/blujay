@@ -4,10 +4,10 @@
 Blujay is a minimal, responsive starter theme built with modern web development tools.   
 Use it to bootstrap your next WordPress project and make it your own!
 
-* Homepage: [http://blujay.blueberryln.com](http://blujay.blueberryln.com)
-* Demo: [http://blujay.blueberryln.com/demo](http://blujay.blueberryln.com/demo)
-* Download: [https://github.com/nlenkowski/blujay/releases/latest](https://github.com/nlenkowski/blujay/releases/latest)
-* Source: [https://github.com/nlenkowski/blujay](https://github.com/nlenkowski/blujay)
+* [Homepage](http://blujay.blueberryln.com)
+* [Demo](http://blujay.blueberryln.com/demo)
+* [Download](https://github.com/nlenkowski/blujay/releases/latest)
+* [Source](https://github.com/nlenkowski/blujay)
 
 ## Features
 
@@ -26,8 +26,8 @@ Use it to bootstrap your next WordPress project and make it your own!
 
 ## Not Featuring
 
-* Heavy front end frameworks and Sass libraries like [Bootstrap](http://getbootstrap.com/) and [Compass](http://compass-style.org/)
-* [jQueryUI](http://jqueryui.com/) and other bulky plugins
+* Heavy front end frameworks and libraries like Bootstrap and Compass
+* jQueryUI and other bulky plugins
 * The kitchen sink
 
 ## Build System
@@ -113,8 +113,8 @@ To use BrowserSync during `gulp watch` you need to update your `devUrl` in `gulp
 For example, if your local development URL is `http://blujay.dev` you would update the file to read:
 
 ```
-var config = {
-  devUrl: 'http://blujay.dev'
+var config = { 
+  devUrl: 'http://blujay.dev' 
 }
 ```
 
