@@ -13,11 +13,11 @@
             <aside class="footer-widgets widget-area">
                 <?php dynamic_sidebar( 'footer-widgets' ); ?>
             </aside>
-            
+
             <hr />
 
             <div class="site-info">
-                <i class="fa fa-code"></i> by <a href="http://littlebiglab.com">LittleBigLab</a>
+                <i class="fa fa-code"></i> by <a href="http://littlebiglab.com">Nathan</a>
             </div>
 
         </div><!-- /container -->
