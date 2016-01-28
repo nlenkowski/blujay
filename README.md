@@ -1,124 +1,128 @@
 # Blujay
 ### A modern starter theme for WordPress
 
-Blujay is a minimal, responsive starter theme built with modern web development tools. Use it to bootstrap your next responsive WordPress project and make it your own! Blujay was inspired by the excellent [Sage](https://roots.io/sage/) starter theme from [the Roots team](https://roots.io/). 
+Blujay is a minimal, responsive starter theme built with modern web development tools. Use it to bootstrap your next responsive WordPress project and [make it your own!](https://github.com/nlenkowski/blujay/fork)
 
-* [Website](http://blujay.blueberryln.com)
-* [Demo](http://blujay.blueberryln.com/demo)
-* [Download](https://github.com/nlenkowski/blujay/releases/tag/v1.1.0)
-* [Github](https://github.com/nlenkowski/blujay)
+* Homepage: [http://blujay.blueberryln.com](http://blujay.blueberryln.com)
+* Demo: [http://blujay.blueberryln.com/demo](http://blujay.blueberryln.com/demo)
+* Download: [https://github.com/nlenkowski/blujay/releases/latest](https://github.com/nlenkowski/blujay/releases/latest)
+* Source: [https://github.com/nlenkowski/blujay](https://github.com/nlenkowski/blujay)
 
 ## Features
 
-* Minimal responsive starter theme
-* Built with [Sass](http://sass-lang.com/)
-* [Susy](http://susy.oddbird.net/) flexible responsive grid
-* [Breakpoint](http://breakpoint-sass.com/) named media query support
-* [Grunt](http://gruntjs.com/) build process automates development and deployment tasks
-* [Bower](http://bower.io/) package manager support
-* [jQuery](http://jquery.com/) loaded by CDN with local fallback
-* [Fitvids.js](http://fitvidsjs.com/) for responsive videos
-* [Picturefill](http://picturefill.com/) for responsive images done right
-* [Font Awesome](http://fortawesome.github.io/Font-Awesome/) icon font library
-* [Html5shiv](https://github.com/aFarkas/html5shiv) and [respond.js](https://github.com/scottjehl/Respond) conditionally loaded for legacy browser support
-* [Custom shortcodes](http://blujay.blueberryln.com/demo/shortcodes) for columns, buttons and video embeds
-* Custom theme activation script for common post-install tasks
-* Optional automated plugin installation
-* Just the right amount of commenting
+* Minimal responsive starter theme built with [Sass](http://sass-lang.com/)
+* [Gulp](http://gulpjs.com/) build system automates common development and deployment tasks
+* [Bower](http://bower.io/) front end package management
+* [Browsersync](browsersync.io) synchronizes browser testing and injects file changes while you're developing
+* [Susy](http://susy.oddbird.net/) responsive grid for Sass
+* [Breakpoint](http://breakpoint-sass.com/) named media queries for Sass
+* [Picturefill](http://picturefill.com/) responsive image polyfill
+* [Font Awesome](http://fortawesome.github.io/Font-Awesome/) iconography
+* A few useful [shortcodes](http://blujay.blueberryln.com/demo/shortcodes) and Sass mixins
+* Several handy WordPress utility functions
 
-## Whats not included
+> Most features are optional and can be disabled easily. For example, if you don't want to use Susy or Breakpoint in your theme, just comment out their includes and bake your own solutions instead.
 
-* Sass libraries like [Compass](http://compass-style.org/) or [Bourbon](http://bourbon.io/)
-* Heavy frontend frameworks like [Bootstrap](http://getbootstrap.com/)
-* [jQueryUI](http://jqueryui.com/) and other bulky jQuery plugins
-* [The kitchen sink](http://goo.gl/IgPH41)
+## Not Featuring
 
-## Plugin Activation
-If you do a lot of WordPress work you probably find yourself installing the same plugins every time you start a new project. Now you can automate plugin installation via the excellent [TGMPA library](http://tgmpluginactivation.com/). When you activate the theme for the first time you'll be asked if you'd like to (optionally) install the following recommended plugins:
+* Heavy front end frameworks and Sass libraries like [Bootstrap](http://getbootstrap.com/) and [Compass](http://compass-style.org/)
+* [jQueryUI](http://jqueryui.com/) and other bulky plugins
+* The kitchen sink
 
-* [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
-* [Custom Post Typer Maker](https://wordpress.org/plugins/custom-post-type-maker/)
-* [WP Migrate DB](https://wordpress.org/plugins/wp-migrate-db/)
+## Build System
 
-> These plugins are hands down the most useful in our WordPress toolbox and we own pro versions of ACF and WP Migrate DB. They're well worth the cost. If you find you don't need them or want to add your own plugins to the install list take a look at /lib/plugins.php
+Blujay uses [Gulp](http://gulpjs.com/) to automate common development and deployment tasks:
 
-## Theme Initialization
-
-The theme is initialized via /functions.php, which acts as a loader for the following:
-
-* **/lib/init.php** Registers custom constants, menus, sidebars, widget areas, etc.
-* **/lib/activation.php** Handles theme activation
-* **/lib/tgmpa.php** Provides automated plugin installation functionality
-* **/lib/plugins.php** Contains a configurable list of plugins to install
-* **/lib/shortcodes.php** Adds custom shortcodes
-* **/lib/utilities.php** Adds some useful PHP and WordPress utilities
-* **/lib/scripts.php** Loads jQuery and the main application JavaScript and legacy browser support scripts
-* **/lib/styles.php** Loads the theme stylesheets and fonts
-* **/lib/custom.php** Contains functions specific to your theme. What you would normally add to /functions.php should be added to /lib/custom.php instead.
-
-## Theme Assets
-
-Theme assets live in the /assets directory.
-
-* **/assets/css** Sass styles are compiled for deployment into this directory
-* **/assets/fonts** Font assets
-* **/assets/img** Image assets
-* **/assets/js** Contains the main application script and minified JavaScript assets for deployment
-* **/assets/js/lib** JavaScript libraries and scripts manually included via /lib/scripts.php
-* **/assets/js/plugins** Scripts and plugins automatically compiled during the build process
-* **/assets/sass** Main Sass styles
-* **/assets/sass/lib** Sass dependencies and extensions
-
-## Build Process
-
-We use [Grunt](http://gruntjs.com/) for automating development and deployment tasks. The build script does the following:
-
-* Compile, autoprefix and minify /sass/main.scss into /css/main.min.css with [libSass](https://github.com/sindresorhus/grunt-sass)
-* Concatenate and minify /js/app.js and /js/plugins/* into /js/app.min.js with [UglifyJS](https://github.com/gruntjs/grunt-contrib-uglify)
-* Lint /js/app.js with [jSHint](https://github.com/gruntjs/grunt-contrib-jshint)
-* Enable [Livereload](http://livereload.com/) support
-* Watch Sass, JavaScript and theme files for changes
-* Provide build feedback via Mac notification center
+* Compiles, autoprefixes and minifies `styles/main.scss` into `dist/main.min.css` with [gulp-sass](https://www.npmjs.com/package/gulp-sass)
+* Compiles and minifies `scripts/lib/*` and `scripts/main.js` into `dist/main.min.js` with [UglifyJS](https://github.com/gruntjs/grunt-contrib-uglify)
+* Lints scripts with [jSHint](https://github.com/gruntjs/grunt-contrib-jshint)
+* Synchronizes browser testing and injects styles and scripts during development with [BrowserSync](http://browsersync.io/)
+* Watches styles, scripts and theme files for changes
+* Pipes build feedback and errors to the Mac notification center
 
 ## Package Management
 
-Using [Bower](http://bower.io/) for package management is entirely optional. We don't reference any Bower components directly, rather we use Bower to quickly pull down componenets and then manually install just the files we need into the appropriate /assets directory.
+Using [Bower](http://bower.io/) for front end package management is entirely optional. We don't reference any Bower components directly in the theme, we prefer to keep our front end assets as lean and organized as possible. Rather we use Bower to quickly download our components and manually install only the files we need from each package into `assets/styles/lib` and `assets/scripts/lib`. That said, if you prefer to reference your Bower components directly from the `bower_components` directory nothing is stopping you!
 
->  If you prefer to reference your Bower components directly or even change where they are installed via .bowerrc feel free!
+> Perhaps when all Bower packages are someday required to specify their dependencies and main files accurately we'll integrate [wiredep](https://github.com/taptapship/wiredep) into the build process, but for now its just too much hassle.
 
-## Development and Deployment
+## Theme Functions
 
-#### Install Node
+The theme functions are located in the `lib` directory and are initialized via `functions.php`, which acts as a loader for the following:
 
-Download and install Node for your development environment from [http://nodejs.org](http://nodejs.org). 
+* `lib/setup.php` — Register constants, menus, sidebars, widget areas, etc
+* `lib/assets.php` — Loads scripts, styles and fonts
+* `lib/shortcodes.php` — Adds custom shortcodes
+* `lib/utilities.php` — Adds some useful WordPress utilities
+* `lib/custom.php` — Your custom theme functions go here instead of in `functions.php`
 
-> Node can also be [installed using Homebrew](http://thechangelog.com/install-node-js-with-homebrew-on-os-x/) if you swing that way.
+## Theme Assets
 
-#### Install Grunt
+Theme assets reside in the `assets` directory:
+
+* `assets/fonts` — Font source files
+* `assets/images` — Image source files
+* `assets/scripts` — JavaScript source files
+* `assets/scripts/lib` — JavaScript libraries
+* `assets/styles` — Sass source files
+* `assets/styles/lib` — Sass libraries
+* `assets/styles/common` — Styles common to all pages; variables, typography, utilities, etc.
+* `assets/styles/components` — Component styles for buttons, columns, etc.
+* `assets/styles/layouts` — Layout styles for header, footer, pages, posts, etc.
+
+## Theme Installation
+
+From the command line:
+
+### Install Node
+
+Download and install Node for your local development environment from [http://nodejs.org/download/](http://nodejs.org/download/)
+
+### Install Gulp and Bower
+
+Blujay uses [Gulp](http://gulpjs.com/) as its build system and [Bower](http://bower.io/) to manage front end packages.
 
 ```
-npm install -g grunt-cli
+npm install -g gulp bower
 ```
 
-#### Clone the repository
+> Installing Bower is optional, see "Package Management" above.
+
+### Install Theme
+
+Clone the Git repository and change to the theme directory:
 
 ```
-git clone git@github.com:nlenkowski/blujay.git
+git clone git@github.com:nlenkowski/blujay.git && cd blujay
 ```
 
-#### Change to project directory
+> Now is a good time to rename the theme directory to reflect your project name
+
+### Configure Theme
+
+Edit `lib/setup.php` to enable or disable theme features, setup navigation menus, custom image sizes, post formats, sidebars, etc.
+
+Edit `lib/utilities.php` to enable or disable theme utilities such as cleaning up the header, moving all JS to the footer, etc.
+
+### Configure BrowserSync
+
+To use BrowserSync during `gulp watch` you need to update your `devUrl` in `gulpfile.js` to reflect your local development hostname.
+
+For example, if your local development URL is `http://blujay.dev` you would update the file to read:
+
 ```
-cd blujay
+var config = {
+
+  devUrl: 'http://blujay.dev'
+}
 ```
 
-#### Install Grunt dependencies
+### Gulp Commands
 
-```
-npm install
-```
+* `gulp` — Compile assets for development
+* `gulp watch` — Compile assets for development when file changes are detected
+* `gulp --production` — Compile and compress assets for production, strip debugging, etc.
 
-#### Run Grunt
+## Thanks
 
-```
-grunt watch
-```
+Blujay was inspired by the excellent [Sage](https://roots.io/sage/) starter theme from [the Roots team](https://roots.io/). I've learned much about WordPress development from following it's development, thanks Roots team!

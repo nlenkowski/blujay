@@ -1,10 +1,16 @@
-## Unreleased
-* Improve default typography
-* Improve default form styles
-* Add Browsersync to build process and remove Livereload support
-* Investigate switching task runner from Grunt to Gulp
+### 1.2.0 - 2016-01-28
+* Switched task runner from Grunt to Gulp
+* Replaced LiveReload with BrowserSync
+* Refactored and improved main styles and scripts
+* Relocated assets and build directories
+* Removed theme and plugin activation scripts that were causing problems in some environments
+* Removed legacy browser support (IE8/9/10 are finally officially dead)
+* Removed unneeded video embed shortcodes (oEmbed now handles this)
+* Added new theme utilities to cleanup header and move all scripts to footer
+* Changed theme font from Museo to Roboto Slab
+* Improved comments
 
-## 1.1.0 - 2015-02-24
+### 1.1.0 - 2015-02-24
 * Convert theme from Less to Sass
 * Integrate Susy grid Sass extension
 * Integrate Breakpoint named media query Sass extension
@@ -29,7 +35,7 @@
 * Rename theme to Blujay
 * Update favicon and touch icon
 
-## 1.0.0 - 2014-05-27
+### 1.0.0 - 2014-05-27
 * Clone Roots theme
 * Remove bootstrap
 * Remove custom template loader
