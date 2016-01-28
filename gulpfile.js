@@ -13,14 +13,15 @@ var plumber      = require('gulp-plumber');
 var rename       = require('gulp-rename');
 var runSequence  = require('run-sequence');
 var sass         = require('gulp-sass');
+var stripDebug   = require('gulp-strip-debug');
 var uglify       = require('gulp-uglify');
 
 // Config
 var config = {
-    
+
     // Specify the hostname of your dev server to enable BrowserSync during development
     devUrl: 'http://blujay.dev',
-    
+
     // Configure your asset and build paths
     assetsPath: 'assets/',
     distPath: 'dist/'
@@ -28,7 +29,7 @@ var config = {
 
 // CLI Options
 var enabled = {
-    
+
     // Combine and minify production assets when running 'gulp --production'
     production : argv.production
 }
@@ -63,6 +64,7 @@ gulp.task('scripts', ['jshint'], function() {
     ])
     .pipe(concat('main.js'))
     .pipe(rename({suffix: '.min'}))
+    .pipe(gulpif(enabled.production, stripDebug()))
     .pipe(gulpif(enabled.production, uglify()))
     .pipe(gulp.dest(config.distPath));
 });
