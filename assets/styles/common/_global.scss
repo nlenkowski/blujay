@@ -61,17 +61,25 @@ img {
 
 code {
     font-size: $f5;
-    padding: 5px 10px;
-    background: #f8f8f8;
-    border: 1px solid #d5d5d5;
+    padding: 3px;
+    background: #F5F5F5;
+    line-height: 1em;
     border-radius: 3px;
     display: inline-block;
 }
 
+ul li code {
+    margin-top: 5px;
+}
+
+pre code {
+    padding: 16px;
+}
+
 blockquote {
     margin-left: 0;
-    padding: 5px 0px 5px 15px;
-    border-left: 5px solid #eee;
+    padding: 0 15px;
+    border-left: 4px solid #ddd;
     color: #777;
 
     p {
