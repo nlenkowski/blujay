@@ -1,7 +1,8 @@
 # Blujay
 ### A modern starter theme for WordPress
 
-Blujay is a minimal, responsive starter theme built with modern web development tools. Use it to bootstrap your next responsive WordPress project and [make it your own!](https://github.com/nlenkowski/blujay/fork)
+Blujay is a minimal, responsive starter theme built with modern web development tools.   
+Use it to bootstrap your next WordPress project and make it your own!
 
 * Homepage: [http://blujay.blueberryln.com](http://blujay.blueberryln.com)
 * Demo: [http://blujay.blueberryln.com/demo](http://blujay.blueberryln.com/demo)
@@ -33,18 +34,19 @@ Blujay is a minimal, responsive starter theme built with modern web development 
 
 Blujay uses [Gulp](http://gulpjs.com/) to automate common development and deployment tasks:
 
-* Compiles, autoprefixes and minifies `styles/main.scss` into `dist/main.min.css` with [gulp-sass](https://www.npmjs.com/package/gulp-sass)
-* Compiles and minifies `scripts/lib/*` and `scripts/main.js` into `dist/main.min.js` with [UglifyJS](https://github.com/gruntjs/grunt-contrib-uglify)
-* Lints scripts with [jSHint](https://github.com/gruntjs/grunt-contrib-jshint)
-* Synchronizes browser testing and injects styles and scripts during development with [BrowserSync](http://browsersync.io/)
+* Compiles, autoprefixes and compresses `styles/main.scss` into `dist/main.min.css` with [gulp-sass](https://www.npmjs.com/package/gulp-sass), [gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer) and [gulp-cssnano](https://github.com/ben-eb/gulp-cssnano)
+* Compiles and compresses `scripts/lib/*` and `scripts/main.js` into `dist/main.min.js` with [gulp-uglify](https://github.com/terinjokes/gulp-uglify)
+* Lints scripts with [gulp-jshint](gulp-jshint)
+* Synchronizes browser testing and injects styles and script changes during development with [BrowserSync](http://browsersync.io/)
 * Watches styles, scripts and theme files for changes
-* Pipes build feedback and errors to the Mac notification center
+* Strips debugging code from production assets with [gulp-strip-debug](https://github.com/sindresorhus/gulp-strip-debug)
+* Pipes build feedback and errors to the Mac notification center with [gulp-notify](https://github.com/mikaelbr/gulp-notify)
 
 ## Package Management
 
 Using [Bower](http://bower.io/) for front end package management is entirely optional. We don't reference any Bower components directly in the theme, we prefer to keep our front end assets as lean and organized as possible. Rather we use Bower to quickly download our components and manually install only the files we need from each package into `assets/styles/lib` and `assets/scripts/lib`. That said, if you prefer to reference your Bower components directly from the `bower_components` directory nothing is stopping you!
 
-> Perhaps when all Bower packages are someday required to specify their dependencies and main files accurately we'll integrate [wiredep](https://github.com/taptapship/wiredep) into the build process, but for now its just too much hassle.
+> If someday all Bower packages are required to specify their dependencies and main files correctly we'll look into integrating [wiredep](https://github.com/taptapship/wiredep) into the build process, but for now its just too much hassle.
 
 ## Theme Functions
 
@@ -100,9 +102,9 @@ git clone git@github.com:nlenkowski/blujay.git && cd blujay
 
 ### Configure Theme
 
-Edit `lib/setup.php` to enable or disable theme features, setup navigation menus, custom image sizes, post formats, sidebars, etc.
+* Edit `lib/setup.php` to enable or disable theme features, setup navigation menus, custom image sizes, post formats, sidebars, etc.
 
-Edit `lib/utilities.php` to enable or disable theme utilities such as cleaning up the header, moving all JS to the footer, etc.
+* Edit `lib/utilities.php` to enable or disable theme utilities such as cleaning up the header, moving all JS to the footer, etc.
 
 ### Configure BrowserSync
 
@@ -112,7 +114,6 @@ For example, if your local development URL is `http://blujay.dev` you would upda
 
 ```
 var config = {
-
   devUrl: 'http://blujay.dev'
 }
 ```
@@ -125,4 +126,4 @@ var config = {
 
 ## Thanks
 
-Blujay was inspired by the excellent [Sage](https://roots.io/sage/) starter theme from [the Roots team](https://roots.io/). I've learned much about WordPress development from following it's development, thanks Roots team!
+Blujay was inspired by the excellent [Sage](https://roots.io/sage/) starter theme from [the Roots team](https://roots.io/). I've learned much about WordPress from following Sage's development, thanks Roots team!
