@@ -110,11 +110,11 @@ git clone git@github.com:nlenkowski/blujay.git && cd blujay
 
 To use BrowserSync during `gulp watch` you need to update your `devUrl` in `gulpfile.js` to reflect your local development hostname.
 
-For example, if your local development URL is `http://blujay.dev` you would update the file to read:
+For example, if your local development URL is `http://myproject.dev` you would update the file to read:
 
 ```
-var config = { 
-  devUrl: 'http://blujay.dev' 
+var config = {
+  devUrl: 'http://myproject.dev' 
 }
 ```
 
