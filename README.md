@@ -4,8 +4,8 @@
 Blujay is a minimal, responsive starter theme built with modern web development tools.   
 Use it to bootstrap your next WordPress project and make it your own!
 
-* [Homepage](http://blujay.blueberryln.com)
-* [Demo](http://blujay.blueberryln.com/demo)
+* [Homepage](http://blujay.littlebiglab.com)
+* [Demo](http://blujay.littlebiglab.com/demo)
 * [Download](https://github.com/nlenkowski/blujay/releases/latest)
 * [Source](https://github.com/nlenkowski/blujay)
 
