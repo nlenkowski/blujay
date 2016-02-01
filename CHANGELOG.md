@@ -1,3 +1,9 @@
+### 1.2.1 - 2016-02-01
+
+* Added dist directory to repo to simplify git deployment
+* Fixed copy in readme that was causing wp-migrate-db find/replace issues
+* Minor style and typography improvements
+
 ### 1.2.0 - 2016-01-28
 * Switched task runner from Grunt to Gulp
 * Replaced LiveReload with BrowserSync
