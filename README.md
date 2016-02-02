@@ -15,19 +15,19 @@ Use it to bootstrap your next WordPress project and make it your own!
 * [Gulp](http://gulpjs.com/) build system automates common development and deployment tasks
 * [Bower](http://bower.io/) front end package management
 * [Browsersync](browsersync.io) synchronizes browser testing and injects file changes while you're developing
-* [Susy](http://susy.oddbird.net/) responsive grid for Sass
-* [Breakpoint](http://breakpoint-sass.com/) named media queries for Sass
-* [Picturefill](http://picturefill.com/) responsive image polyfill
-* [Font Awesome](http://fortawesome.github.io/Font-Awesome/) iconography
+* [Susy](http://susy.oddbird.net/) responsive grid framework
+* [Breakpoint](http://breakpoint-sass.com/) named media queries
+* [Picturefill](http://picturefill.com/) polyfill enables responsive images for all  browsers
+* Utility functions for cleaning up the header, moving scripts to the footer, etc.
 * A few useful [shortcodes](http://blujay.blueberryln.com/demo/shortcodes) and Sass mixins
-* Several handy WordPress utility functions
 
-> Most features are optional and can be disabled easily. For example, if you don't want to use Susy or Breakpoint in your theme, just comment out their includes and bake your own solutions instead.
+
+> Most features are optional and can be disabled easily. For example, if you don't want to use Susy or Breakpoint in your theme, just comment out their includes and bake your own solutions.
 
 ## Not Featuring
 
-* Heavy front end frameworks and libraries like Bootstrap and Compass
-* jQueryUI and other bulky plugins
+* Heavy frameworks like Bootstrap, Foundation and Compass
+* jQueryUI and other bulky scripts
 * The kitchen sink
 
 ## Build System
@@ -114,7 +114,7 @@ For example, if your local development URL is `http://myproject.dev` you would u
 
 ```
 var config = {
-  devUrl: 'http://myproject.dev' 
+  devUrl: 'http://myproject.dev'
 }
 ```
 

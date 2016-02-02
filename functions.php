@@ -4,10 +4,10 @@
  */
 
 $blujay_includes = array(
-    '/lib/setup.php',       // Register constants, menus, sidebars, widget areas, etc
-    '/lib/assets.php',      // Load scripts, styles and fonts
-    '/lib/shortcodes.php',  // Custom shortcodes
-    '/lib/utilities.php',   // Utility and helper functions
+    '/lib/setup.php',       // Registers constants, menus, sidebars, widget areas, etc
+    '/lib/assets.php',      // Loads scripts, styles and fonts
+    '/lib/shortcodes.php',  // Registers shortcodes
+    '/lib/utilities.php',   // Enables utility functions
     '/lib/custom.php'       // Your custom theme functions go here
 );
 

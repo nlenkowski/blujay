@@ -1,3 +1,7 @@
+### 1.2.2 - 2016-02-02
+
+* Removed Font Awesome, better to use [Better Font Awesome](https://wordpress.org/plugins/better-font-awesome/) plugin instead
+
 ### 1.2.1 - 2016-02-01
 
 * Added dist directory to repo to simplify git deployment
