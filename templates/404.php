@@ -2,8 +2,9 @@
 /**
  * Displays 404 errors
  */
+?>
 
-get_header(); ?>
+<?php get_template_part('partials/header'); ?>
 
 <div class="content">
 
@@ -19,4 +20,4 @@ get_header(); ?>
 
 </div><!-- /content -->
 
-<?php get_footer(); ?>
+<?php get_template_part('partials/footer'); ?>

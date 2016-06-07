@@ -2,14 +2,15 @@
 /**
  * Displays single posts
  */
+?>
 
-get_header(); ?>
+<?php get_template_part('partials/header'); ?>
 
 <div class="content">
 
     <?php while ( have_posts() ) : the_post(); ?>
 
-        <?php get_template_part( 'templates/content', 'single' ); ?>
+        <?php get_template_part( 'partials/content', 'single' ); ?>
 
           <nav class="post-nav">
               <span class="previous"><?php previous_post_link('%link', __('&larr; Previous', 'blujay')); ?></span>
@@ -18,7 +19,7 @@ get_header(); ?>
 
         <?php
             if ( comments_open() || '0' != get_comments_number() ) :
-                comments_template();
+                comments_template('/templates/partials/comments.php');
             endif;
         ?>
 
@@ -26,6 +27,6 @@ get_header(); ?>
 
 </div><!-- /content -->
 
-<?php get_template_part( 'sidebar' ); ?>
+<?php get_template_part('partials/sidebar'); ?>
 
-<?php get_footer(); ?>
+<?php get_template_part('partials/footer'); ?>

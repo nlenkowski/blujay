@@ -11,7 +11,7 @@
         <h1 class="entry-title"><?php the_title(); ?></h1>
 
         <div class="entry-meta">
-            <?php get_template_part('templates/entry-meta'); ?>
+            <?php get_template_part('partials/entry-meta'); ?>
         </div>
 
     </header><!-- /entry-header -->

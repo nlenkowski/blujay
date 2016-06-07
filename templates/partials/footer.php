@@ -17,7 +17,7 @@
             <hr />
 
             <div class="site-info">
-                <i class="fa fa-code"></i> by <a href="http://littlebiglab.com">Nathan</a>
+                <i class="fa fa-code"></i> by <a href="http://littlebiglab.com">LittleBigLab</a>
             </div>
 
         </div><!-- /container -->
