@@ -23,19 +23,26 @@ add_action('after_switch_theme', function () {
     basename($stylesheet) == 'templates' || update_option('stylesheet', $stylesheet . '/templates');
 });
 
+/**
+ * Blujay includes
+ *
+ * The $blujay_includes array determines the code library included in your theme.
+ * Add or remove files to the array as needed. Supports child theme overrides.
+ *
+ * Please note that missing files will produce a fatal error.
+ */
 $blujay_includes = array(
-    '/lib/setup.php',       // Registers constants, menus, sidebars, widget areas, etc
-    '/lib/assets.php',      // Loads scripts, styles and fonts
-    '/lib/shortcodes.php',  // Registers shortcodes
-    '/lib/utilities.php',   // Enables utility functions
-    '/lib/custom.php'       // Your custom theme functions go here
+    '/src/setup.php',       // Registers constants, menus, sidebars, widget areas, etc
+    '/src/assets.php',      // Loads scripts, styles and fonts
+    '/src/shortcodes.php',  // Registers shortcodes
+    '/src/utilities.php',   // Enables utility functions
+    '/src/custom.php'       // Your custom theme functions go here
 );
 
 foreach ($blujay_includes as $file) {
     if (!$filepath = locate_template($file)) {
         trigger_error(sprintf(__('Error locating %s for inclusion', 'blujay'), $file), E_USER_ERROR);
     }
-
     require_once $filepath;
 }
 unset($file, $filepath);
