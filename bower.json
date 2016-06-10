@@ -1,9 +1,9 @@
 {
   "name": "blujay",
   "dependencies": {
-    "compass-breakpoint": "^2.6.1",
+    "normalize-css": "^4.1.1",
+    "picturefill": "^3.0.2",
     "susy": "^2.2.12",
-    "normalize-css": "^3.0.3",
-    "picturefill": "^3.0.2"
+    "breakpoint-sass": "^2.7.0"
   }
 }
