@@ -3,6 +3,7 @@
   "dependencies": {
     "compass-breakpoint": "^2.6.1",
     "susy": "^2.2.12",
-    "normalize-css": "^3.0.3"
+    "normalize-css": "^3.0.3",
+    "picturefill": "^3.0.2"
   }
 }
