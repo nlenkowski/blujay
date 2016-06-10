@@ -1,6 +1,6 @@
 <?php
 /**
- * Utility and helper functions
+ * Extra helper functions
  */
 
 /**
@@ -37,7 +37,7 @@ function blujay_head_cleanup() {
 add_action('init', 'blujay_head_cleanup');
 
 /**
- * Moves all scripts to footer
+ * Moves scripts to footer
  */
 function blujay_js_to_footer() {
     remove_action('wp_head', 'wp_print_scripts');
@@ -47,7 +47,7 @@ function blujay_js_to_footer() {
 add_action('wp_enqueue_scripts', 'blujay_js_to_footer');
 
 /**
- * Add page slug to body class
+ * Adds page slug to body class
  */
 function add_body_class( $classes ) {
     global $post;
@@ -64,14 +64,14 @@ function add_body_class( $classes ) {
 add_filter('body_class', 'add_body_class');
 
 /**
- * Returns true if viewing a blog page
+ * Returns true if viewing any blog related page
  */
 function is_blog() {
     return ( ((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_search()) || (is_tag())) ) ? true : false ;
 }
 
 /**
- * Add custom image sizes to media library
+ * Adds custom image sizes to media library
  */
 function blujay_custom_image_sizes( $image_sizes ) {
 
@@ -95,6 +95,6 @@ function blujay_custom_image_sizes( $image_sizes ) {
 add_filter('image_size_names_choose', 'blujay_custom_image_sizes');
 
 /**
- * Enable execution of shortcodes in widgets
+ * Enables execution of shortcodes in widgets
  */
 add_filter('widget_text', 'do_shortcode');
