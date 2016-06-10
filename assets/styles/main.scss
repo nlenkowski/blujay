@@ -2,10 +2,10 @@
  * Main
  */
 
-// Libs
-@import "lib/normalize/normalize";
-@import "lib/susy/susy";
-@import "lib/breakpoint/breakpoint";
+// Vendor
+@import "vendor/normalize/normalize";
+@import "vendor/susy/susy";
+@import "vendor/breakpoint/breakpoint";
 
 // Common
 @import "common/variables";
