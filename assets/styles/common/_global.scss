@@ -11,11 +11,11 @@ html {
 
 html {
     background: $body-background;
-    font-family: $font-family-base;
-    font-size: $font-size-base;
-    font-weight: normal;
-    line-height: $line-height-base;
     color: $text-color;
+    font-weight: normal;
+    font-size: $font-size-base;
+    font-family: $font-family-base;
+    line-height: $line-height-base;
 }
 
 h1, .f1 { font-size: $f1; }
@@ -26,8 +26,8 @@ h5, .f5 { font-size: $f5; }
 h6, .f6 { font-size: $f6; }
 
 h1, h2, h3, h4, h5, h6 {
-    line-height: $line-height-headings;
     color: $header-color;
+    line-height: $line-height-headings;
 }
 
 h1, h2 {
@@ -48,8 +48,8 @@ p {
 }
 
 hr {
-    height: 1px;
     margin: 30px 0;
+    height: 1px;
     border: none;
     background-color: $color-border;
 }
@@ -60,12 +60,12 @@ img {
 }
 
 code {
-    font-size: 1em;
-    padding: 3px;
-    background: #F5F5F5;
-    line-height: 1em;
-    border-radius: 3px;
     display: inline-block;
+    padding: 3px;
+    border-radius: 3px;
+    background: #F5F5F5;
+    font-size: 1em;
+    line-height: 1em;
 }
 
 ul li code {
@@ -83,8 +83,8 @@ blockquote {
     color: #777;
 
     p {
-        padding: 0;
         margin: 0;
+        padding: 0;
     }
 }
 
@@ -95,8 +95,8 @@ blockquote {
 .title {
     margin-top: 0;
     margin-bottom: 1em;
-    font-size: 4.5em;
     font-weight: 400;
+    font-size: 4.5em;
 }
 
 .subtitle {
@@ -113,9 +113,9 @@ blockquote {
     display: inline-block;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    font-size: $f4;
-    text-transform: uppercase;
     border-bottom: 1px solid $color-border;
+    text-transform: uppercase;
+    font-size: $f4;
 }
 
 /*
@@ -123,8 +123,9 @@ blockquote {
  */
 
 .container {
-    @include container;
     padding: 0 15px;
+
+    @include container;
 }
 
 .site-content {

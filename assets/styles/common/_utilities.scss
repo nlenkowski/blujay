@@ -20,17 +20,16 @@
     }
 }
 
-/*
+/**
  * PX to REM conversion
  */
-
 $browser-context: 16;
 @mixin fontsize($pixels, $context: $browser-context) {
     font-size: $pixels + px;
     font-size: $pixels/$context + rem;
 }
 
-/*
+/**
  * Retina background images
  * https://coderwall.com/p/w-e9rq/sass-retina-background-mixin
  */
@@ -43,7 +42,7 @@ $browser-context: 16;
      }
  }
 
-/*
+/**
  * Fontface
  * https://github.com/magnetikonline/sassboilerplate/blob/master/fontface.scss
  */
@@ -61,7 +60,7 @@ $browser-context: 16;
     }
 }
 
-/*
+/**
  * Absolute centering
  * https://css-tricks.com/snippets/sass/centering-mixin/
  */
@@ -80,7 +79,7 @@ $browser-context: 16;
     }
 }
 
-/*
+/**
  * Str-replace
  * https://css-tricks.com/snippets/sass/str-replace-function/
  */

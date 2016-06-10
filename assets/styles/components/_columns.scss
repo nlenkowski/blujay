@@ -2,7 +2,6 @@
  * Columns
  */
 .columns {
-
     @include breakpoint($md) {
 
         .one-fourth {
@@ -21,7 +20,6 @@
             @include span(8);
         }
     }
-
     @include clearfix();
 }
 

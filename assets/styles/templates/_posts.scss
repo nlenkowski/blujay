@@ -24,6 +24,7 @@
 }
 
 .post-nav {
+    @include clearfix();
 
     .previous {
         float: left;
@@ -32,8 +33,6 @@
     .next {
         float: right;
     }
-
-    @include clearfix();
 }
 
 .edit-link a {
@@ -42,9 +41,7 @@
 }
 
 .is-blog .content {
-
     @include breakpoint($md) {
-
         @include span(9);
 
         &:first-child {

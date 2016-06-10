@@ -6,12 +6,12 @@
      padding-top: 20px;
      text-align: center;
 
-     h1:first-child {
-         margin-bottom: 10px;
-     }
-
      @include breakpoint($md) {
          text-align: left;
+     }
+
+     h1:first-child {
+         margin-bottom: 10px;
      }
  }
 
@@ -21,9 +21,9 @@
      transition: transform 1s;
 
      ul {
-         list-style: none;
          margin-top: 10px;
          padding-left: 0;
+         list-style: none;
      }
 
      ul li {
