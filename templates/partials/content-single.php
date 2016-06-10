@@ -14,6 +14,10 @@
             <?php get_template_part('partials/entry-meta'); ?>
         </div>
 
+        <div class="entry-featured">
+            <?php the_post_thumbnail( $post_id, 'large' ); ?>
+        </div>
+
     </header><!-- /entry-header -->
 
     <div class="entry-content">

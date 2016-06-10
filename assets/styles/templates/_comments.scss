@@ -3,16 +3,13 @@
  */
 
 .comments {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid $color-border;
 
     .comment {
         margin-bottom: 25px;
+    }
 
-        .comment-reply-link {
-            font-weight: bold;
-        }
+    .comment-reply-link {
+        font-weight: bold;
     }
 
     .comment-list {
