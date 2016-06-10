@@ -56,15 +56,25 @@ gulp.task('jshint', function() {
 });
 
 // ### Scripts
-// 'gulp scripts' - Lints, combines and minimizes library and project scripts
+// 'gulp scripts' - Lints, combines and minimizes app and vendor scripts
 gulp.task('scripts', ['jshint'], function() {
+
+    // App
     return gulp.src([
-        config.assetsPath + 'scripts/lib/*.js',
         config.assetsPath + 'scripts/main.js'
     ])
     .pipe(concat('main.js'))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulpif(enabled.production, stripDebug()))
+    .pipe(gulpif(enabled.production, uglify()))
+    .pipe(gulp.dest(config.distPath + '/scripts/')),
+
+    // Vendor
+    gulp.src([
+        config.assetsPath + 'scripts/vendor/*.js',
+    ])
+    .pipe(concat('vendor.js'))
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulpif(enabled.production, uglify()))
     .pipe(gulp.dest(config.distPath + '/scripts/'));
 });

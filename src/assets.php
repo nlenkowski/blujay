@@ -5,6 +5,7 @@
 
 // Scripts
 function load_scripts() {
+    wp_enqueue_script( 'vendor-scripts', DISTDIR . '/scripts/vendor.min.js', array('jquery'), '', true );
     wp_enqueue_script( 'main-scripts', DISTDIR . '/scripts/main.min.js', array('jquery'), '', true );
 }
 add_action( 'wp_enqueue_scripts', 'load_scripts' );
