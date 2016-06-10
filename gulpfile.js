@@ -13,16 +13,17 @@ var plumber      = require('gulp-plumber');
 var rename       = require('gulp-rename');
 var runSequence  = require('run-sequence');
 var sass         = require('gulp-sass');
+var sourcemaps   = require('gulp-sourcemaps');
 var stripDebug   = require('gulp-strip-debug');
 var uglify       = require('gulp-uglify');
 
 // Config
 var config = {
 
-    // Specify the hostname of your dev server to enable BrowserSync during development
+    // Specify the hostname of your dev server
     devUrl: 'http://blujay.dev',
 
-    // Configure your asset and build paths
+    // Configure your asset and distrubution paths
     assetsPath: 'assets/',
     distPath: 'dist/'
 };
@@ -30,7 +31,8 @@ var config = {
 // CLI Options
 var enabled = {
 
-    // Combine and minify production assets when running 'gulp --production'
+    // Compile assets for production when running 'gulp --production'
+    // Strips debugging statements and disables source map generation
     production : argv.production
 };
 
@@ -63,24 +65,28 @@ gulp.task('scripts', ['jshint'], function() {
     return gulp.src([
         config.assetsPath + 'scripts/main.js'
     ])
+    .pipe(sourcemaps.init())
     .pipe(concat('main.js'))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulpif(enabled.production, stripDebug()))
-    .pipe(gulpif(enabled.production, uglify()))
+    .pipe(uglify())
+    .pipe(gulpif(!enabled.production, sourcemaps.write()))
     .pipe(gulp.dest(config.distPath + '/scripts/')),
 
     // Vendor
     gulp.src([
         config.assetsPath + 'scripts/vendor/*.js',
     ])
+    .pipe(sourcemaps.init())
     .pipe(concat('vendor.js'))
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulpif(enabled.production, uglify()))
+    .pipe(uglify())
+    .pipe(gulpif(!enabled.production, sourcemaps.write()))
     .pipe(gulp.dest(config.distPath + '/scripts/'));
 });
 
 // ### Styles
-// 'gulp styles' - Compiles, combines, and autoprefixes project styles
+// 'gulp styles' - Compiles, combines, and autoprefixes styles
 gulp.task('styles', function () {
     return gulp.src([
         config.assetsPath + 'styles/main.scss'
@@ -92,6 +98,7 @@ gulp.task('styles', function () {
             this.emit('end');
         }
     }))
+    .pipe(sourcemaps.init())
     .pipe(sass({
         outputStyle: 'nested'
     }))
@@ -99,7 +106,8 @@ gulp.task('styles', function () {
     .pipe(autoprefixer({
         browsers: ['last 2 versions']
     }))
-    .pipe(gulpif(enabled.production, cssnano()))
+    .pipe(cssnano())
+    .pipe(gulpif(!enabled.production, sourcemaps.write()))
     .pipe(gulp.dest(config.distPath + '/styles/'))
     .pipe(browserSync.stream());
 });
@@ -117,11 +125,14 @@ gulp.task('reload', function () {
 });
 
 // ### Clean
-// 'gulp clean' - Deletes the build folder entirely
+// 'gulp clean' - Deletes the build folder
 gulp.task('clean', del.bind(null, [config.distPath]));
 
 // ### Watch
-// 'gulp watch' - Watch files for changes and use BrowserSync to synchronize code changes across devices
+// 'gulp watch' - Use BrowserSync to proxy your dev server and synchronize code changes across devices.
+// Make sure to specify the hostname of your dev server in the config.devUrl option above.
+// When a modification is made to a watched asset the changes are immediately injected into the page.
+// See: http://browsersync.io
 gulp.task('watch', ['scripts', 'styles', 'browsersync'], function () {
     gulp.watch(['assets/styles/**/*'], ['styles']);
     gulp.watch(['assets/scripts/**/*'], ['scripts', 'reload']);
