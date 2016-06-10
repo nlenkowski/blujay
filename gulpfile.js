@@ -25,14 +25,14 @@ var config = {
     // Configure your asset and build paths
     assetsPath: 'assets/',
     distPath: 'dist/'
-}
+};
 
 // CLI Options
 var enabled = {
 
     // Combine and minify production assets when running 'gulp --production'
     production : argv.production
-}
+};
 
 // ### JSHint
 // 'gulp jshint' - Lints project scripts
@@ -66,7 +66,7 @@ gulp.task('scripts', ['jshint'], function() {
     .pipe(rename({suffix: '.min'}))
     .pipe(gulpif(enabled.production, stripDebug()))
     .pipe(gulpif(enabled.production, uglify()))
-    .pipe(gulp.dest(config.distPath));
+    .pipe(gulp.dest(config.distPath + '/scripts/'));
 });
 
 // ### Styles
@@ -90,7 +90,7 @@ gulp.task('styles', function () {
         browsers: ['last 2 versions']
     }))
     .pipe(gulpif(enabled.production, cssnano()))
-    .pipe(gulp.dest(config.distPath))
+    .pipe(gulp.dest(config.distPath + '/styles/'))
     .pipe(browserSync.stream());
 });
 
@@ -113,8 +113,8 @@ gulp.task('clean', del.bind(null, [config.distPath]));
 // ### Watch
 // 'gulp watch' - Watch files for changes and use BrowserSync to synchronize code changes across devices
 gulp.task('watch', ['scripts', 'styles', 'browsersync'], function () {
-    gulp.watch(['assets/styles/**/*'], ['styles'])
-    gulp.watch(['assets/scripts/**/*'], ['scripts', 'reload'])
+    gulp.watch(['assets/styles/**/*'], ['styles']);
+    gulp.watch(['assets/scripts/**/*'], ['scripts', 'reload']);
     gulp.watch(['**/*.php'], ['reload']);
 });
 
