@@ -17,7 +17,7 @@
             <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
             <div class="entry-meta">
-                <?php get_template_part('templates/entry-meta'); ?>
+                <?php get_template_part( 'templates/entry-meta' ); ?>
 
                 <?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 

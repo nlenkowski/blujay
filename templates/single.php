@@ -4,7 +4,7 @@
  */
 ?>
 
-<?php get_template_part('partials/header'); ?>
+<?php get_template_part( 'partials/header' ); ?>
 
 <div class="content">
 
@@ -13,13 +13,13 @@
         <?php get_template_part( 'partials/content', 'single' ); ?>
 
           <nav class="post-nav">
-              <span class="previous"><?php previous_post_link('%link', __('&larr; Previous', 'blujay')); ?></span>
-              <span class="next"><?php next_post_link('%link', __('Next &rarr;', 'blujay')); ?></span>
+              <span class="previous"><?php previous_post_link( '%link', __( '&larr; Previous', 'blujay' ) ); ?></span>
+              <span class="next"><?php next_post_link( '%link', __( 'Next &rarr;', 'blujay' ) ); ?></span>
           </nav>
 
         <?php
             if ( comments_open() || '0' != get_comments_number() ) :
-                comments_template('/templates/partials/comments.php');
+                comments_template( '/templates/partials/comments.php' );
             endif;
         ?>
 
@@ -27,6 +27,6 @@
 
 </div><!-- /content -->
 
-<?php get_template_part('partials/sidebar'); ?>
+<?php get_template_part( 'partials/sidebar' ); ?>
 
-<?php get_template_part('partials/footer'); ?>
+<?php get_template_part( 'partials/footer' ); ?>

@@ -2,5 +2,4 @@
 /**
  * Your custom theme functions
  */
-
 ?>

@@ -4,7 +4,7 @@
  */
 ?>
 
-<?php get_template_part('partials/header'); ?>
+<?php get_template_part( 'partials/header' ); ?>
 
 <div class="content">
 
@@ -30,8 +30,8 @@
 
         <?php if ($wp_query->max_num_pages > 1) : ?>
           <nav class="post-nav">
-              <span class="previous"><?php next_posts_link(__('&larr; Older posts', 'blujay')); ?></span>
-              <span class="next"><?php previous_posts_link(__('Newer posts &rarr;', 'blujay')); ?></span>
+              <span class="previous"><?php next_posts_link( __( '&larr; Older posts', 'blujay' ) ); ?></span>
+              <span class="next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'blujay' ) ); ?></span>
           </nav>
         <?php endif; ?>
 
@@ -43,6 +43,6 @@
 
 </div><!-- /content -->
 
-<?php get_template_part('partials/sidebar'); ?>
+<?php get_template_part( 'partials/sidebar' ); ?>
 
-<?php get_template_part('partials/footer'); ?>
+<?php get_template_part( 'partials/footer' ); ?>

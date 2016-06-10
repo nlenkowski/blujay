@@ -4,9 +4,6 @@
  * Register constants, menus, custom image sizes, sidebars, widget areas, etc
  */
 
-/**
- * General setup
- */
 function blujay_setup() {
 
     // Make theme available for translation
@@ -27,20 +24,20 @@ function blujay_setup() {
     // Enable support for HTML5 markup
     add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 }
-add_action('after_setup_theme', 'blujay_setup');
+add_action( 'after_setup_theme', 'blujay_setup' );
 
 /**
  * Register constants
  */
-define("THEMEDIR", get_template_directory_uri());
-define("ASSETDIR", THEMEDIR . '/assets');
-define("DISTDIR", THEMEDIR . '/dist');
+define( 'THEMEDIR', get_template_directory_uri() );
+define( 'ASSETDIR' , THEMEDIR . '/assets' );
+define( 'DISTDIR', THEMEDIR . '/dist' );
 
 /**
  * Register menus
  */
 register_nav_menus(array(
-    'primary' => __('Primary Menu', 'blujay'),
+    'primary' => __( 'Primary Menu', 'blujay' ),
 ));
 
 /**
@@ -49,7 +46,7 @@ register_nav_menus(array(
 function blujay_add_image_sizes() {
     add_image_size( 'featured', '350', '200', true );
 }
-add_action('init', 'blujay_add_image_sizes');
+add_action( 'init', 'blujay_add_image_sizes' );
 
 /**
  * Register sidebar and widget areas
@@ -57,7 +54,7 @@ add_action('init', 'blujay_add_image_sizes');
 function blujay_widgets_init() {
 
     register_sidebar(array(
-        'name'          => __('Primary Sidebar', 'blujay'),
+        'name'          => __( 'Primary Sidebar', 'blujay' ),
         'id'            => 'primary-sidebar',
         'description'   => 'Widgets displayed in the blog sidebar.',
         'before_widget' => '<section class="widget %1$s %2$s">',
@@ -67,7 +64,7 @@ function blujay_widgets_init() {
     ));
 
     register_sidebar( array(
-        'name'          => __('Footer Widgets', 'blujay'),
+        'name'          => __( 'Footer Widgets', 'blujay' ),
         'id'            => 'footer-widgets',
         'description'   => 'Select up to three widgets for display in the footer.',
         'before_widget' => '<section class="widget %1$s %2$s">',
@@ -76,6 +73,6 @@ function blujay_widgets_init() {
         'after_title'   => '</h3>',
     ));
 }
-add_action('widgets_init', 'blujay_widgets_init');
+add_action( 'widgets_init', 'blujay_widgets_init' );
 
 ?>
