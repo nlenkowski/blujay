@@ -14,10 +14,8 @@
                 <?php dynamic_sidebar( 'footer-widgets' ); ?>
             </aside>
 
-            <hr />
-
             <div class="site-info">
-                <i class="fa fa-code"></i> by <a href="http://littlebiglab.com">LittleBigLab</a>
+                <a href="<?php echo site_url(); ?>"><?php bloginfo( 'name' ); ?></a>, <?php bloginfo( 'description' )?>
             </div>
 
         </div><!-- /container -->
