@@ -20,7 +20,8 @@ var uglify       = require('gulp-uglify');
 // Config
 var config = {
 
-    // Specify the hostname of your dev server
+    // Use BrowserSync (http://browsersync.io) to proxy your dev server and synchronize code changes across devices.
+    // Specify the hostname of your dev server here.
     devUrl: 'http://blujay.dev',
 
     // Configure your asset and distrubution paths
@@ -129,10 +130,7 @@ gulp.task('reload', function () {
 gulp.task('clean', del.bind(null, [config.distPath]));
 
 // ### Watch
-// 'gulp watch' - Use BrowserSync to proxy your dev server and synchronize code changes across devices.
-// Make sure to specify the hostname of your dev server in the config.devUrl option above.
-// When a modification is made to a watched asset the changes are immediately injected into the page.
-// See: http://browsersync.io
+// 'gulp watch' - When a modification is made to a watched asset the changes are immediately injected into the page using BrowserSync.
 gulp.task('watch', ['scripts', 'styles', 'browsersync'], function () {
     gulp.watch(['assets/styles/**/*'], ['styles']);
     gulp.watch(['assets/scripts/**/*'], ['scripts', 'reload']);
