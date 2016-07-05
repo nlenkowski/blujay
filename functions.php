@@ -25,9 +25,9 @@ add_action('after_switch_theme', function () {
  * Add or remove files as needed.
  */
 $blujay_includes = array(
-    '/src/setup.php',      // Configure theme and register assets, menus, sidebars, etc
-    '/src/extras.php',  // Additional theme options and utilities
-    '/src/shortcodes.php', // Register shortcodes
+    '/lib/setup.php',      // Configure theme and register assets, menus, sidebars, etc
+    '/lib/shortcodes.php', // Register shortcodes
+    '/lib/utilities.php'  // Additional theme options and utilities
 );
 
 // Load library
