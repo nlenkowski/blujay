@@ -6,7 +6,7 @@
 
 <?php get_template_part( 'partials/header' ); ?>
 
-<div class="content">
+<main class="main">
 
     <?php while ( have_posts() ) : the_post(); ?>
 
@@ -25,7 +25,7 @@
 
     <?php endwhile; // end of the loop. ?>
 
-</div><!-- /content -->
+</main><!-- /main -->
 
 <?php get_template_part( 'partials/sidebar' ); ?>
 

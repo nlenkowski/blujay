@@ -6,19 +6,19 @@
 
 <?php get_template_part( 'partials/header' ); ?>
 
-<div class="content">
+<main class="main">
 
     <?php if ( have_posts() ) : ?>
 
         <?php if ( is_archive() ) : ?>
-            <header class="page-header">
-                <h1 class="archive-title"><?php the_archive_title(); ?></h1>
+            <header class="entry-header">
+                <h3 class="entry-title"><?php the_archive_title(); ?></h3>
             </header>
         <?php endif; ?>
 
         <?php if ( is_search() ) : ?>
-            <header class="page-header">
-                <h1 class="archive-title"><?php printf( __( 'Search Results for: %s', 'blujay' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+            <header class="entry-header">
+                <h3 class="entry-title"><?php printf( __( 'Search Results for: %s', 'blujay' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
             </header>
         <?php endif; ?>
 
@@ -41,7 +41,7 @@
 
     <?php endif; ?>
 
-</div><!-- /content -->
+</main><!-- /main -->
 
 <?php get_template_part( 'partials/sidebar' ); ?>
 

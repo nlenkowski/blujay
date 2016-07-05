@@ -6,18 +6,18 @@
 
 <?php get_template_part( 'partials/header' ); ?>
 
-<div class="content">
+<main class="main">
 
-    <header class="page-header">
-        <h1 class="page-title"><?php _e( 'Sorry, but the page you were trying to view does not exist.', 'blujay' ); ?></h1>
-    </header><!-- /page-header -->
+    <header class="entry-header">
+        <h1 class="entry-title"><?php _e( 'Sorry, but the page you were trying to view does not exist.', 'blujay' ); ?></h1>
+    </header><!-- /entry-header -->
 
-    <div class="page-content">
+    <div class="entry-content">
         <p><?php _e( 'Maybe try one of the links below?', 'blujay' ); ?></p>
         <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
         <?php the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" ); ?>
-    </div><!-- /page-content -->
+    </div><!-- /entry-content -->
 
-</div><!-- /content -->
+</main><!-- /main -->
 
 <?php get_template_part( 'partials/footer' ); ?>
