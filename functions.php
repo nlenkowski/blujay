@@ -5,20 +5,6 @@
  */
 
 /**
- * Relocate core template directory to themes/blujay/templates
- *
- * The Template Hierarchy will look in themes/blujay/templates for core WordPress themes
- * But functions.php, style.css, and index.php are all still located in themes/blujay
- */
-add_filter('stylesheet', function ($stylesheet) {
-    return dirname($stylesheet);
-});
-add_action('after_switch_theme', function () {
-    $stylesheet = get_option('stylesheet');
-    basename($stylesheet) == 'templates' || update_option('stylesheet', $stylesheet . '/templates');
-});
-
-/**
  * Blujay includes
  *
  * The $blujay_includes array determines the code library to be loaded.

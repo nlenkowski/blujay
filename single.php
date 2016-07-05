@@ -19,7 +19,7 @@
 
         <?php
             if ( comments_open() || '0' != get_comments_number() ) :
-                comments_template( '/templates/partials/comments.php' );
+                comments_template( '/partials/comments.php' );
             endif;
         ?>
 
