@@ -1,0 +1,16 @@
+{
+    "devUrl": "http://blujay.dev",
+    "paths": {
+        "assets": "assets/",
+        "dist": "dist/"
+    },
+    "dependencies": {
+        "scripts": [
+            "node_modules/picturefill/dist/picturefill.js",
+            "assets/scripts/main.js"
+        ],
+        "styles": [
+            "assets/styles/main.scss"
+        ]
+    }
+}
