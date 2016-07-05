@@ -1,9 +1,10 @@
 /**
- * Main Scripts
+ * Main scripts
  */
 
 (function($) {
 
-    "use strict";
+    // Picture element HTML5 shiv
+    document.createElement('picture');
 
 })(jQuery);
