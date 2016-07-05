@@ -2,34 +2,26 @@
  * Header
  */
 
- .site-header {
-     padding-top: 20px;
-     text-align: center;
+.site-header {
+    margin-top: 15px;
+    text-align: center;
 
-     @include breakpoint($md) {
-         text-align: left;
-     }
+    @include breakpoint($md) {
+        text-align: left;
+    }
+}
 
-     h1:first-child {
-         margin-bottom: 10px;
-     }
- }
+.primary-navigation {
+    border-top: 1px solid $color-border;
 
- .primary-navigation {
-     margin: 30px 0;
-     border-top: 1px solid $color-border;
-     transition: transform 1s;
+    ul {
+        padding-left: 0;
+        list-style: none;
+    }
 
-     ul {
-         margin-top: 10px;
-         padding-left: 0;
-         list-style: none;
-     }
-
-     ul li {
-         display: inline-block;
-         margin-right: 20px;
-         font-size: $f4;
-         line-height: 2em;
-     }
- }
+    ul li {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: $f6;
+    }
+}

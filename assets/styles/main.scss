@@ -4,13 +4,14 @@
 @import "../../node_modules/normalize-scss/sass/_normalize.scss";
 
 // Common
+@import "common/utilities";
 @import "common/variables";
 @import "common/global";
-@import "common/utilities";
-@import "common/wpclasses";
 
 // Components
-@import "components/columns";
+@import "components/grid";
+@import "components/shortcodes";
+@import "components/wp";
 
 // Templates
 @import "templates/comments";

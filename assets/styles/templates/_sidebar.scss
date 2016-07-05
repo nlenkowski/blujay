@@ -3,13 +3,6 @@
  */
 
 .sidebar {
-    display: none;
-
-    @include breakpoint($md) {
-        @include span(3);
-        display: block;
-        padding-left: 30px;
-    }
 
     ul {
         padding-left: 0;

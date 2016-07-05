@@ -4,89 +4,12 @@
 
 /*
  * Micro clearfix
- * http://nicolasgallagher.com/micro-clearfix-hack/
+ * http://cssmojo.com/latest_new_clearfix_so_far/
  */
-@mixin clearfix() {
-    & {
-        *zoom: 1;
-    }
-    &:before,
-    &:after {
+@mixin clearfix {
+    &::after {
+        clear: both;
         content: "";
         display: table;
     }
-    &:after {
-        clear: both;
-    }
-}
-
-/**
- * PX to REM conversion
- */
-$browser-context: 16;
-@mixin fontsize($pixels, $context: $browser-context) {
-    font-size: $pixels + px;
-    font-size: $pixels/$context + rem;
-}
-
-/**
- * Retina background images
- * https://coderwall.com/p/w-e9rq/sass-retina-background-mixin
- */
- $retina: '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)';
- @mixin retina-background-image($file, $type, $width, $height) {
-     background-image: url($file + '.' + $type);
-     background-size: $width $height;
-     @media #{$retina} {
-         background-image: url($file + '@2x.' + $type);
-     }
- }
-
-/**
- * Fontface
- * https://github.com/magnetikonline/sassboilerplate/blob/master/fontface.scss
- */
-@mixin fontface($family, $src, $style: normal, $weight: normal) {
-    @font-face {
-        font-family: $family;
-        src: url('#{$src}.eot');
-        src: url('#{$src}.eot?#iefix') format('embedded-opentype'),
-             url('#{$src}.woff2') format('woff2'),
-             url('#{$src}.woff') format('woff'),
-             url('#{$src}.ttf') format('truetype'),
-             url('#{$src}.svg##{$family}') format('svg');
-        font-style: $style;
-        font-weight: $weight;
-    }
-}
-
-/**
- * Absolute centering
- * https://css-tricks.com/snippets/sass/centering-mixin/
- */
-@mixin centerer($horizontal: true, $vertical: true) {
-    position: absolute;
-    @if ($horizontal and $vertical) {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    } @else if ($horizontal) {
-        left: 50%;
-        transform: translate(-50%, 0);
-    } @else if ($vertical) {
-        top: 50%;
-        transform: translate(0, -50);
-    }
-}
-
-/**
- * Str-replace
- * https://css-tricks.com/snippets/sass/str-replace-function/
- */
-@function str-replace($string, $search, $replace: '') {
-    $index: str-index($string, $search);
-    @if $index {
-        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
-    }
-    @return $string;
 }

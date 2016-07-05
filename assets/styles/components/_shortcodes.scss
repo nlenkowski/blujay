@@ -1,7 +1,8 @@
 /**
- * Columns
+ * Shortcodes
  */
 
+// Classes for columns shortcodes
 .columns {
     @include breakpoint($md) {
 
@@ -25,7 +26,6 @@
 }
 
 .column {
-    margin-bottom: 20px;
 
     &:first-child {
         @include first;

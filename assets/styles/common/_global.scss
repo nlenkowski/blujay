@@ -2,20 +2,21 @@
  * Global styles, typography and layout classes
  */
 
-html {
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
+body {
+    margin: 0;
 }
 
 html {
-    background: $body-background;
-    color: $text-color;
+    background:  $color-body;
+    color:       $color-text;
     font-weight: normal;
-    font-size: $font-size-base;
+    font-size:   $font-size-base;
     font-family: $font-family-base;
     line-height: $line-height-base;
+    box-sizing:  border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 h1, .f1 { font-size: $f1; }
@@ -26,32 +27,21 @@ h5, .f5 { font-size: $f5; }
 h6, .f6 { font-size: $f6; }
 
 h1, h2, h3, h4, h5, h6 {
-    color: $header-color;
+    color: $color-heading;
     line-height: $line-height-headings;
 }
 
 h1, h2 {
-    font-family: $font-family-roboto;
+    font-family: $font-family-serif;
 }
 
 a {
-    color: $link-color;
+    color: $color-link;
     text-decoration: none;
 
     &:hover {
-        color: $link-color-hover;
+        color: $color-link-hover;
     }
-}
-
-p {
-    margin-top: 0;
-}
-
-hr {
-    margin: 30px 0;
-    height: 1px;
-    border: none;
-    background-color: $color-border;
 }
 
 img {
@@ -59,75 +49,34 @@ img {
     height: auto;
 }
 
-code {
-    display: inline-block;
-    padding: 3px;
-    border-radius: 3px;
-    background: #F5F5F5;
-    font-size: 1em;
-    line-height: 1em;
-}
-
-ul li code {
-    margin-top: 5px;
-}
-
-pre code {
-    padding: 16px;
-}
-
-blockquote {
-    margin-left: 0;
-    padding: 0 15px;
-    border-left: 4px solid #ddd;
-    color: #777;
-
-    p {
-        margin: 0;
-        padding: 0;
-    }
-}
-
-/*
- * Typography
- */
+//
+// Typography
+//
 
 .title {
     margin-top: 0;
-    margin-bottom: 1em;
+    margin-bottom: 15px;
+    font-size: 4.5rem;
     font-weight: 400;
-    font-size: 4.5em;
 }
 
-.subtitle {
+.tagline {
     margin-top: 0;
-    margin-bottom: 1em;
-    font-size: 1.375em;
-}
-
-.page-title {
-    font-size: $f2;
-}
-
-.archive-title {
-    display: inline-block;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid $color-border;
-    text-transform: uppercase;
     font-size: $f4;
 }
 
-/*
- * Layout
- */
-
-.container {
-    padding: 0 15px;
-
-    @include container;
+.entry-title {
+    margin-top: 30px;
 }
 
-.site-content {
-    padding-bottom: 30px;
+//
+// Layout
+//
+
+.container {
+    padding: 0 20px;
+    @include container;
+    @include breakpoint($xl) {
+        padding: 0;
+    }
 }

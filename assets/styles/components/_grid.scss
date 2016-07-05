@@ -1,0 +1,41 @@
+/**
+ * Grid
+ */
+
+.main {
+    @include span(12);
+}
+
+// Displays sidebar on blog pages (posts, single, archive, etc)
+.is-blog {
+
+    .main {
+        @include breakpoint($md) {
+            @include span(9);
+
+            &:first-child {
+                @include first;
+            }
+        }
+    }
+
+    .sidebar {
+        text-align: center;
+
+        @include breakpoint($md) {
+            @include span(3);
+            text-align: left;
+        }
+    }
+}
+
+// Displays footer widgets
+.footer-widgets .widget {
+    @include breakpoint($md) {
+        @include span(4);
+
+        &:first-child {
+            @include first;
+        }
+    }
+}
