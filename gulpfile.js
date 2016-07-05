@@ -23,9 +23,9 @@ var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
 
 // Get project config
-var config       = require('./config.json'),
-    paths        = config.paths,
-    dependencies = config.dependencies;
+var config = require('./assets/config.json'),
+    paths  = config.paths,
+    assets = config.assets;
 
 // Command line options
 var enabled = {
@@ -54,7 +54,7 @@ var plumberOptions = {
 // ## Scripts
 // 'gulp scripts' - Lints, combines, minifies and adds source maps for scripts
 gulp.task('scripts', ['lint'], function() {
-    return gulp.src(dependencies.scripts)
+    return gulp.src(assets.scripts)
         .pipe(plumber(plumberOptions))
         .pipe(gulpif(!enabled.production, sourcemaps.init()))
         .pipe(concat('main.js'))
@@ -71,7 +71,7 @@ gulp.task('scripts', ['lint'], function() {
 // ## Styles
 // 'gulp styles' - Compiles, autoprefixes, minifies and adds source maps for styles
 gulp.task('styles', function() {
-    return gulp.src(dependencies.styles)
+    return gulp.src(assets.styles)
         .pipe(plumber(plumberOptions))
         .pipe(gulpif(!enabled.production, sourcemaps.init()))
         .pipe(concat('main.css'))

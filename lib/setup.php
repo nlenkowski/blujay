@@ -8,11 +8,11 @@
   * Register constants
   */
  define( 'THEMEDIR', get_template_directory_uri() );
- define( 'ASSETDIR' , THEMEDIR . '/assets' );
+ define( 'ASSETDIR', THEMEDIR . '/assets' );
  define( 'DISTDIR', THEMEDIR . '/dist' );
 
  /**
-  * Register theme assets
+  * Register assets
   */
  function blujay_register_assets() {
      wp_enqueue_script( 'main-scripts', DISTDIR . '/scripts/main.min.js', array('jquery'), '', true );
