@@ -3,7 +3,12 @@
  */
 
 // Two column layout with sidebar
-.blog, .single, .archive, .search, .author, .page-template-page-with-sidebar {
+.blog,
+.single,
+.archive,
+.search,
+.author,
+.page-template-page-with-sidebar {
 
     .main {
         @include breakpoint($md) {
