@@ -4,34 +4,23 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" class="entry entry-single">
 
     <header class="entry-header">
 
-        <h1 class="entry-title"><?php the_title(); ?></h1>
+        <h1 class="entry-title">
+            <?php the_title(); ?>
+        </h1>
 
-        <div class="entry-meta">
-            <?php get_template_part('partials/entry-meta'); ?>
-        </div>
-
-        <div class="entry-featured">
-            <?php the_post_thumbnail( $post_id, 'large' ); ?>
-        </div>
-
+        <?php get_template_part('partials/entry-meta'); ?>
     </header>
 
-    <div class="entry-content">
-        <?php the_content(); ?>
-        <?php
-            wp_link_pages( array(
-                'before' => '<div class="page-links">' . __( 'Pages:', 'blujay' ),
-                'after'  => '</div>',
-            ) );
-        ?>
-    </div>
+    <section class="entry-featured">
+        <?php the_post_thumbnail( $post_id, 'large' ); ?>
+    </section>
 
-    <footer class="entry-footer">
-        <?php edit_post_link( __( 'Edit', 'blujay' ), '<span class="edit-link">', '</span>' ); ?>
-    </footer>
+    <section class="entry-content">
+        <?php the_content(); ?>
+    </section>
 
 </article>

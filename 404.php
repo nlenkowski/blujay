@@ -12,11 +12,11 @@
         <h1 class="entry-title"><?php _e( 'Sorry, but the page you were trying to view does not exist.', 'blujay' ); ?></h1>
     </header>
 
-    <div class="entry-content">
+    <section class="entry-content">
         <p><?php _e( 'Maybe try one of the links below?', 'blujay' ); ?></p>
         <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
         <?php the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" ); ?>
-    </div>
+    </section>
 
 </main>
 

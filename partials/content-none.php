@@ -1,16 +1,16 @@
 <?php
 /**
- * Displays posts not found content
+ * Displays no posts found content
  */
 ?>
 
-<section class="no-results not-found">
+<article class="entry entry-none">
 
     <header class="entry-header">
         <h1 class="entry-title"><?php _e( 'Nothing Found', 'blujay' ); ?></h1>
     </header>
 
-    <div class="entry-content">
+    <section class="entry-content">
 
         <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
@@ -28,5 +28,5 @@
 
         <?php endif; ?>
 
-    </div>
-</section><
+    </section>
+</article>

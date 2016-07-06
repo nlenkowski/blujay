@@ -2,37 +2,61 @@
  * Posts
  */
 
-.post, .single-post {
+// All posts
+.blog, .single, .archive, .search-results {
 
-    .entry-title {
-        margin-bottom: 15px;
+    .entry {
+        margin-bottom: 30px;
     }
+
+    .comments-link {
+        display: block;
+        margin-top: 10px;
+    }
+}
+
+// Blog posts and single posts
+.blog, .single {
 
     .entry-header {
         margin-bottom: 20px;
     }
+}
 
-    .entry-meta {
-        margin-bottom: 30px;
+// Archive and search results posts
+.archive, .search-results {
+
+    .entries-header {
+        margin-bottom: 50px;
     }
 
-    .entry-footer {
+    .entry {
+        @include clearfix;
+    }
 
-        .comments-link {
-            display: block;
-            margin-top: 10px;
+    .entry-title {
+        margin-top: 15px;
+        @include breakpoint($md) {
+            margin-top: 0px;
         }
     }
 
-    .post-nav {
-        @include clearfix();
-
-        .previous {
-            float: left;
+    .entry-featured {
+        @include breakpoint($md) {
+            @include span(2 of 12);
+            &:first-child {
+                @include first;
+            }
         }
+    }
 
-        .next {
-            float: right;
+    .entry-content {
+        @include breakpoint($md) {
+            padding-left: 20px;
+            @include span(10 of 12);
+            &:first-child {
+                @include first;
+            }
         }
     }
 }

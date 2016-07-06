@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays single posts
+ * Displays single post entry
  */
 ?>
 
@@ -12,18 +12,15 @@
 
         <?php get_template_part( 'partials/content', 'single' ); ?>
 
-          <nav class="post-nav">
-              <span class="previous"><?php previous_post_link( '%link', __( '&larr; Previous', 'blujay' ) ); ?></span>
-              <span class="next"><?php next_post_link( '%link', __( 'Next &rarr;', 'blujay' ) ); ?></span>
-          </nav>
+        <?php get_template_part( 'partials/pager' ); ?>
 
         <?php
-            if ( comments_open() || '0' != get_comments_number() ) :
-                comments_template( '/partials/comments.php' );
-            endif;
+        if ( comments_open() || '0' != get_comments_number() ) :
+            comments_template( '/partials/comments.php' );
+        endif;
         ?>
 
-    <?php endwhile; // end of the loop ?>
+    <?php endwhile; ?>
 
 </main>
 
