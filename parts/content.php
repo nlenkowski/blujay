@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="entry entry-default">
+<article id="post-<?php the_ID(); ?>" class="content content-default">
 
     <header class="entry-header">
 
@@ -12,11 +12,11 @@
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </h1>
 
-        <?php get_template_part('partials/entry-meta'); ?>
+        <?php get_template_part('parts/entry-meta'); ?>
     </header>
 
     <section class="entry-featured">
-        <?php the_post_thumbnail( $post_id, 'large' ); ?>
+        <?php the_post_thumbnail( 'large' ); ?>
     </section>
 
     <section class="entry-content">
@@ -24,7 +24,7 @@
     </section>
 
     <footer class="entry-footer">
-        <?php get_template_part('partials/comments-link'); ?>
+        <?php get_template_part('parts/comments-link'); ?>
     </footer>
 
 </article>

@@ -9,16 +9,19 @@
 @import "common/global";
 
 // Components
+@import "components/comments";
 @import "components/grid";
-@import "components/shortcodes";
 @import "components/pager";
+@import "components/shortcodes";
+@import "components/widgets";
 @import "components/wp";
 
+// Layouts
+@import "layouts/footer";
+@import "layouts/header";
+@import "layouts/pages";
+@import "layouts/posts";
+@import "layouts/sidebar";
+
 // Templates
-@import "templates/comments";
-@import "templates/footer";
-@import "templates/header";
-@import "templates/pages";
-@import "templates/posts";
-@import "templates/sidebar";
-@import "templates/widgets";
+@import "templates/page-sidebar";

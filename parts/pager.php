@@ -4,7 +4,7 @@
  */
 ?>
 
-<nav class="post-nav">
+<nav class="pager">
     <?php if ( is_single() ) : ?>
         <span class="previous"><?php previous_post_link( '%link', __( '&larr; Previous', 'blujay' ) ); ?></span>
         <span class="next"><?php next_post_link( '%link', __( 'Next &rarr;', 'blujay' ) ); ?></span>

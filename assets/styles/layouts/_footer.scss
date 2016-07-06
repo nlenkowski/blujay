@@ -12,15 +12,16 @@
 }
 
 .footer-widgets {
-    @include clearfix();
     border-top: 1px solid $color-border;
+    @include clearfix();
 
     .widget {
-        margin-top: 15px;
+        @include breakpoint($md) {
+            @include span(4);
 
-        ul {
-            padding-left: 0;
-            list-style: none;
+            &:first-child {
+                @include first;
+            }
         }
     }
 }

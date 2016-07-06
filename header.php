@@ -18,7 +18,7 @@
     <header class="site-header">
         <div class="container">
 
-            <h1 class="title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
             <h2 class="tagline"><?php bloginfo( 'description' ); ?></h2>
 
             <nav class="primary-navigation">

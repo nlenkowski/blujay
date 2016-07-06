@@ -4,13 +4,13 @@
  */
 ?>
 
-<article class="entry entry-none">
+<article class="content content-none">
 
-    <header class="entry-header">
-        <h1 class="entry-title"><?php _e( 'Nothing Found', 'blujay' ); ?></h1>
+    <header class="page-header">
+        <h1 class="page-title"><?php _e( 'Nothing Found', 'blujay' ); ?></h1>
     </header>
 
-    <section class="entry-content">
+    <section class="page-content">
 
         <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 

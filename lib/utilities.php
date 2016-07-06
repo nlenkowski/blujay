@@ -49,7 +49,7 @@ function blujay_js_to_footer() {
 }
 
 /**
- * Adds some useful classes to the body blass
+ * Adds some useful classes to the body
  */
 function blujay_add_page_slug( $classes ) {
     global $post;
@@ -59,7 +59,7 @@ function blujay_add_page_slug( $classes ) {
         $classes[] = $post->post_type . '-' . $post->post_name;
     }
 
-    // Add is-blog class if current page is a blog related page
+    // Add is-blog class if blog related page
     if ( ((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_search()) || (is_tag()) ) == true) {
         $classes[] = "is-blog";
     }

@@ -9,26 +9,23 @@
         margin-bottom: 30px;
     }
 
+    .entry-header {
+        margin-bottom: 20px;
+    }
+
+    .entry-title {
+        margin-top: 50px;
+        margin-bottom: 15px;
+    }
+
     .comments-link {
         display: block;
         margin-top: 10px;
     }
 }
 
-// Blog posts and single posts
-.blog, .single {
-
-    .entry-header {
-        margin-bottom: 20px;
-    }
-}
-
-// Archive and search results posts
+// Archive and search posts use excerpts layout
 .archive, .search-results {
-
-    .entries-header {
-        margin-bottom: 50px;
-    }
 
     .entry {
         @include clearfix;
@@ -43,20 +40,15 @@
 
     .entry-featured {
         @include breakpoint($md) {
-            @include span(2 of 12);
-            &:first-child {
-                @include first;
-            }
+            @include span(2 first);
         }
     }
 
     .entry-content {
+        margin-bottom: 30px;
         @include breakpoint($md) {
+            @include span(10);
             padding-left: 20px;
-            @include span(10 of 12);
-            &:first-child {
-                @include first;
-            }
         }
     }
 }

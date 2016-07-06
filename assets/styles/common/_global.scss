@@ -44,6 +44,10 @@ a {
     }
 }
 
+textarea, input, button {
+    font-size: $font-size-base;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -53,7 +57,7 @@ img {
 // Typography
 //
 
-.title {
+.site-title {
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 4.5rem;
@@ -65,8 +69,13 @@ img {
     font-size: $f4;
 }
 
-.entry-title {
-    margin-top: 30px;
+.page-title {
+    margin-top: 50px;
+    margin-bottom: 30px
+}
+
+.post-title {
+    margin-top: 50px;
     margin-bottom: 15px;
 }
 
@@ -75,8 +84,10 @@ img {
 //
 
 .container {
-    padding: 0 20px;
     @include container;
+    padding-right: 20px;
+    padding-left: 20px;
+
     @include breakpoint($xl) {
         padding: 0;
     }

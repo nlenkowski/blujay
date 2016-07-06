@@ -4,14 +4,14 @@
  */
 ?>
 
-<?php get_template_part( 'partials/header' ); ?>
+<?php get_header(); ?>
 
 <main class="main">
 
     <?php while ( have_posts() ) : the_post(); ?>
-        <?php get_template_part( 'partials/content', 'page' ); ?>
+        <?php get_template_part( 'parts/content', 'page' ); ?>
     <?php endwhile; ?>
 
 </main>
 
-<?php get_template_part( 'partials/footer' ); ?>
+<?php get_footer(); ?>

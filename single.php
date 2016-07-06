@@ -4,19 +4,19 @@
  */
 ?>
 
-<?php get_template_part( 'partials/header' ); ?>
+<?php get_header(); ?>
 
 <main class="main">
 
     <?php while ( have_posts() ) : the_post(); ?>
 
-        <?php get_template_part( 'partials/content', 'single' ); ?>
+        <?php get_template_part( 'parts/content', 'single' ); ?>
 
-        <?php get_template_part( 'partials/pager' ); ?>
+        <?php get_template_part( 'parts/pager' ); ?>
 
         <?php
         if ( comments_open() || '0' != get_comments_number() ) :
-            comments_template( '/partials/comments.php' );
+            comments_template( '/comments.php' );
         endif;
         ?>
 
@@ -24,6 +24,6 @@
 
 </main>
 
-<?php get_template_part( 'partials/sidebar' ); ?>
+<?php get_sidebar(); ?>
 
-<?php get_template_part( 'partials/footer' ); ?>
+<?php get_footer(); ?>

@@ -10,6 +10,6 @@ if ( !is_active_sidebar( 'primary-sidebar' ) ) {
 }
 ?>
 
-<aside class="primary-sidebar sidebar widget-area">
+<aside class="sidebar primary-sidebar widget-area">
     <?php dynamic_sidebar( 'primary-sidebar' ); ?>
 </aside>

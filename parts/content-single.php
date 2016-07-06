@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="entry entry-single">
+<article id="post-<?php the_ID(); ?>" class="content content-single">
 
     <header class="entry-header">
 
@@ -12,11 +12,11 @@
             <?php the_title(); ?>
         </h1>
 
-        <?php get_template_part('partials/entry-meta'); ?>
+        <?php get_template_part('parts/entry-meta'); ?>
     </header>
 
     <section class="entry-featured">
-        <?php the_post_thumbnail( $post_id, 'large' ); ?>
+        <?php the_post_thumbnail( 'large' ); ?>
     </section>
 
     <section class="entry-content">

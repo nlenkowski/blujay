@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="entry entry-archive">
+<article id="post-<?php the_ID(); ?>" class="content content-archive">
 
     <section class="entry-featured">
         <?php the_post_thumbnail( 'thumbnail' ); ?>
@@ -18,7 +18,7 @@
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </h3>
 
-            <?php get_template_part('partials/entry-meta'); ?>
+            <?php get_template_part('parts/entry-meta'); ?>
         </header>
 
         <section class="entry-summary">
@@ -26,7 +26,7 @@
         </section>
 
         <footer class="entry-footer">
-            <?php get_template_part('partials/comments-link'); ?>
+            <?php get_template_part('parts/comments-link'); ?>
         </footer>
 
     </section>
