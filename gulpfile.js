@@ -155,10 +155,17 @@ gulp.task('watch', function() {
     gulp.watch([paths.assets + 'images/**/*'], ['images']);
 });
 
+// ### Build
+// 'gulp build' - Compiles all assets, but doesn't clean up dist directory first
+gulp.task('build', function() {
+    require('gulp-stats')(gulp);
+    runSequence('styles', 'scripts', ['fonts', 'images']);
+});
+
 // ## Gulp
-// 'gulp' - Compiles and optimizes project assets
-// 'gulp --production' - Compiles assets for production (disables source maps)
+// 'gulp' - Compiles all assets for development
+// 'gulp --production' - Compiles all assets for production (disables source maps)
 gulp.task('default', function() {
     require('gulp-stats')(gulp);
-    runSequence('clean', 'scripts', 'styles', 'fonts', 'images');
+    runSequence('clean', 'scripts', 'styles', ['fonts', 'images']);
 });
