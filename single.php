@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays single post entry
+ * Displays single posts
  */
 ?>
 

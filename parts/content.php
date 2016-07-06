@@ -1,29 +1,29 @@
 <?php
 /**
- * Displays default post content
+ * Displays posts content
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="content content-default">
+<article id="post-<?php the_ID(); ?>" class="content content-post">
 
-    <header class="entry-header">
+    <header class="post-header">
 
-        <h1 class="entry-title">
+        <h1 class="post-title">
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </h1>
 
-        <?php get_template_part('parts/entry-meta'); ?>
+        <?php get_template_part('parts/post-meta'); ?>
     </header>
 
-    <section class="entry-featured">
+    <section class="post-featured">
         <?php the_post_thumbnail( 'large' ); ?>
     </section>
 
-    <section class="entry-content">
+    <section class="post-content">
         <?php the_content(); ?>
     </section>
 
-    <footer class="entry-footer">
+    <footer class="post-footer">
         <?php get_template_part('parts/comments-link'); ?>
     </footer>
 

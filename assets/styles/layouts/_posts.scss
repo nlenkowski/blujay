@@ -5,15 +5,15 @@
 // All posts
 .blog, .single, .archive, .search-results {
 
-    .entry {
+    .post {
         margin-bottom: 30px;
     }
 
-    .entry-header {
+    .post-header {
         margin-bottom: 20px;
     }
 
-    .entry-title {
+    .post-title {
         margin-top: 50px;
         margin-bottom: 15px;
     }
@@ -27,24 +27,24 @@
 // Archive and search posts use excerpts layout
 .archive, .search-results {
 
-    .entry {
+    .post {
         @include clearfix;
     }
 
-    .entry-title {
+    .post-title {
         margin-top: 15px;
         @include breakpoint($md) {
             margin-top: 0px;
         }
     }
 
-    .entry-featured {
+    .post-featured {
         @include breakpoint($md) {
             @include span(2 first);
         }
     }
 
-    .entry-content {
+    .post-content {
         margin-bottom: 30px;
         @include breakpoint($md) {
             @include span(10);
