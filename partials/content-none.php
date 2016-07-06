@@ -8,7 +8,7 @@
 
     <header class="entry-header">
         <h1 class="entry-title"><?php _e( 'Nothing Found', 'blujay' ); ?></h1>
-    </header><!-- /entry-header -->
+    </header>
 
     <div class="entry-content">
 
@@ -28,5 +28,5 @@
 
         <?php endif; ?>
 
-    </div><!-- /entry-content -->
-</section><!-- /no-results -->
+    </div>
+</section><

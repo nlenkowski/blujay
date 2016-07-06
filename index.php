@@ -41,7 +41,7 @@
 
     <?php endif; ?>
 
-</main><!-- /main -->
+</main>
 
 <?php get_template_part( 'partials/sidebar' ); ?>
 

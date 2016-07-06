@@ -102,7 +102,7 @@ gulp.task('images', function() {
 });
 
 // ## Fonts
-// `gulp fonts` - Outputs font assets to dist in a flattened directory structure
+// 'gulp fonts' - Outputs font assets to dist in a flattened directory structure
 gulp.task('fonts', function() {
     return gulp.src([
         paths.assets + 'fonts/**/*.eot',
@@ -137,7 +137,7 @@ gulp.task('reload', function() {
 });
 
 // ## Watch
-// `gulp watch` - Use BrowserSync to proxy your local development server and
+// 'gulp watch' - Use BrowserSync to proxy your local development server and
 // synchronize code changes across devices. Specify your development server
 // hostname in config.json. See http://browsersync.io for details.
 gulp.task('watch', function() {

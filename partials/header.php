@@ -25,8 +25,8 @@
                 <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
             </nav>
 
-        </div><!-- /container -->
-    </header><!-- /site-header -->
+        </div>
+    </header>
 
     <section class="site-content">
         <div class="container">

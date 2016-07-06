@@ -18,7 +18,7 @@
             <?php the_post_thumbnail( $post_id, 'large' ); ?>
         </div>
 
-    </header><!-- /entry-header -->
+    </header>
 
     <div class="entry-content">
         <?php the_content(); ?>
@@ -28,10 +28,10 @@
                 'after'  => '</div>',
             ) );
         ?>
-    </div><!-- /entry-content -->
+    </div>
 
     <footer class="entry-footer">
         <?php edit_post_link( __( 'Edit', 'blujay' ), '<span class="edit-link">', '</span>' ); ?>
-    </footer><!-- /entry-footer -->
+    </footer>
 
-</article><!-- /post -->
+</article>

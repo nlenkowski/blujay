@@ -24,7 +24,7 @@
                 </div>
             <?php endif; ?>
 
-        </header><!-- /entry-header -->
+        </header>
 
         <?php if ( is_search() ) : ?>
 
@@ -48,7 +48,7 @@
 
             <?php edit_post_link( __( 'Edit', 'blujay' ), '<span class="edit-link">', '</span>' ); ?>
 
-        </footer><!-- /entry-footer -->
+        </footer>
 
-    </div><!-- /entry-container -->
-</article><!-- /post -->
+    </div>
+</article>

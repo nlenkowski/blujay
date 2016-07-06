@@ -4,8 +4,8 @@
  */
 ?>
 
-        </div><!-- /container -->
-    </section><!-- /site-content -->
+        </div>
+    </section>
 
     <footer class="site-footer">
         <div class="container">
@@ -18,8 +18,8 @@
                 <a href="<?php echo site_url(); ?>"><?php bloginfo( 'name' ); ?></a>, <?php bloginfo( 'description' )?>
             </div>
 
-        </div><!-- /container -->
-    </footer><!-- /footer -->
+        </div>
+    </footer>
 
     <?php wp_footer(); ?>
 

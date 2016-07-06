@@ -12,8 +12,8 @@
 
         <?php get_template_part( 'partials/content', 'page' ); ?>
 
-    <?php endwhile; // end of the loop. ?>
+    <?php endwhile; // end of the loop ?>
 
-</main><!-- /main -->
+</main>
 
 <?php get_template_part( 'partials/footer' ); ?>
