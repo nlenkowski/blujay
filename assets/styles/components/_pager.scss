@@ -1,0 +1,16 @@
+/**
+ * Pager
+ */
+
+.post-nav {
+    @include clearfix();
+    margin-top: 30px;
+
+    .previous {
+        float: left;
+    }
+
+    .next {
+        float: right;
+    }
+}
