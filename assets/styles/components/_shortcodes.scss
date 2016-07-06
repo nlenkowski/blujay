@@ -2,8 +2,8 @@
  * Shortcodes
  */
 
-// Classes for columns shortcodes
 .columns {
+    @include clearfix();
     @include breakpoint($md) {
 
         .one-fourth {
@@ -22,12 +22,8 @@
             @include span(8);
         }
     }
-    @include clearfix();
 }
 
-.column {
-
-    &:first-child {
-        @include first;
-    }
+.column:first-child {
+    @include first;
 }
