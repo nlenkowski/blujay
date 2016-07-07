@@ -12,7 +12,7 @@
             <?php the_title(); ?>
         </h1>
 
-        <?php get_template_part('parts/post-meta'); ?>
+        <?php get_template_part('partials/post-meta'); ?>
     </header>
 
     <section class="post-featured">

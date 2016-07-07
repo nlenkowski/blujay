@@ -10,9 +10,9 @@
 
     <?php while ( have_posts() ) : the_post(); ?>
 
-        <?php get_template_part( 'parts/content', 'single' ); ?>
+        <?php get_template_part( 'partials/content', 'single' ); ?>
 
-        <?php get_template_part( 'parts/pager' ); ?>
+        <?php get_template_part( 'partials/pager' ); ?>
 
         <?php
         if ( comments_open() || '0' != get_comments_number() ) :
