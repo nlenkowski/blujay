@@ -1,9 +1,9 @@
 {
-    "paths": {
+    "path": {
         "assets": "assets/",
         "dist": "dist/"
     },
-    "assets": {
+    "manifest": {
         "scripts": [
             "node_modules/picturefill/dist/picturefill.js",
             "assets/scripts/main.js"
