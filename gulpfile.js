@@ -73,8 +73,8 @@ gulp.task('styles', function() {
 });
 
 // ## Scripts
-// 'gulp scripts' - Lints, combines, minifies and generates source maps for
-// scripts, ES6 scripts are transpiled with Babel
+// 'gulp scripts' - Lints, transpiles ES6, combines, minifies and generates
+// source maps for scripts
 gulp.task('scripts', ['lint'], function() {
     return gulp.src(dependencies.scripts)
         .pipe(plumber(plumberOptions))

@@ -1,8 +1,7 @@
 # Blujay
 ### A modern starter theme for WordPress
 
-Blujay is a minimal, responsive starter theme with modern tooling. 
-Use it to bootstrap your next WordPress project and make it your own!
+Blujay is a minimal, responsive starter theme with modern tooling.
 
 * [Homepage](http://blujay.littlebiglab.com)
 * [Demo](http://blujay.littlebiglab.com/demo)
@@ -14,7 +13,7 @@ Use it to bootstrap your next WordPress project and make it your own!
 * [Gulp](http://gulpjs.com) build system automates common development tasks
 * [Browsersync](http://browsersync.io) enables synchronized browser testing and live reloading
 * Front-end package management with [npm](https://www.npmjs.com)
-* [ES6](https://babeljs.io/docs/learn-es2015) support with [Babel](https://babeljs.io) transpiling
+* [ES6](https://babeljs.io/docs/learn-es2015) support with [Babel](https://babeljs.io)
 * Built with [Sass](http://sass-lang.com)
 * [Susy](http://susy.oddbird.net) grid system
 * [Breakpoint](http://breakpoint-sass.com) named media queries
@@ -63,7 +62,7 @@ Edit `assets/config.json` and update your `devUrl` to reflect your local develop
 For example:
 
 ```
-"devUrl": "http://my-project.dev"
+"devUrl": "http://project-name.dev"
 ```
 
 ## Theme development
@@ -72,16 +71,16 @@ Blujay uses [gulp](http://gulpjs.com/) as a build tool.
 
 ### Development tasks
 
-* `gulp watch` monitors theme files and assets for changes and live reloads with [Browsersync](http://browsersync.io).
+* `gulp watch` monitors theme files and assets for changes and live reloads with [Browsersync](http://browsersync.io)
 
 ### Build tasks
 
-Use the following tasks to compile your theme assets. All assets are output to the `dist` directory.
+Use the following to compile your theme assets to the `dist` directory.
 
 
 * `gulp styles` — Compiles Sass, autoprefixes, minifies and generates source maps for styles
 
-* `gulp scripts` — Lints, combines, minifies and generates source maps for scripts, ES6 scripts are transpiled with Babel
+* `gulp scripts` — Lints, transpiles ES6, combines, minifies and generates source maps for scripts
 
 * `gulp images` — Optimizes images
 
