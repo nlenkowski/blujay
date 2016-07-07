@@ -1,7 +1,7 @@
 ### 1.3.0 - 2016-07-07
-* Switch from Bower to NPM for frontend dependencies
+* Switch from Bower to npm for frontend dependencies
 * Add asset configuration file for managing paths and dependencies
-* Add ES6 support to scripts build task
+* Add ES6 support with Babel to scripts build task
 * Switch scripts linter from jshint to eslint
 * Add font and image optimization build tasks
 * Add source maps generation to styles and scripts build tasks
