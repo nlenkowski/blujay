@@ -32,5 +32,4 @@ function blujay_column_two_thirds( $atts, $content = null ) {
     return '<div class="column two-thirds">' . do_shortcode($content) . '</div>';
 }
 add_shortcode( 'column_two_thirds', 'blujay_column_two_thirds' );
-
 ?>

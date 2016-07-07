@@ -89,3 +89,4 @@ function blujay_custom_image_sizes( $image_sizes ) {
 
     return $image_sizes;
 }
+?>
