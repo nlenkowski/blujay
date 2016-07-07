@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays default entries
+ * Displays standard posts
  */
 ?>
 

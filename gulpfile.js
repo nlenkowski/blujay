@@ -30,11 +30,11 @@ var config       = require('./assets/config.json'),
 // Command line options
 var enabled = {
 
-    // Enable production build
+    // Enable production build argument
     production: argv.production
 };
 
-// Custom error handler to send native notifications
+// Custom error handler to send native system notifications
 var onError = function(err) {
     notify.onError({
         title: "Gulp",
@@ -51,25 +51,9 @@ var plumberOptions = {
 // Tasks
 //
 
-// ## Scripts
-// 'gulp scripts' - Lints, combines, minifies and adds source maps for scripts
-gulp.task('scripts', ['lint'], function() {
-    return gulp.src(manifest.scripts)
-        .pipe(plumber(plumberOptions))
-        .pipe(gulpif(!enabled.production, sourcemaps.init()))
-        .pipe(concat('main.js'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(babel({
-			presets: ['es2015']
-		}))
-        .pipe(uglify())
-        .pipe(gulpif(!enabled.production, sourcemaps.write()))
-        .pipe(gulp.dest(path.dist + 'scripts'))
-        .pipe(browsersync.stream());
-});
-
 // ## Styles
-// 'gulp styles' - Compiles, autoprefixes, minifies and adds source maps for styles
+// 'gulp styles' - Compiles, autoprefixes, minifies and generates source maps
+// for styles.
 gulp.task('styles', function() {
     return gulp.src(dependencies.styles)
         .pipe(plumber(plumberOptions))
@@ -88,9 +72,26 @@ gulp.task('styles', function() {
         .pipe(browsersync.stream());
 });
 
+// ## Scripts
+// 'gulp scripts' - Lints, combines, minifies and generates source maps for
+// scripts, ES6 scripts are transpiled with Babel
+gulp.task('scripts', ['lint'], function() {
     return gulp.src(dependencies.scripts)
+        .pipe(plumber(plumberOptions))
+        .pipe(gulpif(!enabled.production, sourcemaps.init()))
+        .pipe(concat('main.js'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(babel({
+			presets: ['es2015']
+		}))
+        .pipe(uglify())
+        .pipe(gulpif(!enabled.production, sourcemaps.write()))
+        .pipe(gulp.dest(path.dist + 'scripts'))
+        .pipe(browsersync.stream());
+});
+
 // ## Images
-// 'gulp images' - Optimizes image assets and outputs to dist
+// 'gulp images' - Optimizes images with imagemin
 gulp.task('images', function() {
     return gulp.src(path.assets + 'images/**/*')
         .pipe(changed(path.dist + 'images'))
@@ -103,7 +104,7 @@ gulp.task('images', function() {
 });
 
 // ## Fonts
-// 'gulp fonts' - Outputs font assets to dist in a flattened directory structure
+// 'gulp fonts' - Gathers font files and outputs to flat directory structure
 gulp.task('fonts', function() {
     return gulp.src([
         path.assets + 'fonts/**/*.eot',
@@ -137,10 +138,25 @@ gulp.task('reload', function() {
     browsersync.reload();
 });
 
+// ## Build
+// 'gulp build' - Builds all assets without cleaning dist, you
+//  should use the `gulp` task to ensure a proper build
+gulp.task('build', function() {
+    require('gulp-stats')(gulp);
+    runSequence('styles', 'scripts', ['fonts', 'images']);
+});
+
+// ## Gulp
+// 'gulp' - Builds all assets
+// 'gulp --production' - Builds all assets for production (no source maps)
+gulp.task('default', function() {
+    runSequence('clean', 'build');
+});
+
 // ## Watch
-// 'gulp watch' - Use BrowserSync to proxy your local development server and
-// synchronize code changes across devices. Specify your development server
-// hostname in config.json. See http://browsersync.io for details.
+// 'gulp watch' - Monitors theme files and assets for changes and live reloads
+// with Browsersync. You must update your devUrl in config.json to reflect your
+// local development hostname.
 gulp.task('watch', function() {
     browsersync.init({
         proxy: config.devUrl,
@@ -150,23 +166,8 @@ gulp.task('watch', function() {
         }
     });
     gulp.watch(['**/*.php'], ['reload']);
-    gulp.watch([path.assets + 'scripts/**/*'], ['scripts']);
     gulp.watch([path.assets + 'styles/**/*'], ['styles']);
+    gulp.watch([path.assets + 'scripts/**/*'], ['scripts']);
     gulp.watch([path.assets + 'fonts/**/*'], ['fonts']);
     gulp.watch([path.assets + 'images/**/*'], ['images']);
-});
-
-// ### Build
-// 'gulp build' - Compiles all assets, but doesn't clean up dist directory first
-gulp.task('build', function() {
-    require('gulp-stats')(gulp);
-    runSequence('styles', 'scripts', ['fonts', 'images']);
-});
-
-// ## Gulp
-// 'gulp' - Compiles all assets for development
-// 'gulp --production' - Compiles all assets for production (disables source maps)
-gulp.task('default', function() {
-    require('gulp-stats')(gulp);
-    runSequence('clean', 'scripts', 'styles', ['fonts', 'images']);
 });

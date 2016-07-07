@@ -2,10 +2,7 @@
  * Utilities
  */
 
-/*
- * Micro clearfix
- * http://cssmojo.com/latest_new_clearfix_so_far/
- */
+// Micro clearfix
 @mixin clearfix {
     &::after {
         clear: both;

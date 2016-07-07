@@ -1,25 +1,8 @@
 <?php
 /**
- * Theme setup
- * Registers constants, assets, menus, image sizes, sidebars, widget areas, etc
+ * Setup
+ * Enables theme features and utilities and register assets, menus, image sizes, sidebars, etc.
  */
-
- /**
-  * Register constants
-  */
- define( 'THEMEDIR', get_template_directory_uri() );
- define( 'ASSETDIR', THEMEDIR . '/assets' );
- define( 'DISTDIR', THEMEDIR . '/dist' );
-
- /**
-  * Register assets
-  */
- function blujay_register_assets() {
-     wp_enqueue_script( 'main-scripts', DISTDIR . '/scripts/main.min.js', array('jquery'), '', true );
-     wp_enqueue_style( 'main-styles', DISTDIR . '/styles/main.min.css', false );
-     wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700', false );
- }
- add_action( 'wp_enqueue_scripts', 'blujay_register_assets' );
 
  /**
   * Theme setup
@@ -69,6 +52,23 @@ function blujay_theme_utilities() {
     add_filter( 'widget_text', 'do_shortcode' );
 }
 add_action( 'after_setup_theme', 'blujay_theme_utilities' );
+
+/**
+ * Register constants
+ */
+define( 'THEMEDIR', get_template_directory_uri() );
+define( 'ASSETDIR', THEMEDIR . '/assets' );
+define( 'DISTDIR', THEMEDIR . '/dist' );
+
+/**
+ * Register assets
+ */
+function blujay_register_assets() {
+    wp_enqueue_script( 'main-scripts', DISTDIR . '/scripts/main.min.js', array('jquery'), '', true );
+    wp_enqueue_style( 'main-styles', DISTDIR . '/styles/main.min.css', false );
+    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700', false );
+}
+add_action( 'wp_enqueue_scripts', 'blujay_register_assets' );
 
 /**
  * Register menus

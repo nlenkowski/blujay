@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme utilities
+ * Utilities
  */
 
 /**

@@ -7,14 +7,14 @@
 @import "common/utilities";
 @import "common/variables";
 @import "common/global";
+@import "common/shortcodes";
+@import "common/wp";
 
 // Components
 @import "components/comments";
 @import "components/grid";
 @import "components/pager";
-@import "components/shortcodes";
 @import "components/widgets";
-@import "components/wp";
 
 // Layouts
 @import "layouts/footer";

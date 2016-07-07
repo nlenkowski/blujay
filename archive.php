@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays archive entries
+ * Displays archive posts
  */
 ?>
 
