@@ -12,7 +12,7 @@
 }
 
 .footer-widgets {
-    @include clearfix();
+    @include container;
     border-top: 1px solid $color-border;
 
     .widget {

@@ -28,7 +28,7 @@
 .archive, .search-results {
 
     .post {
-        @include clearfix;
+        @include container;
     }
 
     .post-featured-image {

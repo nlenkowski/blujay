@@ -3,7 +3,7 @@
  */
 
 .columns {
-    @include clearfix();
+    @include container;
     @include breakpoint($md) {
 
         .one-fourth {
