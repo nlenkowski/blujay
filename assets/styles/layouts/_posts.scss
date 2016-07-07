@@ -31,14 +31,7 @@
         @include clearfix;
     }
 
-    .post-title {
-        margin-top: 15px;
-        @include breakpoint($md) {
-            margin-top: 0px;
-        }
-    }
-
-    .post-featured {
+    .post-featured-image {
         @include breakpoint($md) {
             @include span(2);
         }
@@ -49,6 +42,13 @@
         @include breakpoint($md) {
             @include span(10 last);
             padding-left: 20px;
+        }
+    }
+
+    .post-title {
+        margin-top: 15px;
+        @include breakpoint($md) {
+            margin-top: 0px;
         }
     }
 }

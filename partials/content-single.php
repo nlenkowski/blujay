@@ -15,7 +15,7 @@
         <?php get_template_part('partials/post-meta'); ?>
     </header>
 
-    <section class="post-featured">
+    <section class="post-featured-image">
         <?php the_post_thumbnail( 'large' ); ?>
     </section>
 
