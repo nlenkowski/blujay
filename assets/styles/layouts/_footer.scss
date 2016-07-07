@@ -19,8 +19,8 @@
         @include breakpoint($md) {
             @include span(4);
 
-            &:first-child {
-                @include first;
+            &:last-child {
+                @include last;
             }
         }
     }

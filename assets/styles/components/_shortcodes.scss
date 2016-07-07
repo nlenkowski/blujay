@@ -24,6 +24,6 @@
     }
 }
 
-.column:first-child {
-    @include first;
+.column:last-child {
+    @include last;
 }

@@ -24,7 +24,7 @@
     }
 }
 
-// Archive and search posts use excerpts layout
+// Archive and search posts
 .archive, .search-results {
 
     .post {
@@ -40,14 +40,14 @@
 
     .post-featured {
         @include breakpoint($md) {
-            @include span(2 first);
+            @include span(2);
         }
     }
 
     .post-content {
         margin-bottom: 30px;
         @include breakpoint($md) {
-            @include span(10);
+            @include span(10 last);
             padding-left: 20px;
         }
     }
