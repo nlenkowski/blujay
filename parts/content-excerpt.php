@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="content content-excerpt">
+<article id="post-<?php the_ID(); ?>" class="post content content-excerpt">
 
     <section class="post-featured">
         <?php the_post_thumbnail( 'thumbnail' ); ?>

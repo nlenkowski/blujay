@@ -4,7 +4,7 @@
  */
 ?>
 
-<article class="content content-none">
+<article class="page content content-none">
 
     <header class="page-header">
         <h1 class="page-title"><?php _e( 'Nothing Found', 'blujay' ); ?></h1>

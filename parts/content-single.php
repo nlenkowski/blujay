@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="content content-single">
+<article id="post-<?php the_ID(); ?>" class="post content content-single">
 
     <header class="post-header">
 
