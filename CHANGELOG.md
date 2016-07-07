@@ -1,24 +1,44 @@
+### 1.3.0 - 2016-07-07
+* Switch from Bower to NPM for frontend dependencies
+* Add asset configuration file for managing paths and dependencies
+* Add ES6 support to scripts build task
+* Switch scripts linter from jshint to eslint
+* Add font and image optimization build tasks
+* Add source maps generation to styles and scripts build tasks
+* Remove dist directory from version control
+* Improve theme directory structure
+* Combine and simplify theme libs
+* Move utilities lib inits to setup lib
+* Add archive and search templates
+* Add custom page template example
+* Improve styles and typography
+* Add grid and pager components
+* Remove button component
+* Improve adherence to WordPress coding standards
+* Improve indentation and comments
+* Upgrade vendor dependencies
+
 ### 1.2.2 - 2016-02-02
 
-* Removed Font Awesome, better to use [Better Font Awesome](https://wordpress.org/plugins/better-font-awesome/) plugin instead
+* Remove Font Awesome
 
 ### 1.2.1 - 2016-02-01
 
-* Added dist directory to repo to simplify git deployment
-* Fixed copy in readme that was causing wp-migrate-db find/replace issues
+* Add dist directory to repo to simplify git deployment
+* Fix copy in readme that was causing wp-migrate-db find/replace issues
 * Minor style and typography improvements
 
 ### 1.2.0 - 2016-01-28
-* Switched task runner from Grunt to Gulp
-* Replaced LiveReload with BrowserSync
-* Refactored and improved main styles and scripts
-* Relocated assets and build directories
-* Removed theme and plugin activation scripts that were causing problems in some environments
-* Removed legacy browser support (IE8/9/10 are finally officially dead)
-* Removed unneeded video embed shortcodes (oEmbed now handles this)
-* Added new theme utilities to cleanup header and move all scripts to footer
-* Changed theme font from Museo to Roboto Slab
-* Improved comments
+* Switch task runner from Grunt to Gulp
+* Replace LiveReload with BrowserSync
+* Refactor and improve main styles and scripts
+* Relocate assets and build directories
+* Remove theme and plugin activation scripts that were causing issues in some environments
+* Remove legacy browser support
+* Remove unneeded video embed shortcodes (oEmbed now handles this)
+* Add new theme utilities to cleanup header and move all scripts to footer
+* Change theme font from Museo to Roboto Slab
+* Improve comments
 
 ### 1.1.0 - 2015-02-24
 * Convert theme from Less to Sass

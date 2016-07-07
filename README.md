@@ -1,7 +1,7 @@
 # Blujay
 ### A modern starter theme for WordPress
 
-Blujay is a minimal, responsive starter theme built with modern web development tools.   
+Blujay is a minimal, responsive starter theme with modern tooling. 
 Use it to bootstrap your next WordPress project and make it your own!
 
 * [Homepage](http://blujay.littlebiglab.com)
@@ -11,118 +11,153 @@ Use it to bootstrap your next WordPress project and make it your own!
 
 ## Features
 
-* Minimal responsive starter theme built with [Sass](http://sass-lang.com/)
-* [Gulp](http://gulpjs.com/) build system automates common development and deployment tasks
-* [Bower](http://bower.io/) front end package management
-* [Browsersync](browsersync.io) synchronizes browser testing and injects file changes while you're developing
-* [Susy](http://susy.oddbird.net/) responsive grid framework
-* [Breakpoint](http://breakpoint-sass.com/) named media queries
-* [Picturefill](http://picturefill.com/) polyfill enables responsive images for all  browsers
-* Utility functions for cleaning up the header, moving scripts to the footer, etc.
-* A few useful [shortcodes](http://blujay.blueberryln.com/demo/shortcodes) and Sass mixins
+* [Gulp](http://gulpjs.com) build system automates common development tasks
+* [Browsersync](http://browsersync.io) enables synchronized browser testing and live reloading
+* Front-end package management with [npm](https://www.npmjs.com)
+* [ES6](https://babeljs.io/docs/learn-es2015) support with [Babel](https://babeljs.io) transpiling
+* Built with [Sass](http://sass-lang.com)
+* [Susy](http://susy.oddbird.net) grid system
+* [Breakpoint](http://breakpoint-sass.com) named media queries
+* [Picturefill](http://picturefill.com) responsive images polyfill
+* Handy theme [utilities](https://github.com/nlenkowski/blujay/blob/master/lib/utilities.php) for cleaning up the header, moving scripts to the footer, etc.
+* A few useful [shortcodes](https://github.com/nlenkowski/blujay/blob/master/lib/shortcodes.php) and [mixins](https://github.com/nlenkowski/blujay/blob/master/assets/styles/common/_utilities.scss)
+
+> Most features are optional and can be easily disabled. If you don't need Susy or Breakpoint just comment out their includes and bake your own solutions.
+
+## Theme installation
 
 
-> Most features are optional and can be disabled easily. For example, if you don't want to use Susy or Breakpoint in your theme, just comment out their includes and bake your own solutions.
+Install Node.js from [https://nodejs.org](https://nodejs.org).
 
-## Not Featuring
+### Install gulp
 
-* Heavy frameworks like Bootstrap, Foundation and Compass
-* jQueryUI and other bulky scripts
-* The kitchen sink
 
-## Build System
+```
+npm install -g gulp
+```
 
-Blujay uses [Gulp](http://gulpjs.com/) to automate common development and deployment tasks:
+### Install theme
 
-* Compiles, autoprefixes and compresses `styles/main.scss` into `dist/main.min.css` with [gulp-sass](https://www.npmjs.com/package/gulp-sass), [gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer) and [gulp-cssnano](https://github.com/ben-eb/gulp-cssnano)
-* Compiles and compresses `scripts/lib/*` and `scripts/main.js` into `dist/main.min.js` with [gulp-uglify](https://github.com/terinjokes/gulp-uglify)
-* Lints scripts with [gulp-jshint](gulp-jshint)
-* Synchronizes browser testing and injects styles and script changes during development with [BrowserSync](http://browsersync.io/)
-* Watches styles, scripts and theme files for changes
-* Strips debugging code from production assets with [gulp-strip-debug](https://github.com/sindresorhus/gulp-strip-debug)
-* Pipes build feedback and errors to the Mac notification center with [gulp-notify](https://github.com/mikaelbr/gulp-notify)
+```
+git clone git@github.com:nlenkowski/blujay.git theme-name && cd theme-name
+```
 
-## Package Management
+### Install dependencies
+```
+npm install
+```
 
-Using [Bower](http://bower.io/) for front end package management is entirely optional. We don't reference any Bower components directly in the theme, we prefer to keep our front end assets as lean and organized as possible. Rather we use Bower to quickly download our components and manually install only the files we need from each package into `assets/styles/lib` and `assets/scripts/lib`. That said, if you prefer to reference your Bower components directly from the `bower_components` directory nothing is stopping you!
+### Build assets
+```
+gulp
+```
 
-> If someday all Bower packages are required to specify their dependencies and main files correctly we'll look into integrating [wiredep](https://github.com/taptapship/wiredep) into the build process, but for now its just too much hassle.
+### Configure theme
 
-## Theme Functions
+Edit `lib/setup.php` to enable theme features and utilities and register assets, menus, image sizes, sidebars, etc.
 
-The theme functions are located in the `lib` directory and are initialized via `functions.php`, which acts as a loader for the following:
+### Configure Browsersync
 
-* `lib/setup.php` — Register constants, menus, sidebars, widget areas, etc
-* `lib/assets.php` — Loads scripts, styles and fonts
-* `lib/shortcodes.php` — Adds custom shortcodes
-* `lib/utilities.php` — Adds some useful WordPress utilities
-* `lib/custom.php` — Your custom theme functions go here instead of in `functions.php`
+Edit `assets/config.json` and update your `devUrl` to reflect your local development hostname.
 
-## Theme Assets
+For example:
 
-Theme assets reside in the `assets` directory:
+```
+"devUrl": "http://my-project.dev"
+```
+
+## Theme development
+
+Blujay uses [gulp](http://gulpjs.com/) as a build tool.
+
+### Development tasks
+
+* `gulp watch` monitors theme files and assets for changes and live reloads with [Browsersync](http://browsersync.io).
+
+### Build tasks
+
+Use the following tasks to compile your theme assets. All assets are output to the `dist` directory.
+
+
+* `gulp styles` — Compiles Sass, autoprefixes, minifies and generates source maps for styles
+
+* `gulp scripts` — Lints, combines, minifies and generates source maps for scripts, ES6 scripts are transpiled with Babel
+
+* `gulp images` — Optimizes images
+
+* `gulp fonts` — Gathers font files and outputs to flat directory structure
+
+* `gulp` — Builds all assets
+
+* `gulp --production` — Builds all assets for production (no source maps) 
+
+## Package management
+
+Blujay uses [npm](https://www.npmjs.com) for front-end package management. 
+
+### To install a new package
+
+```
+npm i -D picturefill
+```
+
+### Register the package dependency
+
+Edit `assets/config.json` and add the full path to the package's main styles and/or scripts:
+
+```
+"dependencies": {
+    "scripts": [
+        "node_modules/picturefill/dist/picturefill.js",
+        "assets/scripts/main.js"
+    ],
+    "styles": [
+        "assets/styles/main.scss"
+    ]
+}
+```
+> Dependencies are compiled in the order they are listed.
+
+## Theme structure
+
+### Hierarchy
+
+```
+├── assets                # → Front-end assets
+│   ├── fonts/            # → Theme fonts
+│   ├── images/           # → Theme images
+│   ├── scripts/          # → Theme scripts
+│   └── styles/           # → Theme styles
+│   ├── config.json       # → Settings for compiled assets
+├── dist/                 # → Built theme assets (never manually edit)
+├── lib/                  # → Theme PHP libraries
+├── node_modules/         # → Node.js packages (never manually edit)
+├── partials/             # → Partial templates
+├── templates/            # → Custom page templates
+├── functions.php         # → Theme PHP loader (never manually edit)
+├── gulpfile.js           # → Gulp scripts
+├── package.json          # → Node.js dependencies
+├── style.css             # → Theme meta information
+
+```
+
+### Assets
 
 * `assets/fonts` — Font source files
 * `assets/images` — Image source files
 * `assets/scripts` — JavaScript source files
-* `assets/scripts/lib` — JavaScript libraries
 * `assets/styles` — Sass source files
-* `assets/styles/lib` — Sass libraries
-* `assets/styles/common` — Styles common to all pages; variables, typography, utilities, etc.
-* `assets/styles/components` — Component styles for buttons, columns, etc.
-* `assets/styles/layouts` — Layout styles for header, footer, pages, posts, etc.
+* `assets/styles/common` — Common styles (global, variables, utilities, etc.)
+* `assets/styles/components` — Component styles (comments, grid, columns, etc.)
+* `assets/styles/layouts` — Styles for layouts (header, footer, pages, posts, etc.)
+* `assets/styles/templates` — Styles for custom page templates
+* `assets/config.json` — Compiled assets path and dependency configuration
 
-## Theme Installation
+### Lib
 
-From the command line:
-
-### Install Node
-
-Download and install Node for your local development environment from [http://nodejs.org/download/](http://nodejs.org/download/)
-
-### Install Gulp and Bower
-
-Blujay uses [Gulp](http://gulpjs.com/) as its build system and [Bower](http://bower.io/) to manage front end packages.
-
-```
-npm install -g gulp bower
-```
-
-> Installing Bower is optional, see "Package Management" above.
-
-### Install Theme
-
-Clone the Git repository and change to the theme directory:
-
-```
-git clone git@github.com:nlenkowski/blujay.git && cd blujay
-```
-
-> Now is a good time to rename the theme directory to reflect your project name
-
-### Configure Theme
-
-* Edit `lib/setup.php` to enable or disable theme features, setup navigation menus, custom image sizes, post formats, sidebars, etc.
-
-* Edit `lib/utilities.php` to enable or disable theme utilities such as cleaning up the header, moving all JS to the footer, etc.
-
-### Configure BrowserSync
-
-To use BrowserSync during `gulp watch` you need to update your `devUrl` in `gulpfile.js` to reflect your local development hostname.
-
-For example, if your local development URL is `http://myproject.dev` you would update the file to read:
-
-```
-var config = {
-  devUrl: 'http://myproject.dev'
-}
-```
-
-### Gulp Commands
-
-* `gulp` — Compile assets for development
-* `gulp watch` — Compile assets for development when file changes are detected
-* `gulp --production` — Compile and compress assets for production, strip debugging, etc.
+* `lib/setup.php` — Enables theme features and utilities and registers assets, menus, image sizes, sidebars, etc.
+* `lib/shortcodes.php` — Registers shortcodes
+* `lib/utilities.php` — Theme utilities for cleaning up the header, moving scripts to the footer, etc.
 
 ## Thanks
 
