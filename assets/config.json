@@ -3,7 +3,7 @@
         "assets": "assets/",
         "dist": "dist/"
     },
-    "manifest": {
+    "dependencies": {
         "scripts": [
             "node_modules/picturefill/dist/picturefill.js",
             "assets/scripts/main.js"

@@ -23,9 +23,9 @@ var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
 
 // Get project config
-var config = require('./config.json'),
-    path  = config.path,
-    manifest = config.manifest;
+var config       = require('./assets/config.json'),
+    path         = config.path,
+    dependencies = config.dependencies;
 
 // Command line options
 var enabled = {
@@ -71,7 +71,7 @@ gulp.task('scripts', ['lint'], function() {
 // ## Styles
 // 'gulp styles' - Compiles, autoprefixes, minifies and adds source maps for styles
 gulp.task('styles', function() {
-    return gulp.src(manifest.styles)
+    return gulp.src(dependencies.styles)
         .pipe(plumber(plumberOptions))
         .pipe(gulpif(!enabled.production, sourcemaps.init()))
         .pipe(concat('main.css'))
@@ -88,6 +88,7 @@ gulp.task('styles', function() {
         .pipe(browsersync.stream());
 });
 
+    return gulp.src(dependencies.scripts)
 // ## Images
 // 'gulp images' - Optimizes image assets and outputs to dist
 gulp.task('images', function() {
