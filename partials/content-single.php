@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Displays single post content
  */
@@ -16,7 +17,7 @@
     </header>
 
     <section class="post-featured-image">
-        <?php the_post_thumbnail( 'large' ); ?>
+        <?php the_post_thumbnail('large'); ?>
     </section>
 
     <section class="post-content">

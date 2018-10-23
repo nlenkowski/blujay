@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Displays the footer
  */
@@ -11,11 +12,11 @@
         <div class="container">
 
             <aside class="footer-widgets widget-area">
-                <?php dynamic_sidebar( 'footer-widgets' ); ?>
+                <?php dynamic_sidebar('footer-widgets'); ?>
             </aside>
 
             <div class="site-info">
-                <a href="<?php echo site_url(); ?>"><?php bloginfo( 'name' ); ?></a>, <?php bloginfo( 'description' )?>
+                <a href="<?php echo site_url(); ?>"><?php bloginfo('name'); ?></a>, <?php bloginfo('description') ?>
             </div>
 
         </div>
