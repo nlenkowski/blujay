@@ -1,10 +1,3 @@
-<?php
-
-/**
- * Displays standard posts
- */
-?>
-
 <?php get_header(); ?>
 
 <main class="main">
@@ -20,13 +13,10 @@
         <?php endif; ?>
 
     <?php else : ?>
-
         <?php get_template_part('partials/content', 'none'); ?>
-
     <?php endif; ?>
 
 </main>
 
 <?php get_sidebar(); ?>
-
 <?php get_footer(); ?>

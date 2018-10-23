@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Shortcodes
- */
-
 // Columns
 function blujay_columns($atts, $content = null)
 {

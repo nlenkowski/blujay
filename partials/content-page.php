@@ -1,10 +1,3 @@
-<?php
-
-/**
- * Displays page content
- */
-?>
-
 <article class="page content content-page">
 
     <header class="page-header">

@@ -1,12 +1,7 @@
 <?php
 
 /**
- * Utilities
- */
-
-/**
  * Cleanup header
- * Based on http://wpengineer.com/1438/wordpress-header and https://github.com/roots/soil
  */
 function blujay_head_cleanup()
 {
@@ -15,9 +10,9 @@ function blujay_head_cleanup()
     remove_action('wp_head', 'feed_links_extra', 3);
     remove_action('wp_head', 'rsd_link');
     remove_action('wp_head', 'wlwmanifest_link');
-    remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+    remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10);
     remove_action('wp_head', 'wp_generator');
-    remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+    remove_action('wp_head', 'wp_shortlink_wp_head', 10);
 
     // Remove the WordPress version from RSS feeds
     add_filter('the_generator', '__return_false');
@@ -26,7 +21,7 @@ function blujay_head_cleanup()
 // Disable REST API and oEmbed discovery links
 function blujay_disable_rest_and_oembed()
 {
-    remove_action('wp_head', 'rest_output_link_wp_head', 10, 0);
+    remove_action('wp_head', 'rest_output_link_wp_head', 10);
     remove_action('wp_head', 'wp_oembed_add_discovery_links');
     remove_action('wp_head', 'wp_oembed_add_host_js');
 }

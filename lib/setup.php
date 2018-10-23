@@ -1,16 +1,10 @@
 <?php
 
 /**
- * Setup
- * Enables theme features and utilities and register assets, menus, image sizes, sidebars, etc.
- */
-
-/**
  * Theme setup
  */
 function blujay_setup()
 {
-
     // Make theme available for translation
     load_theme_textdomain('blujay', get_template_directory() . '/lang');
 
@@ -36,7 +30,6 @@ add_action('after_setup_theme', 'blujay_setup');
  */
 function blujay_theme_utilities()
 {
-
     // Cleanup header
     add_action('init', 'blujay_head_cleanup');
     add_action('init', 'blujay_disable_rest_and_oembed');
@@ -57,7 +50,7 @@ function blujay_theme_utilities()
 add_action('after_setup_theme', 'blujay_theme_utilities');
 
 /**
- * Register constants
+ * Register some useful constants
  */
 define('THEMEDIR', get_template_directory_uri());
 define('ASSETDIR', THEMEDIR . '/assets');

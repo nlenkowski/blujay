@@ -1,10 +1,3 @@
-<?php
-
-/**
- * Displays pager
- */
-?>
-
 <nav class="pager">
     <?php if (is_single()) : ?>
         <span class="previous"><?php previous_post_link('%link', __('&larr; Previous', 'blujay')); ?></span>
