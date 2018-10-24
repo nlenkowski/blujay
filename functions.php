@@ -5,19 +5,16 @@
  */
 
 /**
- * Blujay includes
- *
- * The $blujay_includes array determines the code library to be loaded.
- * Add or remove files as needed.
+ * Load Blujay code library
+ * Add or remove files to the array as needed
  */
-$blujay_includes = array(
-    '/lib/setup.php',      // Configure theme and register assets, menus, sidebars, etc
+$blujay_libs = array(
+    '/lib/helpers.php', // Theme options and helpers
+    '/lib/setup.php', // Configure theme and register assets, menus, sidebars, etc
     '/lib/shortcodes.php', // Register shortcodes
-    '/lib/utilities.php'  // Additional theme options and utilities
 );
 
-// Load library
-foreach ($blujay_includes as $file) {
+foreach ($blujay_libs as $file) {
     if (!$filepath = locate_template($file)) {
         trigger_error(sprintf(__('Error locating %s for inclusion', 'blujay'), $file), E_USER_ERROR);
     }
