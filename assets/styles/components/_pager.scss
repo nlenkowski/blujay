@@ -1,16 +1,16 @@
-/**
- * Pager
- */
-
 .pager {
-    margin-top: 30px;
-    @include clearfix;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 
-    .previous {
-        float: left;
-    }
+  .previous {
+    flex-basis: 50%;
+    text-align: left;
+  }
 
-    .next {
-        float: right;
-    }
+  .next {
+    flex-basis: 50%;
+    text-align: right;
+  }
 }

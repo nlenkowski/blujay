@@ -1,6 +1,26 @@
-/**
- * Sidebar
- */
+.has-sidebar {
+  .site-content .container {
+    display: flex;
+    flex-flow: column nowrap;
 
-.sidebar {
+    @include breakpoint(md) {
+      flex-flow: row nowrap;
+    }
+  }
+
+  .main {
+    @include breakpoint(md) {
+      flex-basis: 66%;
+    }
+  }
+
+  .sidebar {
+    display: none;
+
+    @include breakpoint(md) {
+      flex-basis: 33%;
+      display: block;
+      padding-left: 2rem;
+    }
+  }
 }

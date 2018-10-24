@@ -1,54 +1,7 @@
-/**
- * Posts
- */
-
-// All posts
-.blog, .single, .archive, .search-results {
-
-    .post {
-        margin-bottom: 30px;
-    }
-
-    .post-header {
-        margin-bottom: 20px;
-    }
-
-    .post-title {
-        margin-top: 50px;
-        margin-bottom: 15px;
-    }
-
-    .comments-link {
-        display: block;
-        margin-top: 10px;
-    }
+.post {
+  margin-bottom: 2rem;
 }
 
-// Archive and search posts
-.archive, .search-results {
-
-    .post {
-        @include container;
-    }
-
-    .post-featured-image {
-        @include breakpoint($md) {
-            @include span(2);
-        }
-    }
-
-    .post-content {
-        margin-bottom: 30px;
-        @include breakpoint($md) {
-            @include span(10 last);
-            padding-left: 20px;
-        }
-    }
-
-    .post-title {
-        margin-top: 15px;
-        @include breakpoint($md) {
-            margin-top: 0px;
-        }
-    }
+.post-header {
+  margin-bottom: 1.5rem;
 }

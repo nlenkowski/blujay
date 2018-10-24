@@ -1,53 +1,43 @@
-/**
- * Variables
- *  - Colors
- *  - Typography
- *  - Breakpoints
- *  - Grid
- */
+// Base Colors
+$color-body: #fff;
+$color-text: #000;
+$color-heading: #444;
+$color-link: #09d;
+$color-link-hover: lighten($color-link, 20%);
 
-// Base colors
-$color-body:        #ffffff;
-$color-text:        #444444;
-$color-heading:     #444444;
-$color-link:        #0099dd;
-$color-link-hover:  darken($color-link, 10%);
-$color-success:     #5cb85c;
-$color-info:        #5bc0de;
-$color-warning:     #f0ad4e;
-$color-danger:      #d9534f;
+// Custom Colors
+$color-success: #28a745;
+$color-info: #17a2b8;
+$color-warning: #ffc107;
+$color-danger: #dc3545;
+$color-border: #ccc;
 
-// Custom colors
-$color-border:      #dddddd;
+// Fonts
+$font-family-sans: "Helvetica Neue", Arial, sans-serif;
+$font-family-base: $font-family-sans;
+$font-family-heading: $font-family-sans;
 
-// Font stack
-$font-family-sans:  'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-family-serif: 'Roboto Slab', Georgia, serif;
-$font-family-base:  $font-family-sans;
-
-// Base typography
-$font-size-base:       1rem;
-$line-height-base:     1.625em;
-$line-height-headings: 1.125em;
+// Typography
+$font-size-base: 1rem;
+$font-weight-base: normal;
+$font-weight-heading: bold;
+$line-height-base: 1.6;
+$line-height-heading: 1.4;
+$link-decoration: none;
 
 // Headings
-$f1: 2.5rem;
-$f2: 2rem;
-$f3: 1.75rem;
-$f4: 1.5rem;
-$f5: 1.25rem;
-$f6: 1.15rem;
+$h1: 2.5rem; // 40px
+$h2: 2rem; // 32px
+$h3: 1.75rem; // 28px
+$h4: 1.5rem; // 24px
+$h5: 1.25rem; // 20px
+$h6: 1.15rem; // 18px
 
 // Breakpoints
-$sm: 544px;
-$md: 768px;
-$lg: 992px;
-$xl: 1200px;
-
-// Grid
-$susy: (
-    columns: 12,
-    gutters: 1/4,
-    container: 1200px,
-    global-box-sizing: border-box
-    );
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);

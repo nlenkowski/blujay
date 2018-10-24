@@ -1,29 +1,32 @@
-/**
- * Header
- */
-
 .site-header {
-    margin-top: 15px;
-    text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
 
-    @include breakpoint($md) {
-        text-align: left;
-    }
+  @include breakpoint(md) {
+    text-align: left;
+  }
+}
+
+.site-title {
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+.site-description {
+  font-size: 1.5rem;
 }
 
 .primary-navigation {
-    padding-top: 20px;
-    border-top: 1px solid $color-border;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    ul li {
-        display: inline-block;
-        margin-right: 15px;
-        font-size: $f6;
-    }
+  ul li {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: $h6;
+  }
 }

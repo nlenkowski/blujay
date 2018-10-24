@@ -1,33 +1,22 @@
-/**
- * Footer
- */
-
 .site-footer {
-    margin-top: 30px;
-    text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
 
-    @include breakpoint($md) {
-        text-align: left;
-    }
+  @include breakpoint(md) {
+    text-align: left;
+  }
 }
 
 .footer-widgets {
-    @include container;
-    border-top: 1px solid $color-border;
+  display: flex;
+  flex-flow: column nowrap;
 
-    .widget {
-        @include breakpoint($md) {
-            @include span(4);
+  @include breakpoint(md) {
+    flex-flow: row nowrap;
+  }
 
-            &:last-child {
-                @include last;
-            }
-        }
-    }
-}
-
-.site-info {
-    margin: 20px 0;
-    padding-top: 20px;
-    border-top: 1px solid $color-border;
+  .widget {
+    flex-basis: 100%;
+  }
 }
