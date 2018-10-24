@@ -7,6 +7,7 @@ mix
   .copyDirectory("assets/images", "dist/images")
   .browserSync({
     proxy: "https://blujay.test",
+    files: ["dist/styles/**/*.css", "dist/scripts/**/*.js", "**/*.php"],
     snippetOptions: {
       ignorePaths: ["admin/**"]
     }
