@@ -61,8 +61,8 @@ define('DISTDIR', THEMEDIR . '/dist');
  */
 function blujay_register_assets()
 {
-    wp_enqueue_script('main-scripts', DISTDIR . '/scripts/main.min.js', array('jquery'), '', true);
-    wp_enqueue_style('main-styles', DISTDIR . '/styles/main.min.css', false);
+    wp_enqueue_script('main-scripts', DISTDIR . '/scripts/main.js', array('jquery'), '', true);
+    wp_enqueue_style('main-styles', DISTDIR . '/styles/main.css', false);
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700', false);
 }
 add_action('wp_enqueue_scripts', 'blujay_register_assets');
