@@ -60,9 +60,14 @@ function blujay_add_page_slug($classes)
         $classes[] = $post->post_type . '-' . $post->post_name;
     }
 
-    // Add is-blog class if blog related page
+    // Add "is-blog" class if blog related page
     if (((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_search()) || (is_tag())) == true) {
         $classes[] = "is-blog";
+    }
+
+    // Add "has-sidebar" class if primary sidebar is visible
+    if (is_active_sidebar('primary-sidebar')) {
+        $classes[] = "has-sidebar";
     }
 
     return $classes;
