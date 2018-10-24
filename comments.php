@@ -33,6 +33,8 @@ if (post_password_required()) {
         </div>
     <?php endif; ?>
 
+    <hr>
+
     <?php comment_form(); ?>
 
 </section>

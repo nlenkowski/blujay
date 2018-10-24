@@ -15,7 +15,8 @@
     <header class="site-header">
         <div class="container">
             <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-            <h2 class="tagline"><?php bloginfo('description'); ?></h2>
+            <h2 class="site-description"><?php bloginfo('description'); ?></h2>
+            <hr>
             <nav class="primary-navigation">
                 <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
             </nav>
