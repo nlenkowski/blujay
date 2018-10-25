@@ -1,28 +1,27 @@
-// Base Colors
+// Colors
 $color-body: #fff;
 $color-text: #000;
 $color-heading: #444;
 $color-link: #09d;
 $color-link-hover: lighten($color-link, 20%);
-
-// Custom Colors
-$color-success: #28a745;
-$color-info: #17a2b8;
-$color-warning: #ffc107;
-$color-danger: #dc3545;
+$color-success: #1fd160;
+$color-info: #209cee;
+$color-warning: #ffdd57;
+$color-danger: #ff3860;
 $color-border: #ccc;
 
 // Fonts
 $font-family-sans: "Helvetica Neue", Arial, sans-serif;
+$font-family-serif: "Roboto Slab", Georgia, serif;
 $font-family-base: $font-family-sans;
 $font-family-heading: $font-family-sans;
 
 // Typography
 $font-size-base: 1rem;
 $font-weight-base: normal;
-$font-weight-heading: bold;
+$font-weight-heading: 600;
 $line-height-base: 1.6;
-$line-height-heading: 1.4;
+$line-height-heading: 1.25;
 $link-decoration: none;
 
 // Headings
@@ -35,7 +34,6 @@ $h6: 1.15rem; // 18px
 
 // Breakpoints
 $breakpoints: (
-  xs: 0,
   sm: 576px,
   md: 768px,
   lg: 992px,

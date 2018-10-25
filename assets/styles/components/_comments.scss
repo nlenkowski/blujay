@@ -11,6 +11,12 @@
   list-style: none;
 }
 
-.comment-form-comment label {
-  display: block;
+.comment-form-comment {
+  label {
+    display: block;
+  }
+
+  textarea {
+    max-width: 100%;
+  }
 }
