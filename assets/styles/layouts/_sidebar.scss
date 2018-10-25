@@ -1,4 +1,11 @@
-.has-sidebar {
+/**
+ * Show sidebar on the following page types only
+ */
+.blog,
+.single,
+.archive,
+.search,
+.author {
   .site-content .container {
     display: flex;
     flex-flow: column nowrap;

@@ -65,11 +65,6 @@ function blujay_add_page_slug($classes)
         $classes[] = "is-blog";
     }
 
-    // Add "has-sidebar" class if primary sidebar is visible
-    if (is_active_sidebar('primary-sidebar')) {
-        $classes[] = "has-sidebar";
-    }
-
     return $classes;
 }
 
