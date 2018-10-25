@@ -9,9 +9,9 @@
  * Add or remove files to the array as needed
  */
 $blujay_libs = array(
-    '/lib/helpers.php', // Theme options and helpers
-    '/lib/setup.php', // Configure theme and register assets, menus, sidebars, etc
-    '/lib/shortcodes.php', // Register shortcodes
+    '/lib/helpers.php', // Utilities for cleaning up the header, moving scripts to the footer, etc.
+    '/lib/setup.php', // Enables theme features and registers assets, menus, image sizes, sidebars, etc.
+    '/lib/shortcodes.php', // Registers shortcodes
 );
 
 foreach ($blujay_libs as $file) {

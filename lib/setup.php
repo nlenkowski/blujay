@@ -26,9 +26,9 @@ function blujay_setup()
 add_action('after_setup_theme', 'blujay_setup');
 
 /**
- * Enable theme utilities
+ * Enable/disable theme helpers
  */
-function blujay_theme_utilities()
+function blujay_theme_helpers()
 {
     // Cleanup header
     add_action('init', 'blujay_head_cleanup');
@@ -47,10 +47,10 @@ function blujay_theme_utilities()
     // Enable execution of shortcodes in widgets
     add_filter('widget_text', 'do_shortcode');
 }
-add_action('after_setup_theme', 'blujay_theme_utilities');
+add_action('after_setup_theme', 'blujay_theme_helpers');
 
 /**
- * Register some useful constants
+ * Register constants
  */
 define('THEMEDIR', get_template_directory_uri());
 define('ASSETDIR', THEMEDIR . '/assets');
@@ -79,7 +79,7 @@ register_nav_menus(array(
  */
 function blujay_add_image_sizes()
 {
-    add_image_size('featured', '350', '200', true);
+    // add_image_size('featured', '350', '200', true);
 }
 add_action('init', 'blujay_add_image_sizes');
 
