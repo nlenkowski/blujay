@@ -1,0 +1,36 @@
+.columns {
+  display: flex;
+  flex-flow: column nowrap;
+
+  @include breakpoint(md) {
+    flex-flow: row nowrap;
+  }
+
+  .column {
+    @include breakpoint(md) {
+      margin-right: 2rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @include breakpoint(md) {
+    .one-fourth {
+      flex-basis: 25%;
+    }
+
+    .one-third {
+      flex-basis: 33%;
+    }
+
+    .one-half {
+      flex-basis: 50%;
+    }
+
+    .two-thirds {
+      flex-basis: 66%;
+    }
+  }
+}
