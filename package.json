@@ -31,9 +31,9 @@
   },
   "devDependencies": {
     "browser-sync": "^2.26.3",
-    "browser-sync-webpack-plugin": "^2.0.1",
+    "browser-sync-webpack-plugin": "^2.2.2",
     "cross-env": "^5.2.0",
-    "eslint": "^5.7.0",
+    "eslint": "^5.8.0",
     "laravel-mix": "^2.1.14",
     "rimraf": "^2.6.2",
     "stylelint": "^9.6.0",
