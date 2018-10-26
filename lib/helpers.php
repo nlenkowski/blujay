@@ -100,6 +100,5 @@ function add_custom_image_sizes_to_media_library($image_sizes)
 function enable_shortcodes_in_html_widget()
 {
     add_filter('widget_text', 'do_shortcode');
-
 }
 ?>
