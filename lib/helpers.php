@@ -1,9 +1,11 @@
 <?php
 
+namespace Blujay\Helpers;
+
 /**
  * Cleanup header
  */
-function blujay_head_cleanup()
+function head_cleanup()
 {
 
     // General cleanup
@@ -19,7 +21,7 @@ function blujay_head_cleanup()
 }
 
 // Disable REST API and oEmbed discovery links
-function blujay_disable_rest_and_oembed()
+function disable_rest_and_oembed()
 {
     remove_action('wp_head', 'rest_output_link_wp_head', 10);
     remove_action('wp_head', 'wp_oembed_add_discovery_links');
@@ -27,7 +29,7 @@ function blujay_disable_rest_and_oembed()
 }
 
 // Disable emoji inline styles and scripts
-function blujay_disable_emoji_styles_scripts()
+function disable_emoji()
 {
     remove_action('wp_head', 'print_emoji_detection_script', 7);
     remove_action('admin_print_scripts', 'print_emoji_detection_script');
@@ -39,9 +41,9 @@ function blujay_disable_emoji_styles_scripts()
 }
 
 /**
- * Moves scripts to footer
+ * Move scripts to footer
  */
-function blujay_js_to_footer()
+function move_js_to_footer()
 {
     remove_action('wp_head', 'wp_print_scripts');
     remove_action('wp_head', 'wp_print_head_scripts', 9);
@@ -49,13 +51,13 @@ function blujay_js_to_footer()
 }
 
 /**
- * Adds some useful classes to the body
+ * Add page and post slugs to body class
  */
-function blujay_add_page_slug($classes)
+function add_classes_to_body($classes)
 {
     global $post;
 
-    // Adds page and post slugs
+    // Add page and post slugs
     if (isset($post)) {
         $classes[] = $post->post_type . '-' . $post->post_name;
     }
@@ -69,9 +71,9 @@ function blujay_add_page_slug($classes)
 }
 
 /**
- * Adds custom image sizes to media library
+ * Add custom image sizes to media library
  */
-function blujay_custom_image_sizes($image_sizes)
+function add_custom_image_sizes_to_media_library($image_sizes)
 {
 
     // Get the custom image sizes
@@ -90,5 +92,14 @@ function blujay_custom_image_sizes($image_sizes)
     }
 
     return $image_sizes;
+}
+
+/**
+ * Enable shortcodes in Custom HTML widget
+ */
+function enable_shortcodes_in_html_widget()
+{
+    add_filter('widget_text', 'do_shortcode');
+
 }
 ?>

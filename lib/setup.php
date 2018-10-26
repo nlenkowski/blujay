@@ -1,9 +1,13 @@
 <?php
 
+namespace Blujay\Setup;
+
+use Blujay\Helpers;
+
 /**
  * Theme setup
  */
-function blujay_setup()
+function theme_setup()
 {
     // Make theme available for translation
     load_theme_textdomain('blujay', get_template_directory() . '/lang');
@@ -23,31 +27,31 @@ function blujay_setup()
     // Enable support for HTML5 markup
     add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
 }
-add_action('after_setup_theme', 'blujay_setup');
+add_action('after_setup_theme', __NAMESPACE__ . '\\theme_setup');
 
 /**
  * Enable/disable theme helpers
  */
-function blujay_theme_helpers()
+function enable_theme_helpers()
 {
     // Cleanup header
-    add_action('init', 'blujay_head_cleanup');
-    add_action('init', 'blujay_disable_rest_and_oembed');
-    add_action('init', 'blujay_disable_emoji_styles_scripts');
+    add_action('init', '\Blujay\Helpers\head_cleanup');
+    add_action('init', '\Blujay\Helpers\disable_rest_and_oembed');
+    add_action('init', '\Blujay\Helpers\disable_emoji');
 
     // Move scripts to footer
-    add_action('wp_enqueue_scripts', 'blujay_js_to_footer');
+    add_action('wp_enqueue_scripts', '\Blujay\Helpers\move_js_to_footer');
 
     // Add page and post slugs to body class
-    add_filter('body_class', 'blujay_add_page_slug');
+    add_filter('body_class', '\Blujay\Helpers\add_classes_to_body');
 
     // Add custom image sizes to media library
-    add_filter('image_size_names_choose', 'blujay_custom_image_sizes');
+    add_filter('image_size_names_choose', '\Blujay\Helpers\add_custom_image_sizes_to_media_library');
 
     // Enable execution of shortcodes in widgets
-    add_filter('widget_text', 'do_shortcode');
+    add_action('init', '\Blujay\Helpers\enable_shortcodes_in_html_widget');
 }
-add_action('after_setup_theme', 'blujay_theme_helpers');
+add_action('after_setup_theme', __NAMESPACE__ . '\\enable_theme_helpers');
 
 /**
  * Register constants
@@ -59,7 +63,7 @@ define('DISTDIR', THEMEDIR . '/dist');
 /**
  * Register assets
  */
-function blujay_register_assets()
+function register_assets()
 {
     // Scripts
     wp_enqueue_script(
@@ -85,7 +89,7 @@ function blujay_register_assets()
         false
     );
 }
-add_action('wp_enqueue_scripts', 'blujay_register_assets');
+add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\register_assets');
 
 /**
  * Register menus
@@ -97,16 +101,16 @@ register_nav_menus(array(
 /**
  * Register custom image sizes
  */
-function blujay_add_image_sizes()
+function add_image_sizes()
 {
     // add_image_size('featured', '350', '200', true);
 }
-add_action('init', 'blujay_add_image_sizes');
+add_action('init', __NAMESPACE__ . '\\add_image_sizes');
 
 /**
  * Register sidebar and widget areas
  */
-function blujay_widgets_init()
+function widgets_init()
 {
 
     register_sidebar(array(
@@ -129,5 +133,5 @@ function blujay_widgets_init()
         'after_title' => '</h3>',
     ));
 }
-add_action('widgets_init', 'blujay_widgets_init');
+add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
 ?>
