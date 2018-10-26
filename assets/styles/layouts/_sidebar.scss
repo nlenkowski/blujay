@@ -17,7 +17,7 @@
 
   .main {
     @include breakpoint(md) {
-      flex-basis: 66%;
+      flex-basis: 75%;
     }
   }
 
@@ -25,7 +25,7 @@
     display: none;
 
     @include breakpoint(md) {
-      flex-basis: 33%;
+      flex-basis: 25%;
       display: block;
       padding-left: 2rem;
     }
