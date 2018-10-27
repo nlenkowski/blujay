@@ -2,7 +2,12 @@
 
 namespace Blujay\Setup;
 
-use Blujay\Helpers;
+/**
+ * Register some useful constants
+ */
+define('THEMEDIR', get_template_directory_uri());
+define('ASSETDIR', THEMEDIR . '/assets');
+define('DISTDIR', THEMEDIR . '/dist');
 
 /**
  * Theme setup
@@ -30,12 +35,12 @@ function theme_setup()
 add_action('after_setup_theme', __NAMESPACE__ . '\\theme_setup');
 
 /**
- * Enable/disable theme helpers
+ * Enable and/or disable theme helpers
  */
 function enable_theme_helpers()
 {
     // Cleanup header
-    add_action('init', '\Blujay\Helpers\head_cleanup');
+    add_action('init', '\Blujay\Helpers\cleanup_header');
     add_action('init', '\Blujay\Helpers\disable_rest_and_oembed');
     add_action('init', '\Blujay\Helpers\disable_emoji');
 
@@ -52,13 +57,6 @@ function enable_theme_helpers()
     add_action('init', '\Blujay\Helpers\enable_shortcodes_in_html_widget');
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\enable_theme_helpers');
-
-/**
- * Register constants
- */
-define('THEMEDIR', get_template_directory_uri());
-define('ASSETDIR', THEMEDIR . '/assets');
-define('DISTDIR', THEMEDIR . '/dist');
 
 /**
  * Register assets
@@ -96,6 +94,7 @@ register_nav_menus(array(
  */
 function add_image_sizes()
 {
+    // Example custom image size
     // add_image_size('featured', '350', '200', true);
 }
 add_action('init', __NAMESPACE__ . '\\add_image_sizes');
@@ -105,7 +104,6 @@ add_action('init', __NAMESPACE__ . '\\add_image_sizes');
  */
 function widgets_init()
 {
-
     register_sidebar(array(
         'name' => __('Primary Sidebar', 'blujay'),
         'id' => 'primary-sidebar',

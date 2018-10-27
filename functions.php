@@ -1,8 +1,10 @@
 <?php
 
 /**
- * Load Blujay code library
- * Add or remove files to the mapped array as needed
+ * Load the Blujay code library:
+ * - /lib/helpers.php
+ * - /lib/setup.php
+ * - /lib/shortcodes.php
  */
 array_map(function ($file) {
     $file = "lib/{$file}.php";

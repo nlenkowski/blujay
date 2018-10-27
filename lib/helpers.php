@@ -5,10 +5,9 @@ namespace Blujay\Helpers;
 /**
  * Cleanup header
  */
-function head_cleanup()
+function cleanup_header()
 {
-
-    // General cleanup
+    // Remove extraneous links and the WordPress version number
     remove_action('wp_head', 'feed_links_extra', 3);
     remove_action('wp_head', 'rsd_link');
     remove_action('wp_head', 'wlwmanifest_link');
@@ -75,7 +74,6 @@ function add_classes_to_body($classes)
  */
 function add_custom_image_sizes_to_media_library($image_sizes)
 {
-
     // Get the custom image sizes
     global $_wp_additional_image_sizes;
 
