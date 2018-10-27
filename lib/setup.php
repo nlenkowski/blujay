@@ -81,13 +81,6 @@ function register_assets()
         array(),
         filemtime(get_template_directory() . '/dist/styles/main.css')
     );
-
-    // Fonts
-    wp_enqueue_style(
-        'google-fonts',
-        'https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700',
-        false
-    );
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\register_assets');
 
