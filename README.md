@@ -54,6 +54,9 @@ gulp
 ### Configure theme
 
 Edit `lib/setup.php` to enable theme features and utilities and register assets, menus, image sizes, sidebars, etc.
+- [WordPress](https://wordpress.org/) >= 4.7
+- [PHP](https://secure.php.net/) >= 7.1
+- [Node](https://nodejs.org/) >= 6.14
 
 ### Configure Browsersync
 
