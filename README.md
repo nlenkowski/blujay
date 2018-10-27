@@ -1,166 +1,120 @@
 # Blujay
-### A modern starter theme for WordPress
 
-Blujay is a minimal, responsive starter theme with modern tooling.
+[![Dependency Status](https://david-dm.org/nlenkowski/blujay.svg)](https://david-dm.org/nlenkowski/blujay#info=dependencies)
+[![Build Status](https://travis-ci.org/nlenkowski/blujay.svg?branch=master)](https://travis-ci.org/nlenkowski/blujay)
 
-* [Homepage](http://blujay.littlebiglab.com)
-* [Demo](http://blujay.littlebiglab.com/demo)
-* [Download](https://github.com/nlenkowski/blujay/releases/latest)
-* [Source](https://github.com/nlenkowski/blujay)
+A minimal starter theme for WordPress. Built with modern tooling and sensible defaults.
+
+- [Webpage](http://blujay.littlebiglab.com)
+- [Demo](http://blujay.littlebiglab.com/demo)
+- [Download](https://github.com/nlenkowski/blujay/releases/latest)
+- [GitHub](https://github.com/nlenkowski/blujay)
 
 ## Features
 
-* [Gulp](http://gulpjs.com) build system automates common development tasks
-* [Browsersync](http://browsersync.io) enables synchronized browser testing and live reloading
-* Front-end package management with [npm](https://www.npmjs.com)
-* [ES6](https://babeljs.io/docs/learn-es2015) support with [Babel](https://babeljs.io)
-* Built with [Sass](http://sass-lang.com)
-* [Susy](http://susy.oddbird.net) grid system
-* [Breakpoint](http://breakpoint-sass.com) named media queries
-* [Picturefill](http://picturefill.com) responsive images polyfill
-* Handy theme [utilities](https://github.com/nlenkowski/blujay/blob/master/lib/utilities.php) for cleaning up the header, moving scripts to the footer, etc.
-* A few useful [shortcodes](https://github.com/nlenkowski/blujay/blob/master/lib/shortcodes.php) and [mixins](https://github.com/nlenkowski/blujay/blob/master/assets/styles/common/_utilities.scss)
+- [Webpack](https://webpack.js.org/) for modern JavaScript development
+- [Laravel Mix](https://laravel-mix.com/) for easy Webpack configuration
+- [Browsersync](https://browsersync.io) for synchronized browser testing
+- [npm](https://www.npmjs.com/) for package management
+- [Sass](https://sass-lang.com) for stylesheets, with configurable defaults for colors, typography, etc.
+- [Mixins](https://github.com/nlenkowski/blujay/blob/master/assets/styles/common/_helpers.scss) for quickly defining named breakpoints in your styles
+- [Shortcodes](https://github.com/nlenkowski/blujay/blob/master/lib/shortcodes.php) for using flexbox columns in page and post content
+- [ESLint](https://eslint.org/) and [stylelint](https://stylelint.io/) for linting scripts and styles
+- [Easy setup](https://github.com/nlenkowski/blujay/blob/master/lib/setup.php) for registering assets, menus, image sizes, sidebars, etc.
+- [Helper functions](https://github.com/nlenkowski/blujay/blob/master/lib/helpers.php) for cleaning up the header, moving scripts to the footer, etc.
 
-> Most features are optional and can be easily disabled. If you don't need Susy or Breakpoint just comment out their includes and bake your own solutions.
+## Requirements
 
-## Theme installation
-
-
-Install Node.js from [https://nodejs.org](https://nodejs.org).
-
-### Install gulp
-
-
-```
-npm install -g gulp
-```
-
-### Install theme
-
-```
-git clone git@github.com:nlenkowski/blujay.git theme-name && cd theme-name
-```
-
-### Install dependencies
-```
-npm install
-```
-
-### Build assets
-```
-gulp
-```
-
-### Configure theme
-
-Edit `lib/setup.php` to enable theme features and utilities and register assets, menus, image sizes, sidebars, etc.
 - [WordPress](https://wordpress.org/) >= 4.7
 - [PHP](https://secure.php.net/) >= 7.1
 - [Node](https://nodejs.org/) >= 6.14
 
-### Configure Browsersync
+## Theme installation
 
-Edit `assets/config.json` and update your `devUrl` to reflect your local development hostname.
+1. Download the [latest release](https://github.com/nlenkowski/blujay/releases/latest/) and unzip it into your `/wp-content/themes` directory.
 
-For example:
+2. Run `npm install` from the theme directory to install dependencies.
 
-```
-"devUrl": "http://project-name.dev"
-```
+3. Run `npm run prod` to compile and optimize assets for production.
 
 ## Theme development
 
-Blujay uses [gulp](http://gulpjs.com/) as a build tool.
+1. Edit `/lib/setup.php` to enable theme features and register assets, menus, image sizes, sidebars, etc.
 
-### Development tasks
+2. Edit `/webpack.mix.js` and change the browserSync `proxy` to reflect your local development url.
 
-* `gulp watch` monitors theme files and assets for changes and live reloads with [Browsersync](http://browsersync.io)
+### Build commands
 
-### Build tasks
+Compiled assets are output to the `/dist` directory.
 
-Use the following to compile your theme assets to the `dist` directory.
+- `npm run watch` – Compile assets when changes are detected and start a Browsersync session
 
+- `npm run dev` – Compile assets
 
-* `gulp styles` — Compiles Sass, autoprefixes, minifies and generates source maps for styles
+- `npm run prod` – Compile assets and optimize for production
 
-* `gulp scripts` — Lints, transpiles ES6, combines, minifies and generates source maps for scripts
+### Package management
 
-* `gulp images` — Optimizes images
+Example of how to add 3rd party packages into your theme:
 
-* `gulp fonts` — Gathers font files and outputs to flat directory structure
+1. Install package
 
-* `gulp` — Builds all assets
-
-* `gulp --production` — Builds all assets for production (no source maps) 
-
-## Package management
-
-Blujay uses [npm](https://www.npmjs.com) for front-end package management. 
-
-### To install a new package
-
-```
-npm i -D picturefill
+```sh
+npm install flatpickr
 ```
 
-### Register the package dependency
+2. Add the stylesheet entry points to `/assets/styles/main.scss`
 
-Edit `assets/config.json` and add the full path to the package's main styles and/or scripts:
+```css
+@import "~flatpickr/dist/flatpickr.css";
+```
 
+3. Add the script entry points to `/assets/scripts/main.js`
+
+```js
+import flatpickr from "flatpickr";
 ```
-"dependencies": {
-    "scripts": [
-        "node_modules/picturefill/dist/picturefill.js",
-        "assets/scripts/main.js"
-    ],
-    "styles": [
-        "assets/styles/main.scss"
-    ]
-}
-```
-> Dependencies are compiled in the order they are listed.
+
+4. Run any build command to compile the imported package assets along with your own.
 
 ## Theme structure
 
-### Hierarchy
-
 ```
-├── assets                # → Front-end assets
+/themes/blujay            # → Theme root
+├── assets                # → Theme assets
 │   ├── fonts/            # → Theme fonts
 │   ├── images/           # → Theme images
 │   ├── scripts/          # → Theme scripts
 │   └── styles/           # → Theme styles
-│   ├── config.json       # → Settings for compiled assets
-├── dist/                 # → Built theme assets (never manually edit)
-├── lib/                  # → Theme PHP libraries
-├── node_modules/         # → Node.js packages (never manually edit)
+├── dist/                 # → Compiled assets (never edit)
+├── lib/                  # → Theme code library
+├── node_modules/         # → Node packages (never edit)
 ├── partials/             # → Partial templates
-├── templates/            # → Custom page templates
-├── functions.php         # → Theme PHP loader (never manually edit)
-├── gulpfile.js           # → Gulp scripts
-├── package.json          # → Node.js dependencies
+├── functions.php         # → Theme functions
+├── package.json          # → Node dependencies
+├── package-lock.json     # → Dependencies lock file (never edit)
 ├── style.css             # → Theme meta information
-
+├── webpack.mix.js        # → Mix/Webpack configuration
 ```
 
 ### Assets
 
-* `assets/fonts` — Font source files
-* `assets/images` — Image source files
-* `assets/scripts` — JavaScript source files
-* `assets/styles` — Sass source files
-* `assets/styles/common` — Common styles (global, variables, utilities, etc.)
-* `assets/styles/components` — Component styles (comments, grid, columns, etc.)
-* `assets/styles/layouts` — Styles for layouts (header, footer, pages, posts, etc.)
-* `assets/styles/templates` — Styles for custom page templates
-* `assets/config.json` — Compiled assets path and dependency configuration
+- `/assets/fonts` – Font source files
+- `/assets/images` – Image source files
+- `/assets/scripts` – JavaScript source files
+- `/assets/styles` – Sass source files
+- `/assets/styles/common` – Common styles (variables, global, helpers, etc.)
+- `/assets/styles/components` – Component styles (columns, comments, etc.)
+- `/assets/styles/layouts` – Layouts styles (header, footer, pages, etc.)
 
 ### Lib
 
-* `lib/setup.php` — Enables theme features and utilities and registers assets, menus, image sizes, sidebars, etc.
-* `lib/shortcodes.php` — Registers shortcodes
-* `lib/utilities.php` — Theme utilities for cleaning up the header, moving scripts to the footer, etc.
+- `/lib/setup.php` – Enables theme features and registers assets, menus, image sizes, sidebars, etc.
+- `/lib/helpers.php` – Theme utilities for cleaning up the header, moving scripts to the footer, etc.
+- `/lib/shortcodes.php` – Registers shortcodes
 
 ## Thanks
 
-Blujay was inspired by the excellent [Sage](https://roots.io/sage/) starter theme from [the Roots team](https://roots.io/). I've learned much about WordPress from following Sage's development, thanks Roots team!
+Blujay was inspired by the excellent [Sage](https://roots.io/sage/) starter theme by [Roots](https://roots.io/).
+
+Thanks Roots Team! 👍
