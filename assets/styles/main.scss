@@ -10,12 +10,10 @@
 // Components
 @import "components/columns";
 @import "components/comments";
+@import "components/footer";
+@import "components/header";
 @import "components/pager";
+@import "components/pages";
+@import "components/posts";
+@import "components/sidebar";
 @import "components/widgets";
-
-// Layouts
-@import "layouts/header";
-@import "layouts/footer";
-@import "layouts/pages";
-@import "layouts/posts";
-@import "layouts/sidebar";
