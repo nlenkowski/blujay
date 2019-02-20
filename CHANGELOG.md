@@ -1,3 +1,10 @@
+### 1.4.1 - 2019-02-20
+
+- Update dependencies
+- Upgrade Laravel Mix to 4.x release
+- Enable Browsersync and source maps for development builds only
+- Move layouts styles to components directory
+
 ### 1.4.0 - 2018-10-27
 
 - Switch build system from Gulp to Laravel Mix / Webpack
@@ -7,7 +14,7 @@
 - Remove Susy and replace with flexbox layout
 - Improve typography and vertical rhythm
 - Add cache busting for script and style assets
-- Add continous integration testing
+- Add continuous integration testing
 - Add dependency status monitoring
 - Add stylelint config
 - Update ESLint config
@@ -18,7 +25,7 @@
 - Switch from Bower to npm for frontend dependencies
 - Add asset configuration file for managing paths and dependencies
 - Add ES6 support with Babel to scripts build task
-- Switch scripts linter from jshint to eslint
+- Switch scripts linter from JSHint to ESLint
 - Add font and image optimization build tasks
 - Add source maps generation to styles and scripts build tasks
 - Remove dist directory from version control
@@ -32,7 +39,7 @@
 - Remove button component
 - Improve adherence to WordPress coding standards
 - Improve indentation and comments
-- Upgrade vendor dependencies
+- Update dependencies
 
 ### 1.2.2 - 2016-02-02
 
