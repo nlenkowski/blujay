@@ -3,7 +3,6 @@
   "version": "1.4.1",
   "author": "Nathan Lenkowski <nathan@littlebiglab.com>",
   "homepage": "https://blujay.littlebiglab.com",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git://github.com/nlenkowski/blujay.git"
@@ -11,12 +10,7 @@
   "bugs": {
     "url": "https://github.com/nlenkowski/blujay/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://opensource.org/licenses/MIT"
-    }
-  ],
+  "license" : "MIT",
   "browserslist": [
     ">0.25%"
   ],
