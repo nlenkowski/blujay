@@ -1,12 +1,9 @@
 # Blujay
 
-[![Dependency Status](https://david-dm.org/nlenkowski/blujay.svg)](https://david-dm.org/nlenkowski/blujay#info=dependencies)
-[![Build Status](https://travis-ci.org/nlenkowski/blujay.svg?branch=master)](https://travis-ci.org/nlenkowski/blujay)
-
 Blujay is a minimal WordPress starter theme built with modern tooling and sensible defaults.
 
-- [Home](https://blujay.littlebiglab.com)
-- [Demo](https://blujay.littlebiglab.com/demo)
+- [Website](https://blujay.lenko.dev)
+- [Live Demo](https://blujay-demo.lenko.dev)
 - [Download](https://github.com/nlenkowski/blujay/releases/latest)
 - [GitHub](https://github.com/nlenkowski/blujay)
 
